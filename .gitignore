@@ -1,0 +1,96 @@
+# ==============================================================================
+# Environments & Dependencies
+# ==============================================================================
+venv/
+env/
+.env
+.env.*
+*.local
+node_modules/
+frontend/node_modules/
+
+# ==============================================================================
+# Python & Testing Caches
+# ==============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+.pytest_cache/
+frontend/.pytest_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+
+# ==============================================================================
+# Frontend Build Artifacts
+# ==============================================================================
+frontend/dist/
+frontend/.env
+
+# ==============================================================================
+# Logs & System Files
+# ==============================================================================
+*.log
+*.txt.log
+backend.log
+vite.log
+gpu_before.txt
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ==============================================================================
+# Large Model Training Checkpoints (>100MB Hard GitHub Limit)
+# ==============================================================================
+checkpoints/
+**/checkpoint-*/
+*.pt
+*.pth
+*.bin
+optimizer.pt
+
+# ==============================================================================
+# Obsolete / Experimental Models (Backend uses setfit_v6 and setfit_v4 only)
+# ==============================================================================
+ml_compliance/model/setfit/
+ml_compliance/model/setfit_v5/
+
+# ==============================================================================
+# Temporary Scratch, Archives & Corrupted Stubs
+# ==============================================================================
+scratch/
+*.zip
+*.pptx
+build_presentation.py
+create_zip.py
+details.md
+AGENTS.md
+real_configs/sources/
+real_configs/pyntc/
+tillnow.txt
+
+# ==============================================================================
+# Development & Forensic Reports (Per user request)
+# ==============================================================================
+CLEANUP_REPORT.md
+DIAGNOSTIC_REPORT.md
+FUSION_FIX_SUMMARY.md
+OPTION_B_FINAL_REPORT.md
+AI_ONLY_COMPLIANCE_MIGRATION.md
+ml_compliance/TRAINING_REPORT.md
+ml_compliance/data*/*.md
+ml_compliance/model/*REPORT*.md
+ml_compliance/model/*REGRESSION*.md
+ml_compliance/model/*ANALYSIS*.md
+ml_compliance/model/*AUDIT*.md
+ml_compliance/model/*COMPARISON*.md
+ml_compliance/model/*.csv
+ml_compliance/real_world_eval/*.md
+ml_compliance/real_world_eval/*.csv
+real_configs/cisco_adsl_config.txt
+real_configs/cisco_eigrp_config.txt
+real_configs/cisco_nat_config.txt

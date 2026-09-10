@@ -1,0 +1,125 @@
+# Palo Alto PAN-OS Curly-Brace Configuration
+# Device: TEST-PAFW-01
+# Software: PAN-OS 10.0
+
+deviceconfig {
+    system {
+        hostname TEST-PAFW-01;
+        domain example.com;
+        ip-address 192.168.1.1;
+        netmask 255.255.255.0;
+        default-gateway 192.168.1.254;
+        dns-setting {
+            servers [
+                8.8.8.8
+                8.8.4.4
+            ];
+        }
+        ntp-servers {
+            primary 192.168.1.10;
+            secondary 192.168.1.11;
+        }
+    }
+}
+
+network {
+    interface {
+        ethernet ethernet1/1 {
+            ip 192.168.1.1/24;
+            zone trust;
+        }
+        ethernet ethernet1/2 {
+            ip 203.0.113.1/30;
+            zone untrust;
+        }
+    }
+}
+
+vsys {
+    vsys1 {
+        zone {
+            trust {
+                network [
+                    ethernet1/1
+                ];
+            }
+            untrust {
+                network [
+                    ethernet1/2
+                ];
+            }
+            dmz {
+                network [
+                    ethernet1/3
+                ];
+            }
+        }
+        address {
+            internal-net {
+                ip-netmask 192.168.1.0/24;
+            }
+            dmz-net {
+                ip-netmask 10.0.0.0/24;
+            }
+        }
+        service {
+            tcp-8080 {
+                protocol tcp;
+                port 8080;
+            }
+        }
+        security {
+            rules {
+                "allow-internal-outbound" {
+                    from [
+                        trust
+                    ];
+                    to [
+                        untrust
+                    ];
+                    source [
+                        internal-net
+                    ];
+                    destination [
+                        any
+                    ];
+                    service [
+                        any
+                    ];
+                    action allow;
+                    terminal yes;
+                }
+                "deny-all" {
+                    from [
+                        any
+                    ];
+                    to [
+                        any
+                    ];
+                    source [
+                        any
+                    ];
+                    destination [
+                        any
+                    ];
+                    service [
+                        any
+                    ];
+                    action deny;
+                    terminal yes;
+                }
+            }
+        }
+    }
+}
+
+snmp {
+    community {
+        public {
+            version v2c;
+        }
+        private {
+            version v2c;
+        }
+    }
+}

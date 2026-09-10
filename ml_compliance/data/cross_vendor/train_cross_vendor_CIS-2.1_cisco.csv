@@ -1,0 +1,14 @@
+rule_id,policy,security_intent,config,vendor,label,source,difficulty
+CIS-2.1,Syslog Configuration Required,Remote syslog logging must be configured for audit trails,set system syslog host 192.0.2.10 any any,juniper,0,custom_generated,easy
+CIS-2.1,Syslog Configuration Required,Remote syslog logging must be configured for audit trails,"set system syslog host 10.1.1.5 any any
+set system syslog host 10.1.1.6 any any",juniper,0,custom_generated,medium
+CIS-2.1,Syslog Configuration Required,Remote syslog logging must be configured for audit trails,set system syslog host 172.16.0.2 any critical,juniper,0,custom_generated,medium
+CIS-2.1,Syslog Configuration Required,Remote syslog logging must be configured for audit trails,# set system syslog host 192.0.2.10 any any,juniper,0,custom_generated,easy
+CIS-2.1,Syslog Configuration Required,Remote syslog logging must be configured for audit trails,set system syslog host 0.0.0.0 any any,juniper,0,custom_generated,easy
+CIS-2.1,Syslog Configuration Required,Remote syslog logging must be configured for audit trails,set system syslog host 192.0.2.10 any none,juniper,0,custom_generated,medium
+CIS-2.1,Syslog Configuration Required,Remote syslog logging must be configured for audit trails,set deviceconfig setting logging syslog server 192.0.2.10,paloalto,0,custom_generated,medium
+CIS-2.1,Syslog Configuration Required,Remote syslog logging must be configured for audit trails,"set deviceconfig setting logging syslog server 10.1.1.5
+set deviceconfig setting logging syslog server 10.1.1.6",paloalto,0,custom_generated,medium
+CIS-2.1,Syslog Configuration Required,Remote syslog logging must be configured for audit trails,set deviceconfig setting logging syslog server 172.16.0.2,paloalto,0,custom_generated,medium
+CIS-2.1,Syslog Configuration Required,Remote syslog logging must be configured for audit trails,# set deviceconfig setting logging syslog server 192.0.2.10,paloalto,0,custom_generated,easy
+CIS-2.1,Syslog Configuration Required,Remote syslog logging must be configured for audit trails,set deviceconfig setting logging syslog server 0.0.0.0,paloalto,0,custom_generated,easy

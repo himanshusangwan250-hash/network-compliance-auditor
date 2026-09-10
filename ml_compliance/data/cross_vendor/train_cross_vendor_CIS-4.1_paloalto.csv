@@ -1,0 +1,8 @@
+rule_id,policy,security_intent,config,vendor,label,source,difficulty
+CIS-4.1,Network Segmentation,Security zones must be configured to segment network traffic,set security zones security-zone trust interfaces ge-0/0/1.0,juniper,0,custom_generated,medium
+CIS-4.1,Network Segmentation,Security zones must be configured to segment network traffic,set security zones security-zone untrust interfaces ge-0/0/0.0,juniper,0,custom_generated,medium
+CIS-4.1,Network Segmentation,Security zones must be configured to segment network traffic,set security zones security-zone dmz interfaces xe-0/0/1.0,juniper,0,custom_generated,medium
+CIS-4.1,Network Segmentation,Security zones must be configured to segment network traffic,security-zone trust { interfaces { ge-0/0/1.0; } },juniper,0,custom_generated,hard
+CIS-4.1,Network Segmentation,Security zones must be configured to segment network traffic,# set security zones security-zone trust interfaces ge-0/0/1.0,juniper,0,custom_generated,easy
+CIS-4.1,Network Segmentation,Security zones must be configured to segment network traffic,security-zone untrusted { interfaces { }; },juniper,0,custom_generated,medium
+CIS-4.1,Network Segmentation,Security zones must be configured to segment network traffic,security-zone trust { },juniper,0,custom_generated,medium

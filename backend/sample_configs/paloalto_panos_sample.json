@@ -1,0 +1,26 @@
+{
+  "hostname": "TEST-PA-01",
+  "domain": "example.com",
+  "interfaces": [
+    {
+      "name": "ethernet1/1",
+      "ip": "192.168.1.1/24"
+    }
+  ],
+  "security_rules": [
+    {
+      "name": "allow-rule",
+      "from": ["trust"],
+      "to": ["untrust"],
+      "source": ["10.0.0.0/24"],
+      "destination": ["any"],
+      "action": "allow"
+    }
+  ],
+  "zones": [
+    {
+      "name": "trust",
+      "interfaces": ["ethernet1/1"]
+    }
+  ]
+}

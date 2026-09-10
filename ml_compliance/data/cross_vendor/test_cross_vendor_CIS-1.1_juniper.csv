@@ -1,0 +1,10 @@
+rule_id,policy,security_intent,config,vendor,label,source,difficulty
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,"user ops { uid 2000; class super-user; encrypted-password ""$1$abc123$hash""; }",juniper,0,custom_generated,medium
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,"user analyst { uid 2100; class read-only; encrypted-password ""$1$def456$hash""; }",juniper,0,custom_generated,medium
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,"user backup { uid 2200; class operator; encrypted-password ""$1$ghi789$hash""; }",juniper,0,custom_generated,medium
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,"user network_ops { uid 2300; class super-user; encrypted-password ""$1$jkl012$hash""; }",juniper,0,custom_generated,hard
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,"user security { uid 2400; class read-only; encrypted-password ""$1$mno345$hash""; }",juniper,0,custom_generated,hard
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,"user admin { uid 2000; class super-user; encrypted-password ""$1$abc123$hash""; }",juniper,0,custom_generated,easy
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,"user root { uid 0; class super-user; encrypted-password ""$1$root123$hash""; }",juniper,0,custom_generated,easy
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,"user cisco { uid 3000; class operator; encrypted-password ""$1$cisco123$hash""; }",juniper,0,custom_generated,medium
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,"user guest { uid 3100; class operator; encrypted-password ""$1$guest123$hash""; }",juniper,0,custom_generated,medium

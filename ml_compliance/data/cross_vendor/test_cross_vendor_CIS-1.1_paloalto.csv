@@ -1,0 +1,9 @@
+rule_id,policy,security_intent,config,vendor,label,source,difficulty
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,admin user ops password-hash $1$ops123$hash,paloalto,0,custom_generated,medium
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,admin user analyst password-hash $1$analyst123$hash,paloalto,0,custom_generated,medium
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,admin user backup password-hash $1$backup123$hash,paloalto,0,custom_generated,medium
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,admin user security password-hash $1$sec123$hash,paloalto,0,custom_generated,hard
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,admin user admin password-hash $1$admin123$hash,paloalto,0,custom_generated,easy
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,admin user admin password plaintext,paloalto,0,custom_generated,easy
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,admin user cisco password-hash $1$cisco123$hash,paloalto,0,custom_generated,medium
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,admin user root password plaintext,paloalto,0,custom_generated,medium

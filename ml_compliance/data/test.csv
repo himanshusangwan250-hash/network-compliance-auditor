@@ -1,0 +1,19 @@
+rule_id,policy,security_intent,config,vendor,label,source,reason,difficulty
+CIS-1.1,Avoid Default Credentials,"No default usernames (admin, root, cisco, guest, test) should be configured.",username ops privilege 5 secret 5 $1$ops123$hash,cisco,1,synthetic,valid_secret,easy
+CIS-1.1,Avoid Default Credentials,"No default usernames (admin, root, cisco, guest, test) should be configured.",username netadmin privilege 1 secret 5 $1$netadmin123$hash,cisco,1,synthetic,valid_secret,easy
+CIS-1.1,Avoid Default Credentials,"No default usernames (admin, root, cisco, guest, test) should be configured.","user root { uid 0; class super-user; encrypted-password ""$1$root123$hash""; }",juniper,0,synthetic,default_username,easy
+CIS-1.1,Avoid Default Credentials,"No default usernames (admin, root, cisco, guest, test) should be configured.","user test { uid 3100; class operator; encrypted-password ""$1$test123$hash""; }",juniper,0,synthetic,default_username,easy
+CIS-1.1,Avoid Default Credentials,"No default usernames (admin, root, cisco, guest, test) should be configured.",admin user netadmin password-hash $1$netadmin123$hash,paloalto,1,synthetic,valid_hash,easy
+CIS-1.1,Avoid Default Credentials,"No default usernames (admin, root, cisco, guest, test) should be configured.",admin user operator password plaintext,paloalto,0,synthetic,plaintext_password,medium
+CIS-1.2,Password Encryption Required,All user passwords must be encrypted using secure hashing.,username guest privilege 1 password 0 guest123,cisco,0,synthetic,plaintext_password,easy
+CIS-1.2,Password Encryption Required,All user passwords must be encrypted using secure hashing.,"root-authentication { encrypted-password ""$1$root123$hash""; }",juniper,1,synthetic,root_encrypted,medium
+CIS-1.2,Password Encryption Required,All user passwords must be encrypted using secure hashing.,admin user operator password-hash $1$oper123$hash,paloalto,1,synthetic,valid_hash,easy
+CIS-2.1,Syslog Configuration Required,Remote syslog logging must be configured for audit trails.,set system syslog host 192.0.2.10 any any,juniper,1,synthetic,valid_host,easy
+CIS-2.1,Syslog Configuration Required,Remote syslog logging must be configured for audit trails.,set deviceconfig setting logging syslog server 192.0.2.10,paloalto,1,synthetic,valid_server,easy
+CIS-2.2,NTP Configuration Required,NTP servers must be configured for accurate timestamps.,set system ntp server 0.0.0.0,juniper,0,synthetic,invalid_server,easy
+CIS-2.2,NTP Configuration Required,NTP servers must be configured for accurate timestamps.,set deviceconfig setting ntp server primary 10.0.0.1,paloalto,1,synthetic,valid_server,easy
+CIS-3.1,Secure SNMP Configuration,SNMP must use secure community names (not public/private) and versions.,snmp-server community public RO,cisco,0,synthetic,default_community,easy
+CIS-3.1,Secure SNMP Configuration,SNMP must use secure community names (not public/private) and versions.,set snmp community secure { authorization read-write; },juniper,1,synthetic,secure_community,easy
+CIS-3.1,Secure SNMP Configuration,SNMP must use secure community names (not public/private) and versions.,set deviceconfig setting snmp community private version v2c,paloalto,0,synthetic,default_community_v2,easy
+CIS-4.1,Network Segmentation,Security zones must be configured to segment network traffic.,set security zones security-zone untrust interfaces ge-0/0/0.0,juniper,1,synthetic,valid_zone,medium
+CIS-4.1,Network Segmentation,Security zones must be configured to segment network traffic.,set deviceconfig setting zone untrust network layer3 ethernet1/2,paloalto,1,synthetic,valid_zone,medium

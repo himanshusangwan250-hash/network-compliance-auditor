@@ -1,0 +1,9 @@
+rule_id,policy,security_intent,config,vendor,label,source,reason,difficulty
+CIS-1.1,Avoid Default Credentials,"No default usernames (admin, root, cisco, guest, test) should be configured.",admin user ops password-hash $1$ops123$hash,paloalto,1,synthetic,valid_hash,easy
+CIS-1.1,Avoid Default Credentials,"No default usernames (admin, root, cisco, guest, test) should be configured.",admin user netadmin password-hash $1$netadmin123$hash,paloalto,1,synthetic,valid_hash,easy
+CIS-1.1,Avoid Default Credentials,"No default usernames (admin, root, cisco, guest, test) should be configured.",admin user custom_admin password-hash $1$custadm123$hash,paloalto,1,synthetic,valid_hash,medium
+CIS-1.1,Avoid Default Credentials,"No default usernames (admin, root, cisco, guest, test) should be configured.",admin user admin password-hash $1$admin123$hash,paloalto,0,synthetic,default_username,easy
+CIS-1.1,Avoid Default Credentials,"No default usernames (admin, root, cisco, guest, test) should be configured.",admin user admin password plaintext,paloalto,0,synthetic,plaintext_password,easy
+CIS-1.1,Avoid Default Credentials,"No default usernames (admin, root, cisco, guest, test) should be configured.",admin user cisco password-hash $1$cisco123$hash,paloalto,0,synthetic,default_username,easy
+CIS-1.1,Avoid Default Credentials,"No default usernames (admin, root, cisco, guest, test) should be configured.",admin user operator password plaintext,paloalto,0,synthetic,plaintext_password,medium
+CIS-1.1,Avoid Default Credentials,"No default usernames (admin, root, cisco, guest, test) should be configured.",admin user test password-hash $1$test123$hash,paloalto,0,synthetic,default_username,easy

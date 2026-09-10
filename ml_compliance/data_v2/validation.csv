@@ -1,0 +1,1323 @@
+rule_id,policy,security_intent,config,vendor,label,source,reason,difficulty
+CIS-2.2,NTP servers must be configured for accurate timestamp recording,Verify cis-2.2 compliance,"! SW-29-ACCESS-78,25-CORE-59 Configuration
+! Generated: 2024-01-13
+!
+hostname SW-29-ACCESS-78,25-CORE-59
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+
+! ntp server 148.2.133.45
+interface Loopback2
+ description Uplink Interface
+ ip address 76.174.59.206 255.255.252.0
+ no shutdown
+!
+router ospf 1
+ network 226.64.193/24 area 0
+!",cisco,0,synthetic_v2,non_compliant_cis_2.2,hard
+CIS-3.1,SNMPv3 with custom community names must be implemented,Verify cis-3.1 compliance,"# 43-Junos-88,39-ROUTER-52 Configuration
+# Date: 2024-01-02
+
+system {
+    host-name 43-Junos-88,39-ROUTER-52;
+    domain-name example.corp.net;
+    snmp {
+        community public {
+            authorization read-only;
+        }
+    }
+}",juniper,0,synthetic_v2,non_compliant_cis_3.1,medium
+CIS-2.1,Security-relevant events must be logged to external syslog infrastructure,Verify cis-2.1 compliance,"# 24-SRX-78,41-MX-79,29-EX-82 Configuration
+# Date: 2024-01-19
+
+system {
+    host-name 24-SRX-78,41-MX-79,29-EX-82;
+    domain-name example.corp.net;
+    syslog {
+        #host 27.254.72.85 {
+            any any;
+        }
+    }
+}",juniper,0,synthetic_v2,non_compliant_cis_2.1,hard
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify cis-2.1 compliance,"<!-- 88-PAFW-43,84-PAN-12,29-CORP-46 Configuration -->
+<!-- Date: 2024-01-08 -->
+
+<device-config>
+  <system>
+    <hostname>88-PAFW-43,84-PAN-12,29-CORP-46</hostname>
+    <domain>example.com</domain>
+  </system>
+  <log-settings>
+    <syslog>
+      <!-- <entry name=""primary""> -->
+    </syslog>
+  </log-settings>
+</device-config>",paloalto,0,synthetic_v2,non_compliant_cis_2.1,hard
+CIS-1.1,Administrative accounts must not use vendor-default credentials,Verify cis-1.1 compliance,"<!-- 76-PAFW-72,72-PAN-43,86-CORP-16 Configuration -->
+<!-- Date: 2024-01-14 -->
+
+<device-config>
+  <system>
+    <hostname>76-PAFW-72,72-PAN-43,86-CORP-16</hostname>
+    <domain>example.com</domain>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""cisco"">
+        <password-hash>$1$7929$hashvalue</password-hash>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,0,synthetic_v2,non_compliant_cis_1.1,hard
+CIS-2.1,Security-relevant events must be logged to external syslog infrastructure,Verify cis-2.1 compliance,"# 71-FIREWALL-63,20-SWITCH-7 Configuration
+# Date: 2024-01-12
+
+system {
+    host-name 71-FIREWALL-63,20-SWITCH-7;
+    domain-name example.corp.net;
+    syslog {
+        #host 1.218.44.76 {
+            any any;
+        }
+    }
+}",juniper,0,synthetic_v2,non_compliant_cis_2.1,hard
+CIS-2.2,NTP servers must be configured for accurate timestamp recording,Verify cis-2.2 compliance,"# 23-FIREWALL-76,77-SWITCH-59 Configuration
+# Date: 2024-01-21
+
+system {
+    host-name 23-FIREWALL-76,77-SWITCH-59;
+    domain-name example.corp.net;
+    ntp {
+        #server 192.222.158.233;
+    }
+}",juniper,0,synthetic_v2,non_compliant_cis_2.2,medium
+CIS-2.2,NTP servers must be configured for accurate timestamp recording,Verify cis-2.2 compliance,"! RTR-13,22,99-CORE-69 Configuration
+! Generated: 2024-01-18
+!
+hostname RTR-13,22,99-CORE-69
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+
+ntp server 2.33.107.172
+ntp server 55.217.53.53
+interface Port-channel24
+ description Management Interface
+ ip address 166.36.78.7 255.255.255.252
+ no shutdown
+!
+interface GigabitEthernet2/2
+ description WAN Interface
+ ip address 46.128.36.148 255.255.255.0
+ no shutdown
+!
+interface Vlan12
+ description Management Interface
+ ip address 162.207.221.81 255.255.255.0
+ no shutdown
+!",cisco,1,synthetic_v2,compliant_cis_2.2,easy
+CIS-1.1,Administrative accounts must not use vendor-default credentials,Verify cis-1.1 compliance,"! ASA-58,18-FW-55-DMZ-24 Configuration
+! Generated: 2024-01-09
+!
+hostname ASA-58,18-FW-55-DMZ-24
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+
+username backup_admin privilege 1 secret 5 $1$2235$hashvalue
+interface GigabitEthernet1/20
+ description Uplink Interface
+ ip address 215.7.47.238 255.255.255.0
+!
+interface Vlan15
+ description LAN Interface
+ ip address 222.205.30.43 255.255.255.252
+!
+interface Vlan8
+ description Management Interface
+ ip address 74.216.249.40 255.255.255.0
+!
+router ospf 1
+ network 192.168.31/24 area 0
+!",cisco,1,synthetic_v2,compliant_cis_1.1,easy
+CIS-1.1,Administrative accounts must not use vendor-default credentials,Verify cis-1.1 compliance,"<!-- 30-FORTIGATE-53,44-EDGE-59 Configuration -->
+<!-- Date: 2024-01-13 -->
+
+<device-config>
+  <system>
+    <hostname>30-FORTIGATE-53,44-EDGE-59</hostname>
+    <domain>example.com</domain>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""guest"">
+        <password-hash>$1$2557$hashvalue</password-hash>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,0,synthetic_v2,non_compliant_cis_1.1,medium
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify cis-2.1 compliance,"<!-- 21-SECURITY-9,40-PERIMETER-91 Configuration -->
+<!-- Date: 2024-01-17 -->
+
+<device-config>
+  <system>
+    <hostname>21-SECURITY-9,40-PERIMETER-91</hostname>
+    <domain>example.com</domain>
+  </system>
+  <log-settings>
+    <syslog>
+      <entry name=""primary"">
+        <server>
+          <entry name=""syslog-52"">
+            <ip-address>35.14.88.50</ip-address>
+          </entry>
+        </server>
+      </entry>
+    </syslog>
+  </log-settings>
+</device-config>",paloalto,1,synthetic_v2,compliant_cis_2.1,easy
+CIS-2.2,Time synchronization with trusted NTP infrastructure is required,Verify cis-2.2 compliance,"<!-- 34-PAFW-47,75-PAN-32,30-CORP-33 Configuration -->
+<!-- Date: 2024-01-26 -->
+
+<device-config>
+  <system>
+    <hostname>34-PAFW-47,75-PAN-32,30-CORP-33</hostname>
+    <domain>example.com</domain>
+    <ntp-servers>
+      <primary>77.47.204.146</primary>
+      <secondary>188.39.166.203</secondary>
+    </ntp-servers>
+</device-config>",paloalto,1,synthetic_v2,compliant_cis_2.2,medium
+CIS-2.2,NTP servers must be configured for accurate timestamp recording,Verify cis-2.2 compliance,"# 6-FIREWALL-62,48-SWITCH-80 Configuration
+# Date: 2024-01-11
+
+system {
+    host-name 6-FIREWALL-62,48-SWITCH-80;
+    domain-name example.corp.net;
+    ntp {
+        server 127.140.251.47;
+        server 235.143.203.57;
+    }
+}",juniper,1,synthetic_v2,compliant_cis_2.2,hard
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify cis-2.1 compliance,"! RTR-48,21,33-CORE-99 Configuration
+! Generated: 2024-01-04
+!
+hostname RTR-48,21,33-CORE-99
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+
+! logging host 229.59.116.190
+logging trap debugging
+interface Management0
+ description WAN Interface
+ ip address 63.23.241.94 255.255.255.252
+ no shutdown
+!",cisco,0,synthetic_v2,non_compliant_cis_2.1,easy
+CIS-3.1,SNMP configuration must avoid well-known community names,Verify cis-3.1 compliance,"<!-- 52-SECURITY-24,48-PERIMETER-81 Configuration -->
+<!-- Date: 2024-01-15 -->
+
+<device-config>
+  <system>
+    <hostname>52-SECURITY-24,48-PERIMETER-81</hostname>
+    <domain>example.com</domain>
+  </system>
+  <snmp>
+    <community>
+      <entry name=""public"">
+        <version>v2c</version>
+      </entry>
+    </community>
+  </snmp>
+</device-config>",paloalto,0,synthetic_v2,non_compliant_cis_3.1,hard
+CIS-4.1,Zone-based firewall policies must separate network segments,Verify cis-4.1 compliance,"<!-- 14-SECURITY-95,22-PERIMETER-9 Configuration -->
+<!-- Date: 2024-01-12 -->
+
+<device-config>
+  <system>
+    <hostname>14-SECURITY-95,22-PERIMETER-9</hostname>
+    <domain>example.com</domain>
+  </system>
+  <network>
+    <zone>
+      <!-- <entry name='untrusted'> -->
+    </zone>
+  </network>
+</device-config>",paloalto,0,synthetic_v2,non_compliant_cis_4.1,easy
+CIS-1.2,Authentication credentials must not be stored in readable form,Verify cis-1.2 compliance,"! ASA-80,93-FW-78-DMZ-44 Configuration
+! Generated: 2024-01-27
+!
+hostname ASA-80,93-FW-78-DMZ-44
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+
+username operator privilege 1 password 0 cleartext123
+enable password 0 weakenable
+interface Management0
+ description WAN Interface
+ ip address 21.23.135.167 255.255.255.0
+ no shutdown
+!",cisco,0,synthetic_v2,non_compliant_cis_1.2,hard
+CIS-3.1,SNMPv3 with custom community names must be implemented,Verify cis-3.1 compliance,"# 19-SRX-70,99-MX-56,28-EX-79 Configuration
+# Date: 2024-01-21
+
+system {
+    host-name 19-SRX-70,99-MX-56,28-EX-79;
+    domain-name example.corp.net;
+    snmp {
+        community network-ops {
+            authorization read-write;
+        }
+    }
+}",juniper,1,synthetic_v2,compliant_cis_3.1,medium
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify cis-2.1 compliance,"! ASA-66,53-FW-14-DMZ-4 Configuration
+! Generated: 2024-01-03
+!
+hostname ASA-66,53-FW-14-DMZ-4
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+
+logging host 91.47.166.222
+logging trap informational
+interface Vlan12
+ description WAN Interface
+ ip address 186.124.86.176 255.255.255.252
+!
+interface FastEthernet9/8
+ description Management Interface
+ ip address 38.32.85.112 255.255.255.252
+ no shutdown
+!",cisco,1,synthetic_v2,compliant_cis_2.1,easy
+CIS-1.2,Authentication credentials must not be stored in readable form,Verify cis-1.2 compliance,"! SW-21-ACCESS-48,40-CORE-93 Configuration
+! Generated: 2024-01-11
+!
+hostname SW-21-ACCESS-48,40-CORE-93
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+
+username netadmin privilege 15 secret 5 $1$secure123$hashvalue
+enable secret 5 $1$enablehash$enablevalue
+interface Loopback2
+ description WAN Interface
+ ip address 40.80.25.173 255.255.255.0
+!
+interface Port-channel13
+ description Management Interface
+ ip address 156.226.212.70 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet11/13
+ description WAN Interface
+ ip address 73.249.157.12 255.255.255.0
+ no shutdown
+!
+router ospf 1
+ network 10.0.104.154/24 area 0
+!",cisco,1,synthetic_v2,compliant_cis_1.2,easy
+CIS-4.1,Zone-based firewall policies must separate network segments,Verify cis-4.1 compliance,"<!-- 2-PAFW-18,67-PAN-37,48-CORP-63 Configuration -->
+<!-- Date: 2024-01-14 -->
+
+<device-config>
+  <system>
+    <hostname>2-PAFW-18,67-PAN-37,48-CORP-63</hostname>
+    <domain>example.com</domain>
+  </system>
+  <network>
+    <zone>
+      <entry name=""dmz"">
+        <network>
+          <member>ethernet3/6</member>
+        </network>
+      </entry>
+    </zone>
+  </network>
+</device-config>",paloalto,1,synthetic_v2,compliant_cis_4.1,easy
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify cis-2.1 compliance,"<!-- 19-FORTIGATE-80,78-EDGE-88 Configuration -->
+<!-- Date: 2024-01-23 -->
+
+<device-config>
+  <system>
+    <hostname>19-FORTIGATE-80,78-EDGE-88</hostname>
+    <domain>example.com</domain>
+  </system>
+  <log-settings>
+    <syslog>
+      <entry name=""primary"">
+        <server>
+          <entry name=""syslog-52"">
+            <ip-address>10.202.169.177</ip-address>
+          </entry>
+        </server>
+      </entry>
+    </syslog>
+  </log-settings>
+</device-config>",paloalto,1,synthetic_v2,compliant_cis_2.1,easy
+CIS-2.2,NTP servers must be configured for accurate timestamp recording,Verify cis-2.2 compliance,"! SW-99-ACCESS-32,97-CORE-44 Configuration
+! Generated: 2024-01-25
+!
+hostname SW-99-ACCESS-32,97-CORE-44
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+
+! ntp server 118.235.14.124",cisco,0,synthetic_v2,non_compliant_cis_2.2,hard
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify cis-2.1 compliance,"! RTR-98,29,38-CORE-5 Configuration
+! Generated: 2024-01-09
+!
+hostname RTR-98,29,38-CORE-5
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+
+! logging host 58.147.86.200
+logging trap debugging
+interface Management0
+ description Management Interface
+ ip address 141.57.58.69 255.255.252.0
+ no shutdown
+!
+interface FastEthernet17/24
+ description WAN Interface
+ ip address 195.225.111.254 255.255.255.252
+!
+interface Management0
+ description LAN Interface
+ ip address 77.16.230.68 255.255.255.252
+ no shutdown
+!",cisco,0,synthetic_v2,non_compliant_cis_2.1,easy
+CIS-3.1,SNMPv3 with custom community names must be implemented,Verify cis-3.1 compliance,"# 95-Junos-87,52-ROUTER-42 Configuration
+# Date: 2024-01-04
+
+system {
+    host-name 95-Junos-87,52-ROUTER-42;
+    domain-name example.corp.net;
+    snmp {
+        community default {
+            authorization read-only;
+        }
+    }
+}",juniper,0,synthetic_v2,non_compliant_cis_3.1,hard
+CIS-3.1,SNMPv3 with custom community names must be implemented,Verify cis-3.1 compliance,"# 57-SRX-9,63-MX-26,79-EX-51 Configuration
+# Date: 2024-01-06
+
+system {
+    host-name 57-SRX-9,63-MX-26,79-EX-51;
+    domain-name example.corp.net;
+    snmp {
+        community platform-team {
+            authorization read-write;
+        }
+    }
+}",juniper,1,synthetic_v2,compliant_cis_3.1,medium
+CIS-2.1,Security-relevant events must be logged to external syslog infrastructure,Verify cis-2.1 compliance,"# 22-Junos-53,64-ROUTER-49 Configuration
+# Date: 2024-01-12
+
+system {
+    host-name 22-Junos-53,64-ROUTER-49;
+    domain-name example.corp.net;
+    syslog {
+        #host 140.192.51.213 {
+            any any;
+        }
+    }
+}",juniper,0,synthetic_v2,non_compliant_cis_2.1,medium
+CIS-1.2,Authentication credentials must not be stored in readable form,Verify cis-1.2 compliance,"# 53-SRX-84,61-MX-62,84-EX-26 Configuration
+# Date: 2024-01-25
+
+system {
+    host-name 53-SRX-84,61-MX-62,84-EX-26;
+    domain-name example.corp.net;
+    root-authentication {
+        password ""password"";
+    }
+}",juniper,0,synthetic_v2,non_compliant_cis_1.2,medium
+CIS-4.1,Proper network segmentation via security zones must be implemented,Verify cis-4.1 compliance,"# 94-SRX-62,6-MX-18,87-EX-71 Configuration
+# Date: 2024-01-04
+
+system {
+    host-name 94-SRX-62,6-MX-18,87-EX-71;
+    domain-name example.corp.net;
+    security {
+        zones {
+            security-zone dmz {
+                interfaces {
+                    ge-12/19;
+                }
+            }
+        }
+    }
+}",juniper,1,synthetic_v2,compliant_cis_4.1,easy
+CIS-4.1,Proper network segmentation via security zones must be implemented,Verify cis-4.1 compliance,"# 65-Junos-88,55-ROUTER-36 Configuration
+# Date: 2024-01-02
+
+system {
+    host-name 65-Junos-88,55-ROUTER-36;
+    domain-name example.corp.net;
+    security {
+        zones {
+            security-zone trust {
+                interfaces {
+                    st0.11;
+                }
+            }
+        }
+    }
+}",juniper,1,synthetic_v2,compliant_cis_4.1,medium
+CIS-1.1,No default credential accounts should remain on network devices,Verify cis-1.1 compliance,"# 60-SRX-89,39-MX-90,52-EX-35 Configuration
+# Date: 2024-01-17
+
+system {
+    host-name 60-SRX-89,39-MX-90,52-EX-35;
+    domain-name example.corp.net;
+    login {
+        user infra_ops {
+            uid 34361;
+            class network-admin;
+            authentication {
+                encrypted-password ""$1$2317$hashvalue"";
+            }
+        }
+    }
+}",juniper,1,synthetic_v2,compliant_cis_1.1,hard
+CIS-2.2,Time synchronization with trusted NTP infrastructure is required,Verify cis-2.2 compliance,"<!-- 72-FORTIGATE-92,3-EDGE-6 Configuration -->
+<!-- Date: 2024-01-08 -->
+
+<device-config>
+  <system>
+    <hostname>72-FORTIGATE-92,3-EDGE-6</hostname>
+    <domain>example.com</domain>
+    <ntp-servers>
+      <!-- <primary>237.156.170.126</primary> -->
+    </ntp-servers>
+</device-config>",paloalto,0,synthetic_v2,non_compliant_cis_2.2,medium
+CIS-1.2,Secure password hashing must be used for all user accounts,Verify cis-1.2 compliance,"<!-- 53-FORTIGATE-24,99-EDGE-18 Configuration -->
+<!-- Date: 2024-01-25 -->
+
+<device-config>
+  <system>
+    <hostname>53-FORTIGATE-24,99-EDGE-18</hostname>
+    <domain>example.com</domain>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""admin"">
+        <password-hash>$1$7887$encryptedhash</password-hash>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,1,synthetic_v2,compliant_cis_1.2,medium
+CIS-1.2,Authentication credentials must not be stored in readable form,Verify cis-1.2 compliance,"! SW-94-ACCESS-83,19-CORE-31 Configuration
+! Generated: 2024-01-04
+!
+hostname SW-94-ACCESS-83,19-CORE-31
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+
+username netadmin privilege 15 secret 5 $1$secure123$hashvalue
+enable secret 5 $1$enablehash$enablevalue",cisco,1,synthetic_v2,compliant_cis_1.2,hard
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify cis-2.1 compliance,"! RTR-95,32,67-CORE-23 Configuration
+! Generated: 2024-01-18
+!
+hostname RTR-95,32,67-CORE-23
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+
+logging host 41.169.218.246
+logging trap informational
+interface Port-channel5
+ description LAN Interface
+ ip address 164.221.202.8 255.255.252.0
+ no shutdown
+!
+interface TenGigabitEthernet14/18
+ description Management Interface
+ ip address 100.2.109.53 255.255.255.252
+ no shutdown
+!
+router ospf 1
+ network 52.16.95/24 area 0
+!",cisco,1,synthetic_v2,compliant_cis_2.1,medium
+CIS-2.1,Security-relevant events must be logged to external syslog infrastructure,Verify cis-2.1 compliance,"# 79-SRX-80,79-MX-32,83-EX-38 Configuration
+# Date: 2024-01-16
+
+system {
+    host-name 79-SRX-80,79-MX-32,83-EX-38;
+    domain-name example.corp.net;
+    syslog {
+        host 106.245.31.23 {
+            any any;
+        }
+    }
+}",juniper,1,synthetic_v2,compliant_cis_2.1,medium
+CIS-2.1,Security-relevant events must be logged to external syslog infrastructure,Verify cis-2.1 compliance,"# 74-FIREWALL-87,80-SWITCH-19 Configuration
+# Date: 2024-01-04
+
+system {
+    host-name 74-FIREWALL-87,80-SWITCH-19;
+    domain-name example.corp.net;
+    syslog {
+        #host 244.229.88.243 {
+            any any;
+        }
+    }
+}",juniper,0,synthetic_v2,non_compliant_cis_2.1,easy
+CIS-3.1,Default SNMP community strings like public or private are prohibited,Verify cis-3.1 compliance,"! ASA-68,18-FW-56-DMZ-99 Configuration
+! Generated: 2024-01-05
+!
+hostname ASA-68,18-FW-56-DMZ-99
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+
+snmp-server community platform-team RO
+interface FastEthernet2/17
+ description Uplink Interface
+ ip address 243.60.94.82 255.255.255.0
+ no shutdown
+!
+router ospf 1
+ network 172.20.210/24 area 0
+!",cisco,1,synthetic_v2,compliant_cis_3.1,medium
+CIS-4.1,Zone-based firewall policies must separate network segments,Verify cis-4.1 compliance,"<!-- 62-SECURITY-73,56-PERIMETER-34 Configuration -->
+<!-- Date: 2024-01-21 -->
+
+<device-config>
+  <system>
+    <hostname>62-SECURITY-73,56-PERIMETER-34</hostname>
+    <domain>example.com</domain>
+  </system>
+  <network>
+    <zone>
+      <entry name=""external"">
+        <network>
+          <member>ethernet11/16</member>
+        </network>
+      </entry>
+    </zone>
+  </network>
+</device-config>",paloalto,1,synthetic_v2,compliant_cis_4.1,hard
+CIS-1.1,No default credential accounts should remain on network devices,Verify cis-1.1 compliance,"# 55-FIREWALL-40,73-SWITCH-80 Configuration
+# Date: 2024-01-02
+
+system {
+    host-name 55-FIREWALL-40,73-SWITCH-80;
+    domain-name example.corp.net;
+    login {
+        user network_team {
+            uid 64921;
+            class super-user;
+            authentication {
+                encrypted-password ""$1$4404$hashvalue"";
+            }
+        }
+    }
+}",juniper,1,synthetic_v2,compliant_cis_1.1,hard
+CIS-1.2,Authentication credentials must not be stored in readable form,Verify cis-1.2 compliance,"# 34-Junos-84,75-ROUTER-74 Configuration
+# Date: 2024-01-08
+
+system {
+    host-name 34-Junos-84,75-ROUTER-74;
+    domain-name example.corp.net;
+    root-authentication {
+        encrypted-password ""$1$1841$hashvalue"";
+    }
+}",juniper,1,synthetic_v2,compliant_cis_1.2,hard
+CIS-3.1,SNMP configuration must avoid well-known community names,Verify cis-3.1 compliance,"<!-- 47-SECURITY-98,70-PERIMETER-65 Configuration -->
+<!-- Date: 2024-01-08 -->
+
+<device-config>
+  <system>
+    <hostname>47-SECURITY-98,70-PERIMETER-65</hostname>
+    <domain>example.com</domain>
+  </system>
+  <snmp>
+    <community>
+      <entry name=""router-ops"">
+        <version>v3</version>
+      </entry>
+    </community>
+  </snmp>
+</device-config>",paloalto,1,synthetic_v2,compliant_cis_3.1,hard
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify cis-2.1 compliance,"<!-- 98-FORTIGATE-12,17-EDGE-79 Configuration -->
+<!-- Date: 2024-01-14 -->
+
+<device-config>
+  <system>
+    <hostname>98-FORTIGATE-12,17-EDGE-79</hostname>
+    <domain>example.com</domain>
+  </system>
+  <log-settings>
+    <syslog>
+      <!-- <entry name=""primary""> -->
+    </syslog>
+  </log-settings>
+</device-config>",paloalto,0,synthetic_v2,non_compliant_cis_2.1,hard
+CIS-1.1,No default credential accounts should remain on network devices,Verify cis-1.1 compliance,"# 38-FIREWALL-66,91-SWITCH-35 Configuration
+# Date: 2024-01-14
+
+system {
+    host-name 38-FIREWALL-66,91-SWITCH-35;
+    domain-name example.corp.net;
+    login {
+        user monitoring {
+            uid 32947;
+            class read-only;
+            authentication {
+                encrypted-password ""$1$8483$hashvalue"";
+            }
+        }
+    }
+}",juniper,1,synthetic_v2,compliant_cis_1.1,hard
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify cis-2.1 compliance,"<!-- 54-FORTIGATE-43,48-EDGE-34 Configuration -->
+<!-- Date: 2024-01-19 -->
+
+<device-config>
+  <system>
+    <hostname>54-FORTIGATE-43,48-EDGE-34</hostname>
+    <domain>example.com</domain>
+  </system>
+  <log-settings>
+    <syslog>
+      <!-- <entry name=""primary""> -->
+    </syslog>
+  </log-settings>
+</device-config>",paloalto,0,synthetic_v2,non_compliant_cis_2.1,medium
+CIS-3.1,Default SNMP community strings like public or private are prohibited,Verify cis-3.1 compliance,"! ASA-60,42-FW-72-DMZ-13 Configuration
+! Generated: 2024-01-27
+!
+hostname ASA-60,42-FW-72-DMZ-13
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+
+snmp-server community test RO
+router ospf 1
+ network 55.16.194/24 area 0
+!",cisco,0,synthetic_v2,non_compliant_cis_3.1,medium
+CIS-2.2,NTP servers must be configured for accurate timestamp recording,Verify cis-2.2 compliance,"# 58-FIREWALL-35,90-SWITCH-80 Configuration
+# Date: 2024-01-16
+
+system {
+    host-name 58-FIREWALL-35,90-SWITCH-80;
+    domain-name example.corp.net;
+    ntp {
+        #server 49.164.9.39;
+    }
+}",juniper,0,synthetic_v2,non_compliant_cis_2.2,easy
+CIS-1.1,No default credential accounts should remain on network devices,Verify cis-1.1 compliance,"# 40-SRX-71,2-MX-71,53-EX-12 Configuration
+# Date: 2024-01-08
+
+system {
+    host-name 40-SRX-71,2-MX-71,53-EX-12;
+    domain-name example.corp.net;
+    login {
+        user network_engineer {
+            uid 32241;
+            class super-user;
+            authentication {
+                encrypted-password ""$1$3522$hashvalue"";
+            }
+        }
+    }
+}",juniper,1,synthetic_v2,compliant_cis_1.1,medium
+CIS-2.2,Time synchronization with trusted NTP infrastructure is required,Verify cis-2.2 compliance,"<!-- 31-SECURITY-42,93-PERIMETER-9 Configuration -->
+<!-- Date: 2024-01-22 -->
+
+<device-config>
+  <system>
+    <hostname>31-SECURITY-42,93-PERIMETER-9</hostname>
+    <domain>example.com</domain>
+    <ntp-servers>
+      <primary>248.198.97.135</primary>
+      <secondary>197.78.144.83</secondary>
+    </ntp-servers>
+</device-config>",paloalto,1,synthetic_v2,compliant_cis_2.2,medium
+CIS-4.1,Proper network segmentation via security zones must be implemented,Verify cis-4.1 compliance,"# 62-SRX-48,37-MX-99,7-EX-19 Configuration
+# Date: 2024-01-12
+
+system {
+    host-name 62-SRX-48,37-MX-99,7-EX-19;
+    domain-name example.corp.net;
+    security {
+        zones {
+            security-zone dmz {
+                interfaces {
+                    irb.5;
+                }
+            }
+        }
+    }
+}",juniper,1,synthetic_v2,compliant_cis_4.1,hard
+CIS-1.2,Authentication credentials must not be stored in readable form,Verify cis-1.2 compliance,"! ASA-48,31-FW-50-DMZ-11 Configuration
+! Generated: 2024-01-12
+!
+hostname ASA-48,31-FW-50-DMZ-11
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+
+username netadmin privilege 15 secret 5 $1$secure123$hashvalue
+enable secret 5 $1$enablehash$enablevalue",cisco,1,synthetic_v2,compliant_cis_1.2,easy
+CIS-3.1,Default SNMP community strings like public or private are prohibited,Verify cis-3.1 compliance,"! ASA-82,95-FW-36-DMZ-20 Configuration
+! Generated: 2024-01-25
+!
+hostname ASA-82,95-FW-36-DMZ-20
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+
+snmp-server community datacenter RO",cisco,1,synthetic_v2,compliant_cis_3.1,hard
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify cis-2.1 compliance,"! SW-8-ACCESS-80,82-CORE-86 Configuration
+! Generated: 2024-01-20
+!
+hostname SW-8-ACCESS-80,82-CORE-86
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+
+logging host 234.247.249.5
+logging trap informational
+router ospf 1
+ network 10.0.8.140/24 area 0
+!",cisco,1,synthetic_v2,compliant_cis_2.1,hard
+CIS-3.1,SNMP configuration must avoid well-known community names,Verify cis-3.1 compliance,"<!-- 10-PAFW-61,75-PAN-63,7-CORP-56 Configuration -->
+<!-- Date: 2024-01-05 -->
+
+<device-config>
+  <system>
+    <hostname>10-PAFW-61,75-PAN-63,7-CORP-56</hostname>
+    <domain>example.com</domain>
+  </system>
+  <snmp>
+    <community>
+      <entry name=""datacenter"">
+        <version>v3</version>
+      </entry>
+    </community>
+  </snmp>
+</device-config>",paloalto,1,synthetic_v2,compliant_cis_3.1,hard
+CIS-1.2,Authentication credentials must not be stored in readable form,Verify cis-1.2 compliance,"# 86-SRX-68,29-MX-82,30-EX-7 Configuration
+# Date: 2024-01-04
+
+system {
+    host-name 86-SRX-68,29-MX-82,30-EX-7;
+    domain-name example.corp.net;
+    root-authentication {
+        encrypted-password ""$1$7771$hashvalue"";
+    }
+}",juniper,1,synthetic_v2,compliant_cis_1.2,medium
+CIS-1.1,Administrative accounts must not use vendor-default credentials,Verify cis-1.1 compliance,"! SW-86-ACCESS-87,52-CORE-93 Configuration
+! Generated: 2024-01-06
+!
+hostname SW-86-ACCESS-87,52-CORE-93
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+
+username manager privilege 15 secret 5 $1$8657$hashvalue
+username test privilege 1 password 0 weakpass
+interface Loopback18
+ description WAN Interface
+ ip address 22.219.69.222 255.255.255.252
+!
+interface FastEthernet12/10
+ description LAN Interface
+ ip address 117.167.172.195 255.255.255.252
+!
+router ospf 1
+ network 172.20.129/24 area 0
+!",cisco,0,synthetic_v2,non_compliant_cis_1.1,medium
+CIS-1.2,Authentication credentials must not be stored in readable form,Verify cis-1.2 compliance,"! RTR-92,43,61-CORE-67 Configuration
+! Generated: 2024-01-15
+!
+hostname RTR-92,43,61-CORE-67
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+
+username operator privilege 1 password 0 cleartext123
+enable password 0 weakenable
+router ospf 1
+ network 167.32.163/24 area 0
+!",cisco,0,synthetic_v2,non_compliant_cis_1.2,easy
+CIS-1.2,Authentication credentials must not be stored in readable form,Verify cis-1.2 compliance,"# 91-Junos-27,89-ROUTER-91 Configuration
+# Date: 2024-01-16
+
+system {
+    host-name 91-Junos-27,89-ROUTER-91;
+    domain-name example.corp.net;
+    root-authentication {
+        encrypted-password ""$1$6194$hashvalue"";
+    }
+}",juniper,1,synthetic_v2,compliant_cis_1.2,medium
+CIS-1.2,Authentication credentials must not be stored in readable form,Verify cis-1.2 compliance,"! ASA-95,6-FW-58-DMZ-74 Configuration
+! Generated: 2024-01-21
+!
+hostname ASA-95,6-FW-58-DMZ-74
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+
+username netadmin privilege 15 secret 5 $1$secure123$hashvalue
+enable secret 5 $1$enablehash$enablevalue
+router ospf 1
+ network 192.168.77/24 area 0
+!",cisco,1,synthetic_v2,compliant_cis_1.2,medium
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify cis-2.1 compliance,"<!-- 76-SECURITY-67,54-PERIMETER-15 Configuration -->
+<!-- Date: 2024-01-14 -->
+
+<device-config>
+  <system>
+    <hostname>76-SECURITY-67,54-PERIMETER-15</hostname>
+    <domain>example.com</domain>
+  </system>
+  <log-settings>
+    <syslog>
+      <entry name=""primary"">
+        <server>
+          <entry name=""syslog-20"">
+            <ip-address>38.51.54.145</ip-address>
+          </entry>
+        </server>
+      </entry>
+    </syslog>
+  </log-settings>
+</device-config>",paloalto,1,synthetic_v2,compliant_cis_2.1,easy
+CIS-3.1,Default SNMP community strings like public or private are prohibited,Verify cis-3.1 compliance,"! RTR-56,90,76-CORE-51 Configuration
+! Generated: 2024-01-21
+!
+hostname RTR-56,90,76-CORE-51
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+
+snmp-server community community RO
+interface Vlan13
+ description Uplink Interface
+ ip address 55.88.243.36 255.255.255.0
+ no shutdown
+!
+interface Management0
+ description DMZ Interface
+ ip address 216.213.78.74 255.255.252.0
+!",cisco,0,synthetic_v2,non_compliant_cis_3.1,hard
+CIS-3.1,Default SNMP community strings like public or private are prohibited,Verify cis-3.1 compliance,"! SW-22-ACCESS-37,99-CORE-45 Configuration
+! Generated: 2024-01-20
+!
+hostname SW-22-ACCESS-37,99-CORE-45
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+
+snmp-server community default RO",cisco,0,synthetic_v2,non_compliant_cis_3.1,hard
+CIS-4.1,Proper network segmentation via security zones must be implemented,Verify cis-4.1 compliance,"# 62-FIREWALL-95,97-SWITCH-75 Configuration
+# Date: 2024-01-28
+
+system {
+    host-name 62-FIREWALL-95,97-SWITCH-75;
+    domain-name example.corp.net;
+    security {
+        zones {
+            security-zone untrust {
+                interfaces {
+                    ae10;
+                }
+            }
+        }
+    }
+}",juniper,1,synthetic_v2,compliant_cis_4.1,medium
+CIS-2.2,Time synchronization with trusted NTP infrastructure is required,Verify cis-2.2 compliance,"<!-- 89-PAFW-90,86-PAN-3,49-CORP-75 Configuration -->
+<!-- Date: 2024-01-22 -->
+
+<device-config>
+  <system>
+    <hostname>89-PAFW-90,86-PAN-3,49-CORP-75</hostname>
+    <domain>example.com</domain>
+    <ntp-servers>
+      <!-- <primary>135.22.130.44</primary> -->
+    </ntp-servers>
+</device-config>",paloalto,0,synthetic_v2,non_compliant_cis_2.2,easy
+CIS-3.1,Default SNMP community strings like public or private are prohibited,Verify cis-3.1 compliance,"! SW-83-ACCESS-85,8-CORE-12 Configuration
+! Generated: 2024-01-07
+!
+hostname SW-83-ACCESS-85,8-CORE-12
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+
+snmp-server community private RO
+interface Management0
+ description WAN Interface
+ ip address 194.75.76.116 255.255.252.0
+!
+interface Loopback18
+ description Management Interface
+ ip address 51.105.162.77 255.255.252.0
+ no shutdown
+!
+interface Port-channel9
+ description Management Interface
+ ip address 184.176.45.150 255.255.255.0
+ no shutdown
+!
+router ospf 1
+ network 150.32.31/24 area 0
+!",cisco,0,synthetic_v2,non_compliant_cis_3.1,medium
+CIS-2.2,NTP servers must be configured for accurate timestamp recording,Verify cis-2.2 compliance,"! ASA-40,89-FW-75-DMZ-20 Configuration
+! Generated: 2024-01-19
+!
+hostname ASA-40,89-FW-75-DMZ-20
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+
+! ntp server 146.186.161.246
+interface FastEthernet7/7
+ description Management Interface
+ ip address 71.184.68.174 255.255.252.0
+ no shutdown
+!",cisco,0,synthetic_v2,non_compliant_cis_2.2,medium
+CIS-3.1,SNMP configuration must avoid well-known community names,Verify cis-3.1 compliance,"<!-- 1-FORTIGATE-72,31-EDGE-25 Configuration -->
+<!-- Date: 2024-01-04 -->
+
+<device-config>
+  <system>
+    <hostname>1-FORTIGATE-72,31-EDGE-25</hostname>
+    <domain>example.com</domain>
+  </system>
+  <snmp>
+    <community>
+      <entry name=""netwatch"">
+        <version>v3</version>
+      </entry>
+    </community>
+  </snmp>
+</device-config>",paloalto,1,synthetic_v2,compliant_cis_3.1,easy
+CIS-1.2,Authentication credentials must not be stored in readable form,Verify cis-1.2 compliance,"! RTR-98,33,38-CORE-42 Configuration
+! Generated: 2024-01-04
+!
+hostname RTR-98,33,38-CORE-42
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+
+username netadmin privilege 15 secret 5 $1$secure123$hashvalue
+enable secret 5 $1$enablehash$enablevalue
+router ospf 1
+ network 66.32.194/24 area 0
+!",cisco,1,synthetic_v2,compliant_cis_1.2,hard
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify cis-2.1 compliance,"! RTR-73,45,69-CORE-36 Configuration
+! Generated: 2024-01-20
+!
+hostname RTR-73,45,69-CORE-36
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+
+! logging host 138.86.165.251
+logging trap debugging
+interface Loopback8
+ description Uplink Interface
+ ip address 253.48.69.247 255.255.255.252
+ no shutdown
+!
+interface FastEthernet20/4
+ description LAN Interface
+ ip address 64.74.164.213 255.255.255.0
+ no shutdown
+!
+router ospf 1
+ network 172.24.72/24 area 0
+!",cisco,0,synthetic_v2,non_compliant_cis_2.1,hard
+CIS-1.2,Secure password hashing must be used for all user accounts,Verify cis-1.2 compliance,"<!-- 65-PAFW-38,30-PAN-94,74-CORP-41 Configuration -->
+<!-- Date: 2024-01-19 -->
+
+<device-config>
+  <system>
+    <hostname>65-PAFW-38,30-PAN-94,74-CORP-41</hostname>
+    <domain>example.com</domain>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""admin"">
+        <password-hash>$1$6253$encryptedhash</password-hash>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,1,synthetic_v2,compliant_cis_1.2,easy
+CIS-1.2,Authentication credentials must not be stored in readable form,Verify cis-1.2 compliance,"# 61-FIREWALL-13,88-SWITCH-99 Configuration
+# Date: 2024-01-05
+
+system {
+    host-name 61-FIREWALL-13,88-SWITCH-99;
+    domain-name example.corp.net;
+    root-authentication {
+        password ""admin123"";
+    }
+}",juniper,0,synthetic_v2,non_compliant_cis_1.2,hard
+CIS-2.2,NTP servers must be configured for accurate timestamp recording,Verify cis-2.2 compliance,"! ASA-38,71-FW-67-DMZ-48 Configuration
+! Generated: 2024-01-23
+!
+hostname ASA-38,71-FW-67-DMZ-48
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+
+ntp server 28.23.84.127
+interface Vlan3
+ description DMZ Interface
+ ip address 157.100.96.31 255.255.255.252
+!
+interface Management0
+ description LAN Interface
+ ip address 184.173.55.194 255.255.255.252
+!
+interface Port-channel21
+ description Uplink Interface
+ ip address 32.230.234.169 255.255.252.0
+ no shutdown
+!",cisco,1,synthetic_v2,compliant_cis_2.2,medium
+CIS-1.1,Administrative accounts must not use vendor-default credentials,Verify cis-1.1 compliance,"<!-- 54-SECURITY-68,15-PERIMETER-96 Configuration -->
+<!-- Date: 2024-01-03 -->
+
+<device-config>
+  <system>
+    <hostname>54-SECURITY-68,15-PERIMETER-96</hostname>
+    <domain>example.com</domain>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""guest"">
+        <password-hash>$1$8344$hashvalue</password-hash>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,0,synthetic_v2,non_compliant_cis_1.1,medium
+CIS-4.1,Proper network segmentation via security zones must be implemented,Verify cis-4.1 compliance,"# 48-FIREWALL-87,89-SWITCH-9 Configuration
+# Date: 2024-01-07
+
+system {
+    host-name 48-FIREWALL-87,89-SWITCH-9;
+    domain-name example.corp.net;
+    security {
+        zones {
+            security-zone management {
+                interfaces {
+                    xe-2/12;
+                }
+            }
+        }
+    }
+}",juniper,1,synthetic_v2,compliant_cis_4.1,easy
+CIS-2.2,NTP servers must be configured for accurate timestamp recording,Verify cis-2.2 compliance,"# 96-FIREWALL-44,10-SWITCH-71 Configuration
+# Date: 2024-01-06
+
+system {
+    host-name 96-FIREWALL-44,10-SWITCH-71;
+    domain-name example.corp.net;
+    ntp {
+        server 122.160.181.56;
+        server 69.93.97.128;
+    }
+}",juniper,1,synthetic_v2,compliant_cis_2.2,hard
+CIS-2.2,Time synchronization with trusted NTP infrastructure is required,Verify cis-2.2 compliance,"<!-- 63-PAFW-89,90-PAN-74,13-CORP-77 Configuration -->
+<!-- Date: 2024-01-21 -->
+
+<device-config>
+  <system>
+    <hostname>63-PAFW-89,90-PAN-74,13-CORP-77</hostname>
+    <domain>example.com</domain>
+    <ntp-servers>
+      <!-- <primary>77.19.195.21</primary> -->
+    </ntp-servers>
+</device-config>",paloalto,0,synthetic_v2,non_compliant_cis_2.2,easy
+CIS-3.1,Default SNMP community strings like public or private are prohibited,Verify cis-3.1 compliance,"! SW-12-ACCESS-93,65-CORE-15 Configuration
+! Generated: 2024-01-06
+!
+hostname SW-12-ACCESS-93,65-CORE-15
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+
+snmp-server community infrastructure RO
+interface Loopback4
+ description Management Interface
+ ip address 106.165.230.7 255.255.255.0
+ no shutdown
+!
+interface Port-channel6
+ description Management Interface
+ ip address 24.128.165.178 255.255.252.0
+ no shutdown
+!
+interface Management0
+ description LAN Interface
+ ip address 184.63.46.30 255.255.252.0
+ no shutdown
+!",cisco,1,synthetic_v2,compliant_cis_3.1,hard
+CIS-2.1,Security-relevant events must be logged to external syslog infrastructure,Verify cis-2.1 compliance,"# 32-SRX-89,9-MX-45,33-EX-14 Configuration
+# Date: 2024-01-24
+
+system {
+    host-name 32-SRX-89,9-MX-45,33-EX-14;
+    domain-name example.corp.net;
+    syslog {
+        #host 1.24.197.113 {
+            any any;
+        }
+    }
+}",juniper,0,synthetic_v2,non_compliant_cis_2.1,hard
+CIS-2.1,Security-relevant events must be logged to external syslog infrastructure,Verify cis-2.1 compliance,"# 49-SRX-40,94-MX-89,38-EX-17 Configuration
+# Date: 2024-01-06
+
+system {
+    host-name 49-SRX-40,94-MX-89,38-EX-17;
+    domain-name example.corp.net;
+    syslog {
+        host 187.0.200.218 {
+            any any;
+        }
+    }
+}",juniper,1,synthetic_v2,compliant_cis_2.1,hard
+CIS-1.2,Secure password hashing must be used for all user accounts,Verify cis-1.2 compliance,"<!-- 57-SECURITY-15,88-PERIMETER-27 Configuration -->
+<!-- Date: 2024-01-23 -->
+
+<device-config>
+  <system>
+    <hostname>57-SECURITY-15,88-PERIMETER-27</hostname>
+    <domain>example.com</domain>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""admin"">
+        <password-hash>$1$9008$encryptedhash</password-hash>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,1,synthetic_v2,compliant_cis_1.2,easy
+CIS-1.2,Authentication credentials must not be stored in readable form,Verify cis-1.2 compliance,"! SW-89-ACCESS-47,12-CORE-56 Configuration
+! Generated: 2024-01-28
+!
+hostname SW-89-ACCESS-47,12-CORE-56
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+
+username netadmin privilege 15 secret 5 $1$secure123$hashvalue
+enable secret 5 $1$enablehash$enablevalue",cisco,1,synthetic_v2,compliant_cis_1.2,medium
+CIS-4.1,Proper network segmentation via security zones must be implemented,Verify cis-4.1 compliance,"# 10-Junos-14,22-ROUTER-36 Configuration
+# Date: 2024-01-04
+
+system {
+    host-name 10-Junos-14,22-ROUTER-36;
+    domain-name example.corp.net;
+    security {
+        zones {
+            security-zone untrust {
+                interfaces {
+                    irb.4;
+                }
+            }
+        }
+    }
+}",juniper,1,synthetic_v2,compliant_cis_4.1,easy
+CIS-4.1,Proper network segmentation via security zones must be implemented,Verify cis-4.1 compliance,"# 75-SRX-68,29-MX-99,36-EX-26 Configuration
+# Date: 2024-01-01
+
+system {
+    host-name 75-SRX-68,29-MX-99,36-EX-26;
+    domain-name example.corp.net;
+    security {
+        zones {
+            #security-zone untrusted {
+                interfaces { }
+            }
+        }
+    }
+}",juniper,0,synthetic_v2,non_compliant_cis_4.1,easy
+CIS-1.1,No default credential accounts should remain on network devices,Verify cis-1.1 compliance,"# 62-FIREWALL-45,43-SWITCH-71 Configuration
+# Date: 2024-01-25
+
+system {
+    host-name 62-FIREWALL-45,43-SWITCH-71;
+    domain-name example.corp.net;
+    login {
+        user test {
+            uid 1386;
+            class super-user;
+            authentication {
+                encrypted-password ""$1$8460$hashvalue"";
+            }
+        }
+    }
+}",juniper,0,synthetic_v2,non_compliant_cis_1.1,medium
+CIS-4.1,Proper network segmentation via security zones must be implemented,Verify cis-4.1 compliance,"# 86-SRX-41,45-MX-19,48-EX-58 Configuration
+# Date: 2024-01-18
+
+system {
+    host-name 86-SRX-41,45-MX-19,48-EX-58;
+    domain-name example.corp.net;
+    security {
+        zones {
+            security-zone untrust {
+                interfaces {
+                    lo0;
+                }
+            }
+        }
+    }
+}",juniper,1,synthetic_v2,compliant_cis_4.1,easy
+CIS-3.1,Default SNMP community strings like public or private are prohibited,Verify cis-3.1 compliance,"! ASA-78,61-FW-92-DMZ-84 Configuration
+! Generated: 2024-01-12
+!
+hostname ASA-78,61-FW-92-DMZ-84
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+
+snmp-server community security-team RO
+interface Vlan4
+ description LAN Interface
+ ip address 50.115.16.105 255.255.255.0
+ no shutdown
+!
+interface Vlan7
+ description LAN Interface
+ ip address 194.104.33.46 255.255.255.252
+ no shutdown
+!",cisco,1,synthetic_v2,compliant_cis_3.1,medium

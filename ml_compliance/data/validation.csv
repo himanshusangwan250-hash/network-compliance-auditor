@@ -1,0 +1,16 @@
+rule_id,policy,security_intent,config,vendor,label,source,reason,difficulty
+CIS-1.1,Avoid Default Credentials,"No default usernames (admin, root, cisco, guest, test) should be configured.",username admin privilege 15 secret 5 $1$admin123$hash,cisco,0,synthetic,default_username,easy
+CIS-1.1,Avoid Default Credentials,"No default usernames (admin, root, cisco, guest, test) should be configured.","user admin { uid 2000; class super-user; password ""admin123""; }",juniper,0,synthetic,plaintext_password,medium
+CIS-1.1,Avoid Default Credentials,"No default usernames (admin, root, cisco, guest, test) should be configured.","user ops { uid 2000; class operator; encrypted-password ""$1$ops123$hash""; }",juniper,1,synthetic,valid_encrypted,easy
+CIS-1.1,Avoid Default Credentials,"No default usernames (admin, root, cisco, guest, test) should be configured.",admin user admin password-hash $1$admin123$hash,paloalto,0,synthetic,default_username,easy
+CIS-1.2,Password Encryption Required,All user passwords must be encrypted using secure hashing.,enable secret 5 $1$enable123$hash,cisco,1,synthetic,enable_secret,medium
+CIS-2.1,Syslog Configuration Required,Remote syslog logging must be configured for audit trails.,logging host 192.0.2.10,cisco,1,synthetic,valid_host,easy
+CIS-2.1,Syslog Configuration Required,Remote syslog logging must be configured for audit trails.,set deviceconfig setting logging syslog server 0.0.0.0,paloalto,0,synthetic,invalid_host,easy
+CIS-2.2,NTP Configuration Required,NTP servers must be configured for accurate timestamps.,ntp server 10.0.0.1,cisco,1,synthetic,valid_server,easy
+CIS-2.2,NTP Configuration Required,NTP servers must be configured for accurate timestamps.,set system ntp server,juniper,0,synthetic,incomplete,medium
+CIS-2.2,NTP Configuration Required,NTP servers must be configured for accurate timestamps.,set deviceconfig setting ntp server primary,paloalto,0,synthetic,incomplete,medium
+CIS-3.1,Secure SNMP Configuration,SNMP must use secure community names (not public/private) and versions.,snmp-server community secure RW,cisco,1,synthetic,secure_community,easy
+CIS-3.1,Secure SNMP Configuration,SNMP must use secure community names (not public/private) and versions.,set snmp community custom { authorization read-only; },juniper,1,synthetic,secure_community,easy
+CIS-3.1,Secure SNMP Configuration,SNMP must use secure community names (not public/private) and versions.,set deviceconfig setting snmp community public version v2c,paloalto,0,synthetic,default_community_v2,easy
+CIS-4.1,Network Segmentation,Security zones must be configured to segment network traffic.,set security zones security-zone untrusted,juniper,0,synthetic,empty_zone,medium
+CIS-4.1,Network Segmentation,Security zones must be configured to segment network traffic.,set deviceconfig setting zone trust,paloalto,0,synthetic,incomplete_zone,medium

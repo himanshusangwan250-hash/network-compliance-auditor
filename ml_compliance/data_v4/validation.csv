@@ -1,0 +1,2700 @@
+rule_id,policy,security_intent,config,vendor,label,source,reason,difficulty
+CIS-1.1,Default usernames such as admin or root should be changed,Verify CIS-1.1 compliance,"! RTR-49-95 Configuration
+!
+hostname RTR-49-95
+version 15.7
+username ops_team privilege 15 secret 5 $1$4361$hash
+interface GigabitEthernet1/3
+ ip address 247.30.72.183 255.255.255.0
+ no shutdown
+!",cisco,1,synthetic_v4,compliant,medium
+CIS-1.1,Default usernames such as admin or root should be changed,Verify CIS-1.1 compliance,"! RTR-63-74 Configuration
+!
+hostname RTR-63-74
+version 15.7
+username admin privilege 15 secret 5 $1$3821$hash",cisco,0,synthetic_v4,non_compliant,easy
+CIS-1.1,Default usernames such as admin or root should be changed,Verify CIS-1.1 compliance,"! RTR-68-46 Configuration
+!
+hostname RTR-68-46
+version 15.7
+username root privilege 15 secret 5 $1$3615$hash",cisco,0,synthetic_v4,non_compliant,hard
+CIS-1.1,Default usernames such as admin or root should be changed,Verify CIS-1.1 compliance,"! RTR-79-32 Configuration
+!
+hostname RTR-79-32
+version 15.7
+username guest privilege 15 secret 5 $1$7750$hash
+interface GigabitEthernet0/0
+ ip address 72.196.70.108 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet0/1
+ ip address 162.9.195.201 255.255.255.0
+ no shutdown
+!",cisco,0,synthetic_v4,non_compliant,hard
+CIS-1.1,Default usernames such as admin or root should be changed,Verify CIS-1.1 compliance,"! Generated: 2024-01-19
+!
+hostname RTR-47-8
+version 15.7
+username security_ops privilege 15 secret 5 $1$7024$hash",cisco,1,synthetic_v4,compliant,easy
+CIS-1.1,No default credential accounts should remain on network devices,Verify CIS-1.1 compliance,"! ===========================================================================
+! R1 base configuration  (router, c7200/IOSv)
+! ComputingForGeeks CCNA 200-301 lab: base-device
+! https://computingforgeeks.com/cisco-device-base-configuration/
+!
+! Paste at the privileged-EXEC prompt. RSA key generation takes a few seconds;
+! on real gear, let it finish before the rest is applied.
+! ===========================================================================
+enable
+configure terminal
+hostname R1
+enable secret Cisc0-Lab!
+service password-encryption
+ip domain-name lab.example.com
+crypto key generate rsa modulus 2048
+ip ssh version 2
+interface GigabitEthernet0/0
+ ip address 192.168.10.1 255.255.255.0
+ no shutdown
+ exit
+line console 0
+ password Con-Lab!
+ login
+ exit
+line vty 0 4
+ login local
+ transport input ssh
+ exit
+banner motd #Authorized access only. Activity is logged.#
+end
+write memory
+
+username devops privilege 15 secret 5 $1$2747$hash",cisco,1,real_derived_R1-base-config.txt,mutated_from_R1-base-config.txt_to_1,medium
+CIS-1.1,Default usernames such as admin or root should be changed,Verify CIS-1.1 compliance,"! Generated: 2024-01-18
+!
+hostname RTR-13-7
+version 15.7
+username guest privilege 15 secret 5 $1$3516$hash",cisco,0,synthetic_v4,non_compliant,easy
+CIS-1.1,Default usernames such as admin or root should be changed,Verify CIS-1.1 compliance,"! Generated: 2024-01-19
+!
+hostname RTR-20-69
+version 15.7
+username ops_team privilege 15 secret 5 $1$6081$hash
+interface GigabitEthernet0/1
+ ip address 23.222.59.117 255.255.255.0
+ no shutdown
+!",cisco,1,synthetic_v4,compliant,hard
+CIS-1.1,Default usernames such as admin or root should be changed,Verify CIS-1.1 compliance,"! RTR-48-88 Configuration
+!
+hostname RTR-48-88
+version 15.7
+username operator privilege 15 secret 5 $1$2376$hash
+interface GigabitEthernet0/0
+ ip address 17.101.227.208 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet0/0
+ ip address 232.169.62.11 255.255.255.0
+ no shutdown
+!",cisco,0,synthetic_v4,non_compliant,medium
+CIS-1.1,Default usernames such as admin or root should be changed,Verify CIS-1.1 compliance,"! Generated: 2024-01-02
+!
+hostname RTR-14-18
+version 15.7
+username network_engineer privilege 15 secret 5 $1$3141$hash",cisco,1,synthetic_v4,compliant,medium
+CIS-1.1,Administrative accounts must not use vendor-default credentials,Verify CIS-1.1 compliance,"! ===========================================================================
+! SW1 base configuration  (Layer 2 switch, IOSvL2)
+! ComputingForGeeks CCNA 200-301 lab: base-device
+! https://computingforgeeks.com/cisco-device-base-configuration/
+!
+! Paste at the privileged-EXEC prompt. RSA key generation takes a few seconds.
+! The management IP lives on the Vlan1 SVI (a switch has no routed Gi0/0 by default).
+! ===========================================================================
+enable
+configure terminal
+hostname SW1
+enable secret Cisc0-Lab!
+service password-encryption
+ip domain-name lab.example.com
+username admin privilege 15 secret Adm1n-Lab!
+crypto key generate rsa modulus 2048
+ip ssh version 2
+interface GigabitEthernet0/0
+ no shutdown
+ exit
+interface Vlan1
+ ip address 192.168.10.2 255.255.255.0
+ no shutdown
+ exit
+line vty 0 4
+ login local
+ transport input ssh
+ exit
+banner motd #Authorized access only. Activity is logged.#
+end
+write memory
+
+username test privilege 15 secret 5 $1$1945$hash
+interface GigabitEthernet1/0
+ description LAN Interface
+ ip address 66.1.111.149 255.255.255.0
+ no shutdown
+!",cisco,0,real_derived_SW1-base-config.txt,mutated_from_SW1-base-config.txt_to_0,medium
+CIS-1.1,Default usernames such as admin or root should be changed,Verify CIS-1.1 compliance,"! RTR-70-45 Configuration
+!
+hostname RTR-70-45
+version 15.7
+username netadmin privilege 15 secret 5 $1$6488$hash",cisco,1,synthetic_v4,compliant,hard
+CIS-1.1,Default usernames such as admin or root should be changed,Verify CIS-1.1 compliance,"! Generated: 2024-01-23
+!
+hostname RTR-74-25
+version 15.7
+username network_engineer privilege 15 secret 5 $1$9759$hash
+interface GigabitEthernet1/2
+ ip address 217.87.92.76 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet0/3
+ ip address 33.132.93.243 255.255.255.0
+ no shutdown
+!",juniper,1,synthetic_v4,compliant,hard
+CIS-1.1,Default usernames such as admin or root should be changed,Verify CIS-1.1 compliance,"! Generated: 2024-01-06
+!
+hostname RTR-79-7
+version 15.7
+username devops privilege 15 secret 5 $1$9123$hash
+interface GigabitEthernet1/2
+ ip address 62.169.142.13 255.255.255.0
+ no shutdown
+!",juniper,1,synthetic_v4,compliant,hard
+CIS-1.1,Default usernames such as admin or root should be changed,Verify CIS-1.1 compliance,"! Generated: 2024-01-25
+!
+hostname RTR-39-78
+version 15.7
+username guest privilege 15 secret 5 $1$7249$hash
+interface GigabitEthernet1/1
+ ip address 137.112.69.192 255.255.255.0
+ no shutdown
+!",juniper,0,synthetic_v4,non_compliant,medium
+CIS-1.1,Avoid Default Credentials,"No default usernames (admin, root, cisco, guest, test) should be configured.","user network_admin { uid 2400; class operator; encrypted-password ""$1$netadmin456$hash""; }",juniper,1,v1_curated,curated_training,medium
+CIS-1.1,Default usernames such as admin or root should be changed,Verify CIS-1.1 compliance,"! Generated: 2024-01-17
+!
+hostname RTR-40-17
+version 15.7
+username infrastructure_admin privilege 15 secret 5 $1$3736$hash",juniper,1,synthetic_v4,compliant,easy
+CIS-1.1,Avoid Default Credentials,"No default usernames (admin, root, cisco, guest, test) should be configured.","user guest { uid 3200; class operator; password ""guest123""; }",juniper,0,v1_curated,curated_training,medium
+CIS-1.1,Default usernames such as admin or root should be changed,Verify CIS-1.1 compliance,"! Generated: 2024-01-22
+!
+hostname RTR-46-79
+version 15.7
+username security_ops privilege 15 secret 5 $1$8914$hash
+interface GigabitEthernet1/3
+ ip address 12.32.133.168 255.255.255.0
+ no shutdown
+!",juniper,1,synthetic_v4,compliant,medium
+CIS-1.1,Default usernames such as admin or root should be changed,Verify CIS-1.1 compliance,"! Generated: 2024-01-17
+!
+hostname RTR-39-38
+version 15.7
+username noc_analyst privilege 15 secret 5 $1$8105$hash
+interface GigabitEthernet1/3
+ ip address 92.96.84.243 255.255.255.0
+ no shutdown
+!",juniper,1,synthetic_v4,compliant,medium
+CIS-1.1,Default usernames such as admin or root should be changed,Verify CIS-1.1 compliance,"! RTR-32-29 Configuration
+!
+hostname RTR-32-29
+version 15.7
+username operator privilege 15 secret 5 $1$8145$hash",juniper,0,synthetic_v4,non_compliant,medium
+CIS-1.1,Unique administrative accounts must replace default credentials,Verify CIS-1.1 compliance,"! RTR-20-90 Configuration
+!
+hostname RTR-20-90
+version 15.7
+username admin privilege 15 secret 5 $1$3061$hash
+interface GigabitEthernet1/3
+ ip address 188.98.10.177 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet1/2
+ ip address 186.68.128.231 255.255.255.0
+ no shutdown
+!",paloalto,0,synthetic_v4,non_compliant,easy
+CIS-1.1,Unique administrative accounts must replace default credentials,Verify CIS-1.1 compliance,"! RTR-47-96 Configuration
+!
+hostname RTR-47-96
+version 15.7
+username guest privilege 15 secret 5 $1$7782$hash",paloalto,0,synthetic_v4,non_compliant,easy
+CIS-1.1,Avoid Default Credentials,"No default usernames (admin, root, cisco, guest, test) should be configured.",admin user admin password plaintext,paloalto,0,v1_curated,curated_training,easy
+CIS-1.1,Avoid Default Credentials,"No default usernames (admin, root, cisco, guest, test) should be configured.",admin user cisco password-hash $1$cisco123$hash,paloalto,0,v1_curated,curated_training,easy
+CIS-1.1,Unique administrative accounts must replace default credentials,Verify CIS-1.1 compliance,"! Generated: 2024-01-07
+!
+hostname RTR-88-25
+version 15.7
+username network_engineer privilege 15 secret 5 $1$4965$hash
+interface GigabitEthernet0/1
+ ip address 214.127.182.40 255.255.255.0
+ no shutdown
+!",paloalto,1,synthetic_v4,compliant,easy
+CIS-1.1,Unique administrative accounts must replace default credentials,Verify CIS-1.1 compliance,"! RTR-20-7 Configuration
+!
+hostname RTR-20-7
+version 15.7
+username admin privilege 15 secret 5 $1$4046$hash
+interface GigabitEthernet1/1
+ ip address 184.224.4.60 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet0/1
+ ip address 4.252.111.88 255.255.255.0
+ no shutdown
+!",paloalto,0,synthetic_v4,non_compliant,medium
+CIS-1.1,Unique administrative accounts must replace default credentials,Verify CIS-1.1 compliance,"! Generated: 2024-01-21
+!
+hostname RTR-87-5
+version 15.7
+username netadmin privilege 15 secret 5 $1$3579$hash",paloalto,1,synthetic_v4,compliant,medium
+CIS-1.1,Unique administrative accounts must replace default credentials,Verify CIS-1.1 compliance,"! RTR-94-6 Configuration
+!
+hostname RTR-94-6
+version 15.7
+username test privilege 15 secret 5 $1$9534$hash",paloalto,0,synthetic_v4,non_compliant,medium
+CIS-1.1,Unique administrative accounts must replace default credentials,Verify CIS-1.1 compliance,"! RTR-58-38 Configuration
+!
+hostname RTR-58-38
+version 15.7
+username test privilege 15 secret 5 $1$7014$hash
+interface GigabitEthernet0/0
+ ip address 159.186.122.83 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet0/3
+ ip address 49.254.78.157 255.255.255.0
+ no shutdown
+!",paloalto,0,synthetic_v4,non_compliant,medium
+CIS-1.2,"Password storage must use encrypted representations, not plaintext",Verify CIS-1.2 compliance,"! RTR-39-28 Configuration
+!
+hostname RTR-39-28
+version 15.7
+username operator privilege 1 password 0 cleartext123",cisco,0,synthetic_v4,non_compliant,medium
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"! ===========================================================================
+! SW1 base configuration  (Layer 2 switch, IOSvL2)
+! ComputingForGeeks CCNA 200-301 lab: base-device
+! https://computingforgeeks.com/cisco-device-base-configuration/
+!
+! Paste at the privileged-EXEC prompt. RSA key generation takes a few seconds.
+! The management IP lives on the Vlan1 SVI (a switch has no routed Gi0/0 by default).
+! ===========================================================================
+enable
+configure terminal
+hostname SW1
+enable secret Cisc0-Lab!
+service password-encryption
+ip domain-name lab.example.com
+username admin privilege 15 secret Adm1n-Lab!
+crypto key generate rsa modulus 2048
+ip ssh version 2
+interface GigabitEthernet0/0
+ no shutdown
+ exit
+interface Vlan1
+ ip address 192.168.10.2 255.255.255.0
+ no shutdown
+ exit
+line vty 0 4
+ login local
+ transport input ssh
+ exit
+banner motd #Authorized access only. Activity is logged.#
+end
+write memory
+
+interface GigabitEthernet0/1
+ description DMZ Interface
+ ip address 75.119.163.148 255.255.255.0
+ no shutdown
+!",cisco,1,real_derived_SW1-base-config.txt,mutated_from_SW1-base-config.txt_to_1,medium
+CIS-1.2,All user passwords must be encrypted using secure hashing algorithms,Verify CIS-1.2 compliance,"! ===========================================================================
+! R1 base configuration  (router, c7200/IOSv)
+! ComputingForGeeks CCNA 200-301 lab: base-device
+! https://computingforgeeks.com/cisco-device-base-configuration/
+!
+! Paste at the privileged-EXEC prompt. RSA key generation takes a few seconds;
+! on real gear, let it finish before the rest is applied.
+! ===========================================================================
+enable
+configure terminal
+hostname R1
+enable secret Cisc0-Lab!
+service password-encryption
+ip domain-name lab.example.com
+username admin privilege 15 secret Adm1n-Lab!
+crypto key generate rsa modulus 2048
+ip ssh version 2
+interface GigabitEthernet0/0
+ ip address 192.168.10.1 255.255.255.0
+ no shutdown
+ exit
+line console 0
+ password Con-Lab!
+ login
+ exit
+line vty 0 4
+ login local
+ transport input ssh
+ exit
+banner motd #Authorized access only. Activity is logged.#
+end
+write memory
+
+username operator privilege 1 password 0 cleartext123",cisco,0,real_derived_R1-base-config.txt,mutated_from_R1-base-config.txt_to_0,medium
+CIS-1.2,"Password storage must use encrypted representations, not plaintext",Verify CIS-1.2 compliance,"! Generated: 2024-01-16
+!
+hostname RTR-89-15
+version 15.7
+service password-encryption
+username netadmin privilege 15 secret 5 $1$secure$hash",cisco,1,synthetic_v4,compliant,easy
+CIS-1.2,"Password storage must use encrypted representations, not plaintext",Verify CIS-1.2 compliance,"! RTR-73-81 Configuration
+!
+hostname RTR-73-81
+version 15.7
+service password-encryption
+username netadmin privilege 15 secret 5 $1$secure$hash
+interface GigabitEthernet0/2
+ ip address 173.234.218.227 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet0/1
+ ip address 203.92.205.130 255.255.255.0
+ no shutdown
+!",cisco,1,synthetic_v4,compliant,medium
+CIS-1.2,All user passwords must be encrypted using secure hashing algorithms,Verify CIS-1.2 compliance,"! ===========================================================================
+! SW1 base configuration  (Layer 2 switch, IOSvL2)
+! ComputingForGeeks CCNA 200-301 lab: base-device
+! https://computingforgeeks.com/cisco-device-base-configuration/
+!
+! Paste at the privileged-EXEC prompt. RSA key generation takes a few seconds.
+! The management IP lives on the Vlan1 SVI (a switch has no routed Gi0/0 by default).
+! ===========================================================================
+enable
+configure terminal
+hostname SW1
+enable secret Cisc0-Lab!
+service password-encryption
+ip domain-name lab.example.com
+username admin privilege 15 secret Adm1n-Lab!
+crypto key generate rsa modulus 2048
+ip ssh version 2
+interface GigabitEthernet0/0
+ no shutdown
+ exit
+interface Vlan1
+ ip address 192.168.10.2 255.255.255.0
+ no shutdown
+ exit
+line vty 0 4
+ login local
+ transport input ssh
+ exit
+banner motd #Authorized access only. Activity is logged.#
+end
+write memory
+
+username operator privilege 1 password 0 cleartext123",cisco,0,real_derived_SW1-base-config.txt,mutated_from_SW1-base-config.txt_to_0,medium
+CIS-1.2,"Password storage must use encrypted representations, not plaintext",Verify CIS-1.2 compliance,"! RTR-40-89 Configuration
+!
+hostname RTR-40-89
+version 15.7
+service password-encryption
+username netadmin privilege 15 secret 5 $1$secure$hash
+interface GigabitEthernet1/1
+ ip address 168.80.162.18 255.255.255.0
+ no shutdown
+!",cisco,1,synthetic_v4,compliant,hard
+CIS-1.2,"Password storage must use encrypted representations, not plaintext",Verify CIS-1.2 compliance,"! ===========================================================================
+! R1 base configuration  (router, c7200/IOSv)
+! ComputingForGeeks CCNA 200-301 lab: base-device
+! https://computingforgeeks.com/cisco-device-base-configuration/
+!
+! Paste at the privileged-EXEC prompt. RSA key generation takes a few seconds;
+! on real gear, let it finish before the rest is applied.
+! ===========================================================================
+enable
+configure terminal
+hostname R1
+enable secret Cisc0-Lab!
+service password-encryption
+ip domain-name lab.example.com
+username admin privilege 15 secret Adm1n-Lab!
+crypto key generate rsa modulus 2048
+ip ssh version 2
+interface GigabitEthernet0/0
+ ip address 192.168.10.1 255.255.255.0
+ no shutdown
+ exit
+line console 0
+ password Con-Lab!
+ login
+ exit
+line vty 0 4
+ login local
+ transport input ssh
+ exit
+banner motd #Authorized access only. Activity is logged.#
+end
+write memory
+
+interface GigabitEthernet0/2
+ description LAN Interface
+ ip address 192.212.89.52 255.255.255.0
+ no shutdown
+!",cisco,1,real_derived_R1-base-config.txt,mutated_from_R1-base-config.txt_to_1,medium
+CIS-1.2,Authentication credentials must not be stored in readable form,Verify CIS-1.2 compliance,"! ===========================================================================
+! R1 base configuration  (router, c7200/IOSv)
+! ComputingForGeeks CCNA 200-301 lab: base-device
+! https://computingforgeeks.com/cisco-device-base-configuration/
+!
+! Paste at the privileged-EXEC prompt. RSA key generation takes a few seconds;
+! on real gear, let it finish before the rest is applied.
+! ===========================================================================
+enable
+configure terminal
+hostname R1
+enable secret Cisc0-Lab!
+service password-encryption
+ip domain-name lab.example.com
+username admin privilege 15 secret Adm1n-Lab!
+crypto key generate rsa modulus 2048
+ip ssh version 2
+interface GigabitEthernet0/0
+ ip address 192.168.10.1 255.255.255.0
+ no shutdown
+ exit
+line console 0
+ password Con-Lab!
+ login
+ exit
+line vty 0 4
+ login local
+ transport input ssh
+ exit
+banner motd #Authorized access only. Activity is logged.#
+end
+write memory
+
+username operator privilege 1 password 0 cleartext123
+interface GigabitEthernet0/0
+ description DMZ Interface
+ ip address 166.20.158.202 255.255.255.0
+ no shutdown
+!",cisco,0,real_derived_R1-base-config.txt,mutated_from_R1-base-config.txt_to_0,medium
+CIS-1.2,"Password storage must use encrypted representations, not plaintext",Verify CIS-1.2 compliance,"! RTR-67-98 Configuration
+!
+hostname RTR-67-98
+version 15.7
+username operator privilege 1 password 0 cleartext123",cisco,0,synthetic_v4,non_compliant,medium
+CIS-1.2,All user passwords must be encrypted using secure hashing algorithms,Verify CIS-1.2 compliance,"! RTR-55-95 Configuration
+!
+hostname RTR-55-95
+version 15.7
+username operator privilege 1 password 0 cleartext123",juniper,0,synthetic_v4,non_compliant,medium
+CIS-1.2,All user passwords must be encrypted using secure hashing algorithms,Verify CIS-1.2 compliance,"! Generated: 2024-01-06
+!
+hostname RTR-81-79
+version 15.7
+username operator privilege 1 password 0 cleartext123",juniper,0,synthetic_v4,non_compliant,medium
+CIS-1.2,All user passwords must be encrypted using secure hashing algorithms,Verify CIS-1.2 compliance,"! RTR-75-29 Configuration
+!
+hostname RTR-75-29
+version 15.7
+username operator privilege 1 password 0 cleartext123
+interface GigabitEthernet0/3
+ ip address 251.22.20.254 255.255.255.0
+ no shutdown
+!",juniper,0,synthetic_v4,non_compliant,medium
+CIS-1.2,All user passwords must be encrypted using secure hashing algorithms,Verify CIS-1.2 compliance,"! RTR-6-32 Configuration
+!
+hostname RTR-6-32
+version 15.7
+username operator privilege 1 password 0 cleartext123",juniper,0,synthetic_v4,non_compliant,easy
+CIS-1.2,All user passwords must be encrypted using secure hashing algorithms,Verify CIS-1.2 compliance,"! RTR-10-95 Configuration
+!
+hostname RTR-10-95
+version 15.7
+service password-encryption
+username netadmin privilege 15 secret 5 $1$secure$hash
+interface GigabitEthernet0/3
+ ip address 84.49.227.46 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet1/3
+ ip address 18.55.194.84 255.255.255.0
+ no shutdown
+!",juniper,1,synthetic_v4,compliant,medium
+CIS-1.2,All user passwords must be encrypted using secure hashing algorithms,Verify CIS-1.2 compliance,"! Generated: 2024-01-23
+!
+hostname RTR-12-55
+version 15.7
+service password-encryption
+username netadmin privilege 15 secret 5 $1$secure$hash
+interface GigabitEthernet1/2
+ ip address 86.101.40.250 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet1/1
+ ip address 24.239.49.117 255.255.255.0
+ no shutdown
+!",juniper,1,synthetic_v4,compliant,medium
+CIS-1.2,All user passwords must be encrypted using secure hashing algorithms,Verify CIS-1.2 compliance,"! Generated: 2024-01-18
+!
+hostname RTR-71-7
+version 15.7
+service password-encryption
+username netadmin privilege 15 secret 5 $1$secure$hash
+interface GigabitEthernet0/2
+ ip address 222.15.120.111 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet1/2
+ ip address 183.195.207.98 255.255.255.0
+ no shutdown
+!",juniper,1,synthetic_v4,compliant,medium
+CIS-1.2,All user passwords must be encrypted using secure hashing algorithms,Verify CIS-1.2 compliance,"! RTR-19-28 Configuration
+!
+hostname RTR-19-28
+version 15.7
+username operator privilege 1 password 0 cleartext123
+interface GigabitEthernet1/1
+ ip address 118.99.183.250 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet1/1
+ ip address 86.65.16.178 255.255.255.0
+ no shutdown
+!",juniper,0,synthetic_v4,non_compliant,hard
+CIS-1.2,All user passwords must be encrypted using secure hashing algorithms,Verify CIS-1.2 compliance,"! RTR-52-89 Configuration
+!
+hostname RTR-52-89
+version 15.7
+username operator privilege 1 password 0 cleartext123",paloalto,0,synthetic_v4,non_compliant,easy
+CIS-1.2,All user passwords must be encrypted using secure hashing algorithms,Verify CIS-1.2 compliance,"! RTR-37-22 Configuration
+!
+hostname RTR-37-22
+version 15.7
+username operator privilege 1 password 0 cleartext123
+interface GigabitEthernet0/3
+ ip address 94.94.225.173 255.255.255.0
+ no shutdown
+!",paloalto,0,synthetic_v4,non_compliant,easy
+CIS-1.2,All user passwords must be encrypted using secure hashing algorithms,Verify CIS-1.2 compliance,"! Generated: 2024-01-28
+!
+hostname RTR-34-70
+version 15.7
+username operator privilege 1 password 0 cleartext123
+interface GigabitEthernet0/3
+ ip address 226.60.196.116 255.255.255.0
+ no shutdown
+!",paloalto,0,synthetic_v4,non_compliant,medium
+CIS-1.2,All user passwords must be encrypted using secure hashing algorithms,Verify CIS-1.2 compliance,"! RTR-9-47 Configuration
+!
+hostname RTR-9-47
+version 15.7
+username operator privilege 1 password 0 cleartext123
+interface GigabitEthernet0/1
+ ip address 215.217.255.72 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet1/3
+ ip address 92.243.207.253 255.255.255.0
+ no shutdown
+!",paloalto,0,synthetic_v4,non_compliant,medium
+CIS-1.2,All user passwords must be encrypted using secure hashing algorithms,Verify CIS-1.2 compliance,"! RTR-86-2 Configuration
+!
+hostname RTR-86-2
+version 15.7
+username operator privilege 1 password 0 cleartext123
+interface GigabitEthernet0/1
+ ip address 172.179.14.24 255.255.255.0
+ no shutdown
+!",paloalto,0,synthetic_v4,non_compliant,easy
+CIS-1.2,All user passwords must be encrypted using secure hashing algorithms,Verify CIS-1.2 compliance,"! Generated: 2024-01-02
+!
+hostname RTR-49-57
+version 15.7
+username operator privilege 1 password 0 cleartext123",paloalto,0,synthetic_v4,non_compliant,hard
+CIS-1.2,All user passwords must be encrypted using secure hashing algorithms,Verify CIS-1.2 compliance,"! RTR-27-17 Configuration
+!
+hostname RTR-27-17
+version 15.7
+username operator privilege 1 password 0 cleartext123
+interface GigabitEthernet0/0
+ ip address 199.247.220.11 255.255.255.0
+ no shutdown
+!",paloalto,0,synthetic_v4,non_compliant,easy
+CIS-1.2,All user passwords must be encrypted using secure hashing algorithms,Verify CIS-1.2 compliance,"! Generated: 2024-01-05
+!
+hostname RTR-63-64
+version 15.7
+username operator privilege 1 password 0 cleartext123",paloalto,0,synthetic_v4,non_compliant,hard
+CIS-2.1,Syslog Configuration Required,Remote syslog logging must be configured for audit trails.,"logging host 10.1.1.5
+logging trap informational",cisco,1,v1_curated,curated_training,medium
+CIS-2.1,Network devices must forward security events to approved centralized logging,Verify CIS-2.1 compliance,"! RTR-87-84 Configuration
+!
+hostname RTR-87-84
+version 15.7
+! logging host 204.241.82.160",cisco,0,synthetic_v4,non_compliant,hard
+CIS-2.1,Security-relevant events must be logged to external syslog infrastructure,Verify CIS-2.1 compliance,"# -*- restclient -*-
+
+# Settings
+:node = asr-101
+:addr = 50.196.141.39
+:deviceusername = <username>
+:devicepassword = <password>
+:host = http://localhost:8181
+:basic-auth := (format ""Basic %s"" (base64-encode-string (format ""%s:%s"" ""admin"" ""admin"")))
+
+# Create ASR 101
+POST :host/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules
+Authorization: :basic-auth
+Content-Type: application/xml
+<module xmlns=""urn:opendaylight:params:xml:ns:yang:controller:config"">
+   <type xmlns:prefix=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">prefix:sal-netconf-connector</type>
+   <name>:node
+   </name>
+   <address xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">:addr
+   </address>
+   <port xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">830</port>
+   <username xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">:deviceusername</username>
+   <password xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">:devicepassword</password>
+   <tcp-only xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">false</tcp-only>
+   <event-executor xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">
+     <type xmlns:prefix=""urn:opendaylight:params:xml:ns:yang:controller:netty"">prefix:netty-event-executor</type>
+     <name>global-event-executor</name>
+   </event-executor>
+   <binding-registry xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">
+     <type xmlns:prefix=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:binding"">prefix:binding-broker-osgi-registry</type>
+     <name>binding-osgi-broker</name>
+   </binding-registry>
+   <dom-registry xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">
+     <type xmlns:prefix=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:dom"">prefix:dom-broker-osgi-registry</type>
+     <name>dom-broker</name>
+   </dom-registry>
+   <client-dispatcher xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">
+     <type xmlns:prefix=""urn:opendaylight:params:xml:ns:yang:controller:config:netconf"">prefix:netconf-client-dispatcher</type>
+     <name>global-netconf-dispatcher</name>
+   </client-dispatcher>
+   <processing-executor xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">
+     <type xmlns:prefix=""urn:opendaylight:params:xml:ns:yang:controller:threadpool"">prefix:threadpool</type>
+     <name>global-netconf-processing-executor</name>
+   </processing-executor>
+ </module>
+
+# Get node operational status
+GET :host/restconf/operational/network-topology:network-topology/topology/topology-netconf/node/:node/
+Authorization: :basic-auth
+
+# Get interface configuration
+GET :host/restconf/operational/network-topology:network-topology/topology/topology-netconf/node/:node/yang-ext:mount/Cisco-IOS-XR-ifmgr-cfg:interface-configurations/
+Authorization: :basic-auth
+Accept: application/xml
+
+# Get operational l2vpn xconnect groups
+GET :host/restconf/operational/network-topology:network-topology/topology/topology-netconf/node/:node/yang-ext:mount/Cisco-IOS-XR-l2vpn-cfg:l2vpn/database/xconnect-groups/xconnect-group/local
+Authorization: :basic-auth
+Accept: application/xml
+
+# Show
+GET :host/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/module/odl-sal-netconf-connector-cfg:sal-netconf-connector/:node
+Authorization: :basic-auth
+
+# Delete
+DELETE :host/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/module/odl-sal-netconf-connector-cfg:sal-netconf-connector/:node
+Authorization: :basic-auth
+
+interface GigabitEthernet1/0
+ description WAN Interface
+ ip address 98.49.183.217 255.255.255.0
+ no shutdown
+!",cisco,0,real_derived_cisco-xr-lab-device.txt,mutated_from_cisco-xr-lab-device.txt_to_0,medium
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"# -*- restclient -*-
+
+# Settings
+:node = asr-101
+:addr = 50.196.141.39
+:deviceusername = <username>
+:devicepassword = <password>
+:host = http://localhost:8181
+:basic-auth := (format ""Basic %s"" (base64-encode-string (format ""%s:%s"" ""admin"" ""admin"")))
+
+# Create ASR 101
+POST :host/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules
+Authorization: :basic-auth
+Content-Type: application/xml
+<module xmlns=""urn:opendaylight:params:xml:ns:yang:controller:config"">
+   <type xmlns:prefix=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">prefix:sal-netconf-connector</type>
+   <name>:node
+   </name>
+   <address xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">:addr
+   </address>
+   <port xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">830</port>
+   <username xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">:deviceusername</username>
+   <password xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">:devicepassword</password>
+   <tcp-only xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">false</tcp-only>
+   <event-executor xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">
+     <type xmlns:prefix=""urn:opendaylight:params:xml:ns:yang:controller:netty"">prefix:netty-event-executor</type>
+     <name>global-event-executor</name>
+   </event-executor>
+   <binding-registry xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">
+     <type xmlns:prefix=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:binding"">prefix:binding-broker-osgi-registry</type>
+     <name>binding-osgi-broker</name>
+   </binding-registry>
+   <dom-registry xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">
+     <type xmlns:prefix=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:dom"">prefix:dom-broker-osgi-registry</type>
+     <name>dom-broker</name>
+   </dom-registry>
+   <client-dispatcher xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">
+     <type xmlns:prefix=""urn:opendaylight:params:xml:ns:yang:controller:config:netconf"">prefix:netconf-client-dispatcher</type>
+     <name>global-netconf-dispatcher</name>
+   </client-dispatcher>
+   <processing-executor xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">
+     <type xmlns:prefix=""urn:opendaylight:params:xml:ns:yang:controller:threadpool"">prefix:threadpool</type>
+     <name>global-netconf-processing-executor</name>
+   </processing-executor>
+ </module>
+
+# Get node operational status
+GET :host/restconf/operational/network-topology:network-topology/topology/topology-netconf/node/:node/
+Authorization: :basic-auth
+
+# Get interface configuration
+GET :host/restconf/operational/network-topology:network-topology/topology/topology-netconf/node/:node/yang-ext:mount/Cisco-IOS-XR-ifmgr-cfg:interface-configurations/
+Authorization: :basic-auth
+Accept: application/xml
+
+# Get operational l2vpn xconnect groups
+GET :host/restconf/operational/network-topology:network-topology/topology/topology-netconf/node/:node/yang-ext:mount/Cisco-IOS-XR-l2vpn-cfg:l2vpn/database/xconnect-groups/xconnect-group/local
+Authorization: :basic-auth
+Accept: application/xml
+
+# Show
+GET :host/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/module/odl-sal-netconf-connector-cfg:sal-netconf-connector/:node
+Authorization: :basic-auth
+
+# Delete
+DELETE :host/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/module/odl-sal-netconf-connector-cfg:sal-netconf-connector/:node
+Authorization: :basic-auth
+
+interface GigabitEthernet0/1
+ description DMZ Interface
+ ip address 109.174.142.40 255.255.255.0
+ no shutdown
+!",cisco,0,real_derived_cisco-xr-lab-device.txt,mutated_from_cisco-xr-lab-device.txt_to_0,medium
+CIS-2.1,Centralized logging via syslog must be implemented for compliance,Verify CIS-2.1 compliance,"! ===========================================================================
+! R1 base configuration  (router, c7200/IOSv)
+! ComputingForGeeks CCNA 200-301 lab: base-device
+! https://computingforgeeks.com/cisco-device-base-configuration/
+!
+! Paste at the privileged-EXEC prompt. RSA key generation takes a few seconds;
+! on real gear, let it finish before the rest is applied.
+! ===========================================================================
+enable
+configure terminal
+hostname R1
+enable secret Cisc0-Lab!
+service password-encryption
+ip domain-name lab.example.com
+username admin privilege 15 secret Adm1n-Lab!
+crypto key generate rsa modulus 2048
+ip ssh version 2
+interface GigabitEthernet0/0
+ ip address 192.168.10.1 255.255.255.0
+ no shutdown
+ exit
+line console 0
+ password Con-Lab!
+ login
+ exit
+line vty 0 4
+ login local
+ transport input ssh
+ exit
+banner motd #Authorized access only. Activity is logged.#
+end
+write memory
+
+logging host 28.119.241.7
+logging trap informational
+interface GigabitEthernet1/1
+ description DMZ Interface
+ ip address 17.237.154.167 255.255.255.0
+ no shutdown
+!",cisco,1,real_derived_R1-base-config.txt,mutated_from_R1-base-config.txt_to_1,medium
+CIS-2.1,Network devices must forward security events to approved centralized logging,Verify CIS-2.1 compliance,"! Generated: 2024-01-16
+!
+hostname RTR-7-30
+version 15.7
+logging host 67.83.239.112
+logging trap informational",cisco,1,synthetic_v4,compliant,medium
+CIS-2.1,Network devices must forward security events to approved centralized logging,Verify CIS-2.1 compliance,"! RTR-37-42 Configuration
+!
+hostname RTR-37-42
+version 15.7
+! logging host 191.36.195.24
+interface GigabitEthernet0/3
+ ip address 23.10.106.42 255.255.255.0
+ no shutdown
+!",cisco,0,synthetic_v4,non_compliant,medium
+CIS-2.1,Centralized logging via syslog must be implemented for compliance,Verify CIS-2.1 compliance,"! SW1 - Layer 3 switch doing inter-VLAN routing with SVIs.
+! ip routing is OFF by default on a multilayer switch; this is the key step.
+enable
+configure terminal
+hostname SW1
+!
+ip routing
+!
+vlan 10
+ name SALES
+vlan 20
+ name ENGINEERING
+!
+! SVIs = the per-VLAN gateways (routed inside the switch)
+interface Vlan10
+ ip address 10.10.10.1 255.255.255.0
+ no shutdown
+!
+interface Vlan20
+ ip address 10.20.20.1 255.255.255.0
+ no shutdown
+!
+! Host access ports
+interface GigabitEthernet0/1
+ switchport mode access
+ switchport access vlan 10
+!
+interface GigabitEthernet0/2
+ switchport mode access
+ switchport access vlan 20
+end
+write memory
+
+interface GigabitEthernet0/1
+ description WAN Interface
+ ip address 159.129.181.69 255.255.255.0
+ no shutdown
+!",cisco,0,real_derived_SW1-config.txt,mutated_from_SW1-config.txt_to_0,medium
+CIS-2.1,Network devices must forward security events to approved centralized logging,Verify CIS-2.1 compliance,"! Generated: 2024-01-11
+!
+hostname RTR-29-63
+version 15.7
+! logging host 201.181.23.198
+interface GigabitEthernet0/0
+ ip address 181.25.224.205 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet1/0
+ ip address 250.54.52.211 255.255.255.0
+ no shutdown
+!",cisco,0,synthetic_v4,non_compliant,hard
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"! ===========================================================================
+! R1 HSRP configuration  (router, c7200/IOSv)  -- ACTIVE (higher priority)
+! ComputingForGeeks CCNA 200-301 lab: hsrp
+! https://computingforgeeks.com/ccna-labs-hsrp-configuration-on-gns3-and-packet-tracer/
+!
+! Group 1, HSRP version 2, virtual IP 192.168.10.254.
+! R1 has priority 110 + preempt, so it owns the active role and reclaims it
+! after a recovery.
+! ===========================================================================
+enable
+configure terminal
+hostname R1
+interface GigabitEthernet0/0
+ ip address 192.168.10.1 255.255.255.0
+ standby version 2
+ standby 1 ip 192.168.10.254
+ standby 1 priority 110
+ standby 1 preempt
+ no shutdown
+ exit
+end
+write memory
+
+interface GigabitEthernet1/3
+ description DMZ Interface
+ ip address 2.40.9.66 255.255.255.0
+ no shutdown
+!",cisco,0,real_derived_R1-hsrp.txt,mutated_from_R1-hsrp.txt_to_0,medium
+CIS-2.1,Network devices must forward security events to approved centralized logging,Verify CIS-2.1 compliance,"! ===========================================================================
+! R1 base configuration  (router, c7200/IOSv)
+! ComputingForGeeks CCNA 200-301 lab: base-device
+! https://computingforgeeks.com/cisco-device-base-configuration/
+!
+! Paste at the privileged-EXEC prompt. RSA key generation takes a few seconds;
+! on real gear, let it finish before the rest is applied.
+! ===========================================================================
+enable
+configure terminal
+hostname R1
+enable secret Cisc0-Lab!
+service password-encryption
+ip domain-name lab.example.com
+username admin privilege 15 secret Adm1n-Lab!
+crypto key generate rsa modulus 2048
+ip ssh version 2
+interface GigabitEthernet0/0
+ ip address 192.168.10.1 255.255.255.0
+ no shutdown
+ exit
+line console 0
+ password Con-Lab!
+ login
+ exit
+line vty 0 4
+ login local
+ transport input ssh
+ exit
+banner motd #Authorized access only. Activity is logged.#
+end
+write memory",cisco,0,real_derived_R1-base-config.txt,mutated_from_R1-base-config.txt_to_0,medium
+CIS-2.1,Centralized logging via syslog must be implemented for compliance,Verify CIS-2.1 compliance,"! ===========================================================================
+! SW2 LACP EtherChannel  (Layer 2 switch, IOSvL2)
+! ComputingForGeeks CCNA 200-301 lab: etherchannel-lacp
+! https://computingforgeeks.com/cisco-etherchannel-configuration/
+!
+! Paste at the privileged-EXEC prompt. Two links (Gi0/0, Gi0/1) bundle into
+! Port-channel 1 with LACP active. Run the matching SW1 file on the other switch;
+! both ends must be active (or one active, one passive).
+! ===========================================================================
+enable
+configure terminal
+hostname SW2
+interface range GigabitEthernet0/0 - 1
+ channel-group 1 mode active
+ exit
+end
+write memory
+
+logging host 77.164.102.123
+logging trap informational",cisco,1,real_derived_SW2-config.txt,mutated_from_SW2-config.txt_to_1,medium
+CIS-2.1,Centralized logging via syslog must be implemented for compliance,Verify CIS-2.1 compliance,"! ===========================================================================
+! SW2 LACP EtherChannel  (Layer 2 switch, IOSvL2)
+! ComputingForGeeks CCNA 200-301 lab: etherchannel-lacp
+! https://computingforgeeks.com/cisco-etherchannel-configuration/
+!
+! Paste at the privileged-EXEC prompt. Two links (Gi0/0, Gi0/1) bundle into
+! Port-channel 1 with LACP active. Run the matching SW1 file on the other switch;
+! both ends must be active (or one active, one passive).
+! ===========================================================================
+enable
+configure terminal
+hostname SW2
+interface range GigabitEthernet0/0 - 1
+ channel-group 1 mode active
+ exit
+end
+write memory
+
+interface GigabitEthernet1/1
+ description LAN Interface
+ ip address 28.69.155.2 255.255.255.0
+ no shutdown
+!",cisco,0,real_derived_SW2-config.txt,mutated_from_SW2-config.txt_to_0,medium
+CIS-2.1,Network devices must forward security events to approved centralized logging,Verify CIS-2.1 compliance,"! ===========================================================================
+! ClientB dhcp-server-relay lab  (DHCP client, remote LAN, c7200 / IOS 15.2)
+! ComputingForGeeks CCNA 200-301 lab: dhcp-server-relay
+! https://computingforgeeks.com/cisco-dhcp-server-relay-configuration/
+!
+! A router used as an end host on R2's LAN (192.168.20.0/24). It has no local
+! DHCP server; its request is relayed by R2 to the server at 10.0.0.1. The lease
+! record names server 10.0.0.1, the proof the request crossed the relay.
+! ===========================================================================
+enable
+configure terminal
+hostname ClientB
+interface GigabitEthernet0/0
+ ip address dhcp
+ no shutdown
+ exit
+end
+write memory
+
+logging host 7.91.170.201
+logging trap informational
+interface GigabitEthernet0/2
+ description WAN Interface
+ ip address 202.55.195.224 255.255.255.0
+ no shutdown
+!",cisco,1,real_derived_ClientB-config.txt,mutated_from_ClientB-config.txt_to_1,medium
+CIS-2.1,Network devices must forward security events to approved centralized logging,Verify CIS-2.1 compliance,"! Generated: 2024-01-22
+!
+hostname RTR-19-31
+version 15.7
+logging host 196.153.222.106
+logging trap informational
+interface GigabitEthernet0/3
+ ip address 69.146.82.66 255.255.255.0
+ no shutdown
+!",cisco,1,synthetic_v4,compliant,hard
+CIS-2.1,Network devices must forward security events to approved centralized logging,Verify CIS-2.1 compliance,"! Generated: 2024-01-02
+!
+hostname RTR-52-99
+version 15.7
+! logging host 101.18.77.232
+interface GigabitEthernet1/3
+ ip address 227.155.160.233 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet1/0
+ ip address 212.143.75.180 255.255.255.0
+ no shutdown
+!",cisco,0,synthetic_v4,non_compliant,medium
+CIS-2.1,Network devices must forward security events to approved centralized logging,Verify CIS-2.1 compliance,"! RTR-8-63 Configuration
+!
+hostname RTR-8-63
+version 15.7
+logging host 180.57.162.140
+logging trap informational
+interface GigabitEthernet1/1
+ ip address 93.243.188.211 255.255.255.0
+ no shutdown
+!",cisco,1,synthetic_v4,compliant,medium
+CIS-2.1,Centralized logging via syslog must be implemented for compliance,Verify CIS-2.1 compliance,"! Host20 - end device in VLAN 20 (a router acting as a host in the lab).
+! On a real PC this is just IP 10.20.20.20/24, gateway 10.20.20.1 (the Vlan20 SVI).
+enable
+configure terminal
+hostname Host20
+!
+interface GigabitEthernet0/0
+ ip address 10.20.20.20 255.255.255.0
+ no shutdown
+!
+ip route 0.0.0.0 0.0.0.0 10.20.20.1
+end
+write memory
+
+logging host 30.206.0.169
+logging trap informational
+interface GigabitEthernet1/3
+ description WAN Interface
+ ip address 49.185.255.161 255.255.255.0
+ no shutdown
+!",cisco,1,real_derived_Host20-config.txt,mutated_from_Host20-config.txt_to_1,medium
+CIS-2.1,Network devices must forward security events to approved centralized logging,Verify CIS-2.1 compliance,"! RTR-4-37 Configuration
+!
+hostname RTR-4-37
+version 15.7
+logging host 175.62.201.96
+logging trap informational
+interface GigabitEthernet1/1
+ ip address 8.41.235.213 255.255.255.0
+ no shutdown
+!",cisco,1,synthetic_v4,compliant,hard
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"! ===========================================================================
+! Host1 nat-pat lab  (inside host on 192.168.10.0/24, translated by PAT)
+! ComputingForGeeks CCNA 200-301 lab: nat-pat
+! https://computingforgeeks.com/cisco-nat-pat-configuration/
+!
+! A router used as an end host. It sits on the PAT LAN, so its traffic to the
+! outside is overloaded onto the PUBLIC pool address with a translated port.
+! ===========================================================================
+enable
+configure terminal
+hostname Host1
+interface GigabitEthernet0/0
+ ip address 192.168.10.10 255.255.255.0
+ no shutdown
+ exit
+ip route 0.0.0.0 0.0.0.0 192.168.10.1
+end
+write memory
+
+interface GigabitEthernet0/3
+ description LAN Interface
+ ip address 85.238.212.16 255.255.255.0
+ no shutdown
+!",cisco,0,real_derived_Host1-config.txt,mutated_from_Host1-config.txt_to_0,medium
+CIS-2.1,Security-relevant events must be logged to external syslog infrastructure,Verify CIS-2.1 compliance,"! ===========================================================================
+! R1 DNS host configuration  (router, c7200/IOSv)
+! ComputingForGeeks CCNA 200-301 lab: dns-static
+! https://computingforgeeks.com/ccna-labs-dns-server-configuration-on-gns3-and-packet-tracer/
+!
+! R1 holds the static name-to-IP records. server1 resolves to a loopback so the
+! mapping is testable end to end.
+! ===========================================================================
+enable
+configure terminal
+hostname R1
+interface GigabitEthernet0/0
+ ip address 192.168.10.1 255.255.255.0
+ no shutdown
+ exit
+interface Loopback0
+ ip address 10.0.0.1 255.255.255.255
+ exit
+ip host server1.lab.example.com 10.0.0.1
+ip host gw.lab.example.com 192.168.10.1
+!
+! Full router-as-resolver (answering DNS queries from clients) needs:
+!   ip dns server
+! That command exists only on ISR / IOSv / IOS-XE. On a c7200 (dynamips) it
+! returns ""% Invalid input detected at '^' marker."" See the article for detail.
+!
+end
+write memory
+
+logging host 129.77.31.116
+logging trap informational",cisco,1,real_derived_R1-dns.txt,mutated_from_R1-dns.txt_to_1,medium
+CIS-2.1,Centralized logging via syslog must be implemented for compliance,Verify CIS-2.1 compliance,"! Host20 - end device in VLAN 20 (a router acting as a host in the lab).
+! On a real PC this is just IP 10.20.20.20/24, gateway 10.20.20.1 (the Vlan20 SVI).
+enable
+configure terminal
+hostname Host20
+!
+interface GigabitEthernet0/0
+ ip address 10.20.20.20 255.255.255.0
+ no shutdown
+!
+ip route 0.0.0.0 0.0.0.0 10.20.20.1
+end
+write memory
+
+interface GigabitEthernet0/2
+ description LAN Interface
+ ip address 178.253.147.170 255.255.255.0
+ no shutdown
+!",cisco,0,real_derived_Host20-config.txt,mutated_from_Host20-config.txt_to_0,medium
+CIS-2.1,Security-relevant events must be logged to external syslog infrastructure,Verify CIS-2.1 compliance,"! ===========================================================================
+! R1 DNS host configuration  (router, c7200/IOSv)
+! ComputingForGeeks CCNA 200-301 lab: dns-static
+! https://computingforgeeks.com/ccna-labs-dns-server-configuration-on-gns3-and-packet-tracer/
+!
+! R1 holds the static name-to-IP records. server1 resolves to a loopback so the
+! mapping is testable end to end.
+! ===========================================================================
+enable
+configure terminal
+hostname R1
+interface GigabitEthernet0/0
+ ip address 192.168.10.1 255.255.255.0
+ no shutdown
+ exit
+interface Loopback0
+ ip address 10.0.0.1 255.255.255.255
+ exit
+ip host server1.lab.example.com 10.0.0.1
+ip host gw.lab.example.com 192.168.10.1
+!
+! Full router-as-resolver (answering DNS queries from clients) needs:
+!   ip dns server
+! That command exists only on ISR / IOSv / IOS-XE. On a c7200 (dynamips) it
+! returns ""% Invalid input detected at '^' marker."" See the article for detail.
+!
+end
+write memory
+
+interface GigabitEthernet0/1
+ description DMZ Interface
+ ip address 127.237.229.175 255.255.255.0
+ no shutdown
+!",cisco,0,real_derived_R1-dns.txt,mutated_from_R1-dns.txt_to_0,medium
+CIS-2.1,Network devices must forward security events to approved centralized logging,Verify CIS-2.1 compliance,"! RTR-61-46 Configuration
+!
+hostname RTR-61-46
+version 15.7
+logging host 241.23.2.65
+logging trap informational
+interface GigabitEthernet1/3
+ ip address 172.189.67.248 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet0/1
+ ip address 67.86.252.239 255.255.255.0
+ no shutdown
+!",cisco,1,synthetic_v4,compliant,medium
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"! RTR-2-64 Configuration
+!
+hostname RTR-2-64
+version 15.7
+! logging host 214.181.173.58
+interface GigabitEthernet1/2
+ ip address 151.11.16.237 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet0/1
+ ip address 251.169.200.251 255.255.255.0
+ no shutdown
+!",juniper,0,synthetic_v4,non_compliant,medium
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"! RTR-93-28 Configuration
+!
+hostname RTR-93-28
+version 15.7
+! logging host 106.62.188.20
+interface GigabitEthernet1/3
+ ip address 43.129.106.130 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet0/3
+ ip address 7.37.236.98 255.255.255.0
+ no shutdown
+!",juniper,0,synthetic_v4,non_compliant,medium
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"! Generated: 2024-01-23
+!
+hostname RTR-87-23
+version 15.7
+logging host 181.250.201.138
+logging trap informational",juniper,1,synthetic_v4,compliant,hard
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"! RTR-61-31 Configuration
+!
+hostname RTR-61-31
+version 15.7
+logging host 214.27.170.134
+logging trap informational
+interface GigabitEthernet1/0
+ ip address 161.228.63.22 255.255.255.0
+ no shutdown
+!",juniper,1,synthetic_v4,compliant,easy
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"! RTR-24-4 Configuration
+!
+hostname RTR-24-4
+version 15.7
+logging host 77.199.50.82
+logging trap informational",juniper,1,synthetic_v4,compliant,medium
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"! Generated: 2024-01-04
+!
+hostname RTR-78-13
+version 15.7
+! logging host 137.200.86.20
+interface GigabitEthernet1/1
+ ip address 113.183.91.56 255.255.255.0
+ no shutdown
+!",juniper,0,synthetic_v4,non_compliant,hard
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"! RTR-84-10 Configuration
+!
+hostname RTR-84-10
+version 15.7
+logging host 229.227.63.91
+logging trap informational
+interface GigabitEthernet1/3
+ ip address 46.4.63.119 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet1/1
+ ip address 114.4.113.191 255.255.255.0
+ no shutdown
+!",juniper,1,synthetic_v4,compliant,easy
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"! Generated: 2024-01-20
+!
+hostname RTR-94-42
+version 15.7
+logging host 171.209.198.60
+logging trap informational
+interface GigabitEthernet0/3
+ ip address 189.142.45.222 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet0/0
+ ip address 147.158.63.165 255.255.255.0
+ no shutdown
+!",juniper,1,synthetic_v4,compliant,hard
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"! RTR-11-25 Configuration
+!
+hostname RTR-11-25
+version 15.7
+logging host 139.27.96.193
+logging trap informational
+interface GigabitEthernet0/1
+ ip address 247.9.140.202 255.255.255.0
+ no shutdown
+!",juniper,1,synthetic_v4,compliant,easy
+CIS-2.1,Security-relevant events must be logged to external syslog infrastructure,Verify CIS-2.1 compliance,"! RTR-90-69 Configuration
+!
+hostname RTR-90-69
+version 15.7
+! logging host 63.21.229.247",paloalto,0,synthetic_v4,non_compliant,hard
+CIS-2.1,Security-relevant events must be logged to external syslog infrastructure,Verify CIS-2.1 compliance,"! Generated: 2024-01-04
+!
+hostname RTR-49-29
+version 15.7
+! logging host 201.63.89.135
+interface GigabitEthernet1/0
+ ip address 136.178.144.142 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet1/0
+ ip address 230.24.87.82 255.255.255.0
+ no shutdown
+!",paloalto,0,synthetic_v4,non_compliant,medium
+CIS-2.1,Security-relevant events must be logged to external syslog infrastructure,Verify CIS-2.1 compliance,"! Generated: 2024-01-12
+!
+hostname RTR-49-79
+version 15.7
+logging host 224.169.51.1
+logging trap informational
+interface GigabitEthernet0/0
+ ip address 155.62.143.244 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet0/2
+ ip address 116.243.211.170 255.255.255.0
+ no shutdown
+!",paloalto,1,synthetic_v4,compliant,easy
+CIS-2.1,Security-relevant events must be logged to external syslog infrastructure,Verify CIS-2.1 compliance,"! Generated: 2024-01-24
+!
+hostname RTR-12-15
+version 15.7
+logging host 152.96.59.147
+logging trap informational
+interface GigabitEthernet1/0
+ ip address 80.31.97.217 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet1/3
+ ip address 82.186.64.134 255.255.255.0
+ no shutdown
+!",paloalto,1,synthetic_v4,compliant,hard
+CIS-2.1,Security-relevant events must be logged to external syslog infrastructure,Verify CIS-2.1 compliance,"! Generated: 2024-01-25
+!
+hostname RTR-81-90
+version 15.7
+logging host 178.68.170.45
+logging trap informational
+interface GigabitEthernet1/0
+ ip address 86.9.229.98 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet0/0
+ ip address 60.10.63.80 255.255.255.0
+ no shutdown
+!",paloalto,1,synthetic_v4,compliant,easy
+CIS-2.1,Security-relevant events must be logged to external syslog infrastructure,Verify CIS-2.1 compliance,"! RTR-37-37 Configuration
+!
+hostname RTR-37-37
+version 15.7
+logging host 50.201.49.34
+logging trap informational
+interface GigabitEthernet1/3
+ ip address 168.83.70.114 255.255.255.0
+ no shutdown
+!",paloalto,1,synthetic_v4,compliant,hard
+CIS-2.1,Security-relevant events must be logged to external syslog infrastructure,Verify CIS-2.1 compliance,"! RTR-1-9 Configuration
+!
+hostname RTR-1-9
+version 15.7
+logging host 18.98.26.163
+logging trap informational
+interface GigabitEthernet0/0
+ ip address 45.104.120.130 255.255.255.0
+ no shutdown
+!",paloalto,1,synthetic_v4,compliant,easy
+CIS-2.1,Security-relevant events must be logged to external syslog infrastructure,Verify CIS-2.1 compliance,"! Generated: 2024-01-22
+!
+hostname RTR-75-31
+version 15.7
+logging host 195.51.4.16
+logging trap informational",paloalto,1,synthetic_v4,compliant,easy
+CIS-2.1,Security-relevant events must be logged to external syslog infrastructure,Verify CIS-2.1 compliance,"! Generated: 2024-01-17
+!
+hostname RTR-63-26
+version 15.7
+! logging host 231.78.210.32
+interface GigabitEthernet0/2
+ ip address 58.240.202.96 255.255.255.0
+ no shutdown
+!",paloalto,0,synthetic_v4,non_compliant,medium
+CIS-2.2,Device clocks must be synchronized via configured NTP servers,Verify CIS-2.2 compliance,"! ===========================================================================
+! R2 ipv6-static-routing lab  (router, c7200 / IOS 15.2)
+! ComputingForGeeks CCNA 200-301 lab: ipv6-static-routing
+! https://computingforgeeks.com/cisco-ipv6-static-routes-configuration/
+!
+! Two links to R1: primary 2001:DB8:12::/64 (Gi0/0), backup 2001:DB8:13::/64
+! (Gi1/0). R2 reaches R1's network 2001:DB8:1::/64 via a fully-specified
+! link-local primary static (AD 1) and a floating static (AD 200), so the return
+! path also fails over when the primary link is shut. Run the matching R1 file.
+! ===========================================================================
+enable
+configure terminal
+hostname R2
+ipv6 unicast-routing
+interface Loopback1
+ ipv6 address 2001:DB8:2::1/64
+ exit
+interface GigabitEthernet0/0
+ ipv6 address 2001:DB8:12::2/64
+ ipv6 address FE80::2 link-local
+ no shutdown
+ exit
+interface GigabitEthernet1/0
+ ipv6 address 2001:DB8:13::2/64
+ ipv6 address FE80::20 link-local
+ no shutdown
+ exit
+ipv6 route 2001:DB8:1::/64 GigabitEthernet0/0 FE80::1
+ipv6 route 2001:DB8:1::/64 GigabitEthernet1/0 FE80::10 200
+end
+write memory",cisco,0,real_derived_R2-config.txt,mutated_from_R2-config.txt_to_0,medium
+CIS-2.2,NTP servers must be configured for accurate timestamp recording,Verify CIS-2.2 compliance,"! ===========================================================================
+! SW2 LACP EtherChannel  (Layer 2 switch, IOSvL2)
+! ComputingForGeeks CCNA 200-301 lab: etherchannel-lacp
+! https://computingforgeeks.com/cisco-etherchannel-configuration/
+!
+! Paste at the privileged-EXEC prompt. Two links (Gi0/0, Gi0/1) bundle into
+! Port-channel 1 with LACP active. Run the matching SW1 file on the other switch;
+! both ends must be active (or one active, one passive).
+! ===========================================================================
+enable
+configure terminal
+hostname SW2
+interface range GigabitEthernet0/0 - 1
+ channel-group 1 mode active
+ exit
+end
+write memory
+
+ntp server 254.245.205.137
+interface GigabitEthernet1/0
+ description LAN Interface
+ ip address 180.43.55.197 255.255.255.0
+ no shutdown
+!",cisco,1,real_derived_SW2-config.txt,mutated_from_SW2-config.txt_to_1,medium
+CIS-2.2,NTP servers must be configured for accurate timestamp recording,Verify CIS-2.2 compliance,"! ===========================================================================
+! R2 HSRP configuration  (router, c7200/IOSv)  -- STANDBY (lower priority)
+! ComputingForGeeks CCNA 200-301 lab: hsrp
+! https://computingforgeeks.com/ccna-labs-hsrp-configuration-on-gns3-and-packet-tracer/
+!
+! Group 1, HSRP version 2, same virtual IP 192.168.10.254.
+! R2 has priority 100 (default) + preempt, so it takes over only when R1 fails.
+! ===========================================================================
+enable
+configure terminal
+hostname R2
+interface GigabitEthernet0/0
+ ip address 192.168.10.2 255.255.255.0
+ standby version 2
+ standby 1 ip 192.168.10.254
+ standby 1 priority 100
+ standby 1 preempt
+ no shutdown
+ exit
+end
+write memory
+
+ntp server 85.83.234.166",cisco,1,real_derived_R2-hsrp.txt,mutated_from_R2-hsrp.txt_to_1,medium
+CIS-2.2,Device clocks must be synchronized via configured NTP servers,Verify CIS-2.2 compliance,"! ===========================================================================
+! SW2 LACP EtherChannel  (Layer 2 switch, IOSvL2)
+! ComputingForGeeks CCNA 200-301 lab: etherchannel-lacp
+! https://computingforgeeks.com/cisco-etherchannel-configuration/
+!
+! Paste at the privileged-EXEC prompt. Two links (Gi0/0, Gi0/1) bundle into
+! Port-channel 1 with LACP active. Run the matching SW1 file on the other switch;
+! both ends must be active (or one active, one passive).
+! ===========================================================================
+enable
+configure terminal
+hostname SW2
+interface range GigabitEthernet0/0 - 1
+ channel-group 1 mode active
+ exit
+end
+write memory
+
+ntp server 169.78.216.203",cisco,1,real_derived_SW2-config.txt,mutated_from_SW2-config.txt_to_1,medium
+CIS-2.2,NTP servers must be configured for accurate timestamp recording,Verify CIS-2.2 compliance,"! RTR-92-10 Configuration
+!
+hostname RTR-92-10
+version 15.7
+ntp server 221.76.75.82
+interface GigabitEthernet0/0
+ ip address 148.218.142.38 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet0/2
+ ip address 33.93.197.91 255.255.255.0
+ no shutdown
+!",cisco,1,synthetic_v4,compliant,medium
+CIS-2.2,Device clocks must be synchronized via configured NTP servers,Verify CIS-2.2 compliance,"! ===========================================================================
+! ClientA dhcp-server-relay lab  (DHCP client, local LAN, c7200 / IOS 15.2)
+! ComputingForGeeks CCNA 200-301 lab: dhcp-server-relay
+! https://computingforgeeks.com/cisco-dhcp-server-relay-configuration/
+!
+! A router used as an end host on R1's own LAN. It leases directly from the
+! local server (192.168.10.1). Verify with: show ip interface brief / show dhcp lease.
+! ===========================================================================
+enable
+configure terminal
+hostname ClientA
+interface GigabitEthernet0/0
+ ip address dhcp
+ no shutdown
+ exit
+end
+write memory",cisco,0,real_derived_ClientA-config.txt,mutated_from_ClientA-config.txt_to_0,medium
+CIS-2.2,NTP servers must be configured for accurate timestamp recording,Verify CIS-2.2 compliance,"! Generated: 2024-01-06
+!
+hostname RTR-89-93
+version 15.7
+! ntp server 23.97.188.209
+interface GigabitEthernet0/2
+ ip address 227.22.56.13 255.255.255.0
+ no shutdown
+!",cisco,0,synthetic_v4,non_compliant,medium
+CIS-2.2,Time synchronization with trusted NTP infrastructure is required,Verify CIS-2.2 compliance,"! SW1 - Layer 3 switch doing inter-VLAN routing with SVIs.
+! ip routing is OFF by default on a multilayer switch; this is the key step.
+enable
+configure terminal
+hostname SW1
+!
+ip routing
+!
+vlan 10
+ name SALES
+vlan 20
+ name ENGINEERING
+!
+! SVIs = the per-VLAN gateways (routed inside the switch)
+interface Vlan10
+ ip address 10.10.10.1 255.255.255.0
+ no shutdown
+!
+interface Vlan20
+ ip address 10.20.20.1 255.255.255.0
+ no shutdown
+!
+! Host access ports
+interface GigabitEthernet0/1
+ switchport mode access
+ switchport access vlan 10
+!
+interface GigabitEthernet0/2
+ switchport mode access
+ switchport access vlan 20
+end
+write memory
+
+ntp server 92.192.221.48
+interface GigabitEthernet1/0
+ description DMZ Interface
+ ip address 76.126.37.22 255.255.255.0
+ no shutdown
+!",cisco,1,real_derived_SW1-config.txt,mutated_from_SW1-config.txt_to_1,medium
+CIS-2.2,Network infrastructure must synchronize clock with approved time sources,Verify CIS-2.2 compliance,"# -*- restclient -*-
+
+# Settings
+:node = asr-101
+:addr = 50.196.141.39
+:deviceusername = <username>
+:devicepassword = <password>
+:host = http://localhost:8181
+:basic-auth := (format ""Basic %s"" (base64-encode-string (format ""%s:%s"" ""admin"" ""admin"")))
+
+# Create ASR 101
+POST :host/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules
+Authorization: :basic-auth
+Content-Type: application/xml
+<module xmlns=""urn:opendaylight:params:xml:ns:yang:controller:config"">
+   <type xmlns:prefix=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">prefix:sal-netconf-connector</type>
+   <name>:node
+   </name>
+   <address xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">:addr
+   </address>
+   <port xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">830</port>
+   <username xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">:deviceusername</username>
+   <password xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">:devicepassword</password>
+   <tcp-only xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">false</tcp-only>
+   <event-executor xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">
+     <type xmlns:prefix=""urn:opendaylight:params:xml:ns:yang:controller:netty"">prefix:netty-event-executor</type>
+     <name>global-event-executor</name>
+   </event-executor>
+   <binding-registry xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">
+     <type xmlns:prefix=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:binding"">prefix:binding-broker-osgi-registry</type>
+     <name>binding-osgi-broker</name>
+   </binding-registry>
+   <dom-registry xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">
+     <type xmlns:prefix=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:dom"">prefix:dom-broker-osgi-registry</type>
+     <name>dom-broker</name>
+   </dom-registry>
+   <client-dispatcher xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">
+     <type xmlns:prefix=""urn:opendaylight:params:xml:ns:yang:controller:config:netconf"">prefix:netconf-client-dispatcher</type>
+     <name>global-netconf-dispatcher</name>
+   </client-dispatcher>
+   <processing-executor xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">
+     <type xmlns:prefix=""urn:opendaylight:params:xml:ns:yang:controller:threadpool"">prefix:threadpool</type>
+     <name>global-netconf-processing-executor</name>
+   </processing-executor>
+ </module>
+
+# Get node operational status
+GET :host/restconf/operational/network-topology:network-topology/topology/topology-netconf/node/:node/
+Authorization: :basic-auth
+
+# Get interface configuration
+GET :host/restconf/operational/network-topology:network-topology/topology/topology-netconf/node/:node/yang-ext:mount/Cisco-IOS-XR-ifmgr-cfg:interface-configurations/
+Authorization: :basic-auth
+Accept: application/xml
+
+# Get operational l2vpn xconnect groups
+GET :host/restconf/operational/network-topology:network-topology/topology/topology-netconf/node/:node/yang-ext:mount/Cisco-IOS-XR-l2vpn-cfg:l2vpn/database/xconnect-groups/xconnect-group/local
+Authorization: :basic-auth
+Accept: application/xml
+
+# Show
+GET :host/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/module/odl-sal-netconf-connector-cfg:sal-netconf-connector/:node
+Authorization: :basic-auth
+
+# Delete
+DELETE :host/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/module/odl-sal-netconf-connector-cfg:sal-netconf-connector/:node
+Authorization: :basic-auth
+
+interface GigabitEthernet0/1
+ description WAN Interface
+ ip address 207.161.205.69 255.255.255.0
+ no shutdown
+!",cisco,0,real_derived_cisco-xr-lab-device.txt,mutated_from_cisco-xr-lab-device.txt_to_0,medium
+CIS-2.2,NTP servers must be configured for accurate timestamp recording,Verify CIS-2.2 compliance,"! RTR-23-33 Configuration
+!
+hostname RTR-23-33
+version 15.7
+ntp server 138.54.195.243
+ntp server 223.105.226.57
+interface GigabitEthernet1/1
+ ip address 115.118.222.95 255.255.255.0
+ no shutdown
+!",cisco,1,synthetic_v4,compliant,easy
+CIS-2.2,NTP servers must be configured for accurate timestamp recording,Verify CIS-2.2 compliance,"! RTR-42-30 Configuration
+!
+hostname RTR-42-30
+version 15.7
+! ntp server 99.145.108.135",cisco,0,synthetic_v4,non_compliant,hard
+CIS-2.2,NTP servers must be configured for accurate timestamp recording,Verify CIS-2.2 compliance,"! RTR-98-83 Configuration
+!
+hostname RTR-98-83
+version 15.7
+ntp server 34.127.42.69
+interface GigabitEthernet0/0
+ ip address 139.173.43.52 255.255.255.0
+ no shutdown
+!",cisco,1,synthetic_v4,compliant,easy
+CIS-2.2,Time synchronization with trusted NTP infrastructure is required,Verify CIS-2.2 compliance,"# -*- restclient -*-
+
+# Settings
+:node = asr-101
+:addr = 50.196.141.39
+:deviceusername = <username>
+:devicepassword = <password>
+:host = http://localhost:8181
+:basic-auth := (format ""Basic %s"" (base64-encode-string (format ""%s:%s"" ""admin"" ""admin"")))
+
+# Create ASR 101
+POST :host/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules
+Authorization: :basic-auth
+Content-Type: application/xml
+<module xmlns=""urn:opendaylight:params:xml:ns:yang:controller:config"">
+   <type xmlns:prefix=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">prefix:sal-netconf-connector</type>
+   <name>:node
+   </name>
+   <address xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">:addr
+   </address>
+   <port xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">830</port>
+   <username xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">:deviceusername</username>
+   <password xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">:devicepassword</password>
+   <tcp-only xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">false</tcp-only>
+   <event-executor xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">
+     <type xmlns:prefix=""urn:opendaylight:params:xml:ns:yang:controller:netty"">prefix:netty-event-executor</type>
+     <name>global-event-executor</name>
+   </event-executor>
+   <binding-registry xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">
+     <type xmlns:prefix=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:binding"">prefix:binding-broker-osgi-registry</type>
+     <name>binding-osgi-broker</name>
+   </binding-registry>
+   <dom-registry xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">
+     <type xmlns:prefix=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:dom"">prefix:dom-broker-osgi-registry</type>
+     <name>dom-broker</name>
+   </dom-registry>
+   <client-dispatcher xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">
+     <type xmlns:prefix=""urn:opendaylight:params:xml:ns:yang:controller:config:netconf"">prefix:netconf-client-dispatcher</type>
+     <name>global-netconf-dispatcher</name>
+   </client-dispatcher>
+   <processing-executor xmlns=""urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf"">
+     <type xmlns:prefix=""urn:opendaylight:params:xml:ns:yang:controller:threadpool"">prefix:threadpool</type>
+     <name>global-netconf-processing-executor</name>
+   </processing-executor>
+ </module>
+
+# Get node operational status
+GET :host/restconf/operational/network-topology:network-topology/topology/topology-netconf/node/:node/
+Authorization: :basic-auth
+
+# Get interface configuration
+GET :host/restconf/operational/network-topology:network-topology/topology/topology-netconf/node/:node/yang-ext:mount/Cisco-IOS-XR-ifmgr-cfg:interface-configurations/
+Authorization: :basic-auth
+Accept: application/xml
+
+# Get operational l2vpn xconnect groups
+GET :host/restconf/operational/network-topology:network-topology/topology/topology-netconf/node/:node/yang-ext:mount/Cisco-IOS-XR-l2vpn-cfg:l2vpn/database/xconnect-groups/xconnect-group/local
+Authorization: :basic-auth
+Accept: application/xml
+
+# Show
+GET :host/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/module/odl-sal-netconf-connector-cfg:sal-netconf-connector/:node
+Authorization: :basic-auth
+
+# Delete
+DELETE :host/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/module/odl-sal-netconf-connector-cfg:sal-netconf-connector/:node
+Authorization: :basic-auth",cisco,0,real_derived_cisco-xr-lab-device.txt,mutated_from_cisco-xr-lab-device.txt_to_0,medium
+CIS-2.2,Network infrastructure must synchronize clock with approved time sources,Verify CIS-2.2 compliance,"! ===========================================================================
+! R1 HSRP configuration  (router, c7200/IOSv)  -- ACTIVE (higher priority)
+! ComputingForGeeks CCNA 200-301 lab: hsrp
+! https://computingforgeeks.com/ccna-labs-hsrp-configuration-on-gns3-and-packet-tracer/
+!
+! Group 1, HSRP version 2, virtual IP 192.168.10.254.
+! R1 has priority 110 + preempt, so it owns the active role and reclaims it
+! after a recovery.
+! ===========================================================================
+enable
+configure terminal
+hostname R1
+interface GigabitEthernet0/0
+ ip address 192.168.10.1 255.255.255.0
+ standby version 2
+ standby 1 ip 192.168.10.254
+ standby 1 priority 110
+ standby 1 preempt
+ no shutdown
+ exit
+end
+write memory",cisco,0,real_derived_R1-hsrp.txt,mutated_from_R1-hsrp.txt_to_0,medium
+CIS-2.2,NTP servers must be configured for accurate timestamp recording,Verify CIS-2.2 compliance,"! ===========================================================================
+! SW1 base configuration  (Layer 2 switch, IOSvL2)
+! ComputingForGeeks CCNA 200-301 lab: base-device
+! https://computingforgeeks.com/cisco-device-base-configuration/
+!
+! Paste at the privileged-EXEC prompt. RSA key generation takes a few seconds.
+! The management IP lives on the Vlan1 SVI (a switch has no routed Gi0/0 by default).
+! ===========================================================================
+enable
+configure terminal
+hostname SW1
+enable secret Cisc0-Lab!
+service password-encryption
+ip domain-name lab.example.com
+username admin privilege 15 secret Adm1n-Lab!
+crypto key generate rsa modulus 2048
+ip ssh version 2
+interface GigabitEthernet0/0
+ no shutdown
+ exit
+interface Vlan1
+ ip address 192.168.10.2 255.255.255.0
+ no shutdown
+ exit
+line vty 0 4
+ login local
+ transport input ssh
+ exit
+banner motd #Authorized access only. Activity is logged.#
+end
+write memory",cisco,0,real_derived_SW1-base-config.txt,mutated_from_SW1-base-config.txt_to_0,medium
+CIS-2.2,Network infrastructure must synchronize clock with approved time sources,Verify CIS-2.2 compliance,"IP-EIGRP Topology Table for AS(100)/ID(10.255.11.6)
+
+Codes: P - Passive, A - Active, U - Update, Q - Query, R - Reply,
+       r - reply Status, s - sia Status
+
+P 66.128.208.232/32, 2 successors, FD is 264448
+        via 10.254.11.9, TenGigabitEthernet1/1
+        via 10.254.11.33, TenGigabitEthernet2/1
+P 10.254.6.8/30, 1 successors, FD is 1024
+        via 10.254.6.14, Port-channel10
+P 67.230.223.128/28, 2 successors, FD is 5632, tag is 53471
+        via 10.254.11.9, TenGigabitEthernet1/1
+        via 10.254.11.33, TenGigabitEthernet2/1
+P 10.255.10.5/32, 1 successors, FD is 130816
+        via 10.254.10.34, GigabitEthernet9/29
+P 10.255.1.14/32, 1 successors, FD is 128768
+        via 10.254.1.34, Port-channel3
+P 10.254.2.12/30, 1 successors, FD is 768
+        via 10.254.2.22, TenGigabitEthernet3/3
+P 10.255.11.4/32, 4 successors, FD is 128768
+        via 10.254.56.6, TenGigabitEthernet1/4
+        via 10.254.55.6, TenGigabitEthernet1/6
+        via 10.254.11.33, TenGigabitEthernet2/1
+        via 10.254.11.9, TenGigabitEthernet1/1
+        via 10.254.52.6, TenGigabitEthernet1/5
+        via 10.254.4.10, TenGigabitEthernet4/4
+        via 10.254.4.14, TenGigabitEthernet4/5
+        via 10.254.54.6, TenGigabitEthernet1/3
+
+IP-EIGRP Topology Table for AS(65000)/ID(10.2.0.1)
+
+Codes: P - Passive, A - Active, U - Update, Q - Query, R - Reply,
+       r - reply Status, s - sia Status
+
+P 10.50.20.4/32, 2 successors, FD is 128039168
+        via 10.4.0.1, GigabitEthernet1/1
+        via 10.4.0.2, GigabitEthernet1/2
+P 10.50.21.0/27, 0 successors, FD is Inaccessible, tag is 6508497
+        via 10.4.0.1, GigabitEthernet1/1
+        via 10.4.0.2, GigabitEthernet1/2
+P 10.50.75.0/24, 1 successors, FD is 2816
+        via Rstatic
+P 10.50.23.92/30, 1 successors, FD is 3840256, tag is 5507497
+        via Redistributed
+
+ntp server 81.230.27.222",cisco,1,real_derived_cisco_ios_show_ip_eigrp_topology1.raw,mutated_from_cisco_ios_show_ip_eigrp_topology1.raw_to_1,medium
+CIS-2.2,Network infrastructure must synchronize clock with approved time sources,Verify CIS-2.2 compliance,"! Host20 - end device in VLAN 20 (a router acting as a host in the lab).
+! On a real PC this is just IP 10.20.20.20/24, gateway 10.20.20.1 (the Vlan20 SVI).
+enable
+configure terminal
+hostname Host20
+!
+interface GigabitEthernet0/0
+ ip address 10.20.20.20 255.255.255.0
+ no shutdown
+!
+ip route 0.0.0.0 0.0.0.0 10.20.20.1
+end
+write memory",cisco,0,real_derived_Host20-config.txt,mutated_from_Host20-config.txt_to_0,medium
+CIS-2.2,NTP servers must be configured for accurate timestamp recording,Verify CIS-2.2 compliance,"! Generated: 2024-01-22
+!
+hostname RTR-46-32
+version 15.7
+! ntp server 96.190.74.200
+interface GigabitEthernet1/0
+ ip address 184.168.109.120 255.255.255.0
+ no shutdown
+!",cisco,0,synthetic_v4,non_compliant,hard
+CIS-2.2,NTP servers must be configured for accurate timestamp recording,Verify CIS-2.2 compliance,"! RTR-93-46 Configuration
+!
+hostname RTR-93-46
+version 15.7
+ntp server 180.49.169.105
+ntp server 129.51.76.7
+interface GigabitEthernet1/0
+ ip address 75.82.77.175 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet1/0
+ ip address 227.47.118.227 255.255.255.0
+ no shutdown
+!",cisco,1,synthetic_v4,compliant,easy
+CIS-2.2,NTP servers must be configured for accurate timestamp recording,Verify CIS-2.2 compliance,"! Generated: 2024-01-14
+!
+hostname RTR-22-26
+version 15.7
+! ntp server 124.243.82.248
+interface GigabitEthernet1/0
+ ip address 144.101.39.186 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet0/2
+ ip address 171.162.7.39 255.255.255.0
+ no shutdown
+!",cisco,0,synthetic_v4,non_compliant,medium
+CIS-2.2,NTP servers must be configured for accurate timestamp recording,Verify CIS-2.2 compliance,"! Generated: 2024-01-14
+!
+hostname RTR-87-31
+version 15.7
+! ntp server 9.7.13.40
+interface GigabitEthernet1/1
+ ip address 246.220.123.143 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet1/1
+ ip address 158.201.26.206 255.255.255.0
+ no shutdown
+!",cisco,0,synthetic_v4,non_compliant,hard
+CIS-2.2,NTP servers must be configured for accurate timestamp recording,Verify CIS-2.2 compliance,"! RTR-36-92 Configuration
+!
+hostname RTR-36-92
+version 15.7
+! ntp server 227.38.215.175
+interface GigabitEthernet1/1
+ ip address 51.25.252.128 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet0/2
+ ip address 108.61.63.116 255.255.255.0
+ no shutdown
+!",cisco,0,synthetic_v4,non_compliant,easy
+CIS-2.2,Network infrastructure must synchronize clock with approved time sources,Verify CIS-2.2 compliance,"! ===========================================================================
+! R1 ipv6-static-routing lab  (router, c7200 / IOS 15.2)
+! ComputingForGeeks CCNA 200-301 lab: ipv6-static-routing
+! https://computingforgeeks.com/cisco-ipv6-static-routes-configuration/
+!
+! Two links to R2: primary 2001:DB8:12::/64 (Gi0/0), backup 2001:DB8:13::/64
+! (Gi1/0). R1 reaches R2's network 2001:DB8:2::/64 via a fully-specified
+! link-local primary static (AD 1) and a floating static (AD 200) over the
+! backup, plus a ::/0 default route. Run the matching R2 file on the other router.
+!
+! Failover demo: shut Gi0/0 on BOTH routers, then re-run
+! ""show ipv6 route 2001:DB8:2::/64"" and ping 2001:DB8:2::1 to watch the floating
+! route ([200]) take over the backup link.
+! ===========================================================================
+enable
+configure terminal
+hostname R1
+ipv6 unicast-routing
+interface Loopback1
+ ipv6 address 2001:DB8:1::1/64
+ exit
+interface GigabitEthernet0/0
+ ipv6 address 2001:DB8:12::1/64
+ ipv6 address FE80::1 link-local
+ no shutdown
+ exit
+interface GigabitEthernet1/0
+ ipv6 address 2001:DB8:13::1/64
+ ipv6 address FE80::10 link-local
+ no shutdown
+ exit
+ipv6 route 2001:DB8:2::/64 GigabitEthernet0/0 FE80::2
+ipv6 route 2001:DB8:2::/64 GigabitEthernet1/0 FE80::20 200
+ipv6 route ::/0 2001:DB8:12::2
+end
+write memory
+
+ntp server 47.73.205.18",cisco,1,real_derived_R1-config.txt,mutated_from_R1-config.txt_to_1,medium
+CIS-2.2,NTP servers must be configured for accurate timestamp recording,Verify CIS-2.2 compliance,"! ===========================================================================
+! ClientA dhcp-server-relay lab  (DHCP client, local LAN, c7200 / IOS 15.2)
+! ComputingForGeeks CCNA 200-301 lab: dhcp-server-relay
+! https://computingforgeeks.com/cisco-dhcp-server-relay-configuration/
+!
+! A router used as an end host on R1's own LAN. It leases directly from the
+! local server (192.168.10.1). Verify with: show ip interface brief / show dhcp lease.
+! ===========================================================================
+enable
+configure terminal
+hostname ClientA
+interface GigabitEthernet0/0
+ ip address dhcp
+ no shutdown
+ exit
+end
+write memory
+
+ntp server 74.216.249.40",cisco,1,real_derived_ClientA-config.txt,mutated_from_ClientA-config.txt_to_1,medium
+CIS-2.2,Device clocks must be synchronized via configured NTP servers,Verify CIS-2.2 compliance,"! RTR-81-60 Configuration
+!
+hostname RTR-81-60
+version 15.7
+ntp server 97.223.49.36
+ntp server 178.160.183.120
+interface GigabitEthernet1/3
+ ip address 119.14.13.246 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet1/0
+ ip address 194.71.154.202 255.255.255.0
+ no shutdown
+!",juniper,1,synthetic_v4,compliant,easy
+CIS-2.2,Device clocks must be synchronized via configured NTP servers,Verify CIS-2.2 compliance,"! RTR-28-60 Configuration
+!
+hostname RTR-28-60
+version 15.7
+ntp server 49.249.53.88
+interface GigabitEthernet1/3
+ ip address 168.78.54.235 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet0/1
+ ip address 235.186.197.250 255.255.255.0
+ no shutdown
+!",juniper,1,synthetic_v4,compliant,medium
+CIS-2.2,Device clocks must be synchronized via configured NTP servers,Verify CIS-2.2 compliance,"! Generated: 2024-01-22
+!
+hostname RTR-94-21
+version 15.7
+ntp server 28.255.243.83
+ntp server 252.121.53.231
+interface GigabitEthernet1/0
+ ip address 16.128.58.10 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet0/3
+ ip address 196.191.15.237 255.255.255.0
+ no shutdown
+!",juniper,1,synthetic_v4,compliant,easy
+CIS-2.2,Device clocks must be synchronized via configured NTP servers,Verify CIS-2.2 compliance,"! Generated: 2024-01-18
+!
+hostname RTR-67-30
+version 15.7
+! ntp server 54.62.190.186
+interface GigabitEthernet0/1
+ ip address 179.225.232.244 255.255.255.0
+ no shutdown
+!",juniper,0,synthetic_v4,non_compliant,easy
+CIS-2.2,Device clocks must be synchronized via configured NTP servers,Verify CIS-2.2 compliance,"! Generated: 2024-01-26
+!
+hostname RTR-35-64
+version 15.7
+ntp server 53.177.147.181
+ntp server 188.1.48.48
+interface GigabitEthernet1/1
+ ip address 44.161.35.43 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet0/2
+ ip address 231.233.72.247 255.255.255.0
+ no shutdown
+!",juniper,1,synthetic_v4,compliant,easy
+CIS-2.2,Device clocks must be synchronized via configured NTP servers,Verify CIS-2.2 compliance,"! RTR-6-38 Configuration
+!
+hostname RTR-6-38
+version 15.7
+! ntp server 234.13.54.156",juniper,0,synthetic_v4,non_compliant,medium
+CIS-2.2,NTP Configuration Required,NTP servers must be configured for accurate timestamps.,set system ntp server 10.0.0.1,juniper,1,v1_curated,curated_training,easy
+CIS-2.2,Device clocks must be synchronized via configured NTP servers,Verify CIS-2.2 compliance,"! RTR-38-44 Configuration
+!
+hostname RTR-38-44
+version 15.7
+! ntp server 10.140.185.69
+interface GigabitEthernet0/2
+ ip address 146.164.135.217 255.255.255.0
+ no shutdown
+!",juniper,0,synthetic_v4,non_compliant,easy
+CIS-2.2,Device clocks must be synchronized via configured NTP servers,Verify CIS-2.2 compliance,"! Generated: 2024-01-13
+!
+hostname RTR-80-66
+version 15.7
+ntp server 49.35.142.109
+interface GigabitEthernet0/3
+ ip address 225.54.56.62 255.255.255.0
+ no shutdown
+!",juniper,1,synthetic_v4,compliant,easy
+CIS-2.2,Network infrastructure must synchronize clock with approved time sources,Verify CIS-2.2 compliance,"! Generated: 2024-01-07
+!
+hostname RTR-57-6
+version 15.7
+! ntp server 177.209.88.163
+interface GigabitEthernet1/2
+ ip address 144.179.60.88 255.255.255.0
+ no shutdown
+!",paloalto,0,synthetic_v4,non_compliant,medium
+CIS-2.2,NTP Configuration Required,NTP servers must be configured for accurate timestamps.,set deviceconfig setting ntp server primary 0.0.0.0,paloalto,0,v1_curated,curated_training,easy
+CIS-2.2,Network infrastructure must synchronize clock with approved time sources,Verify CIS-2.2 compliance,"! Generated: 2024-01-15
+!
+hostname RTR-24-46
+version 15.7
+! ntp server 140.95.11.113
+interface GigabitEthernet1/3
+ ip address 122.124.129.186 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet1/2
+ ip address 124.205.153.11 255.255.255.0
+ no shutdown
+!",paloalto,0,synthetic_v4,non_compliant,easy
+CIS-2.2,Network infrastructure must synchronize clock with approved time sources,Verify CIS-2.2 compliance,"! RTR-49-85 Configuration
+!
+hostname RTR-49-85
+version 15.7
+! ntp server 9.165.53.162
+interface GigabitEthernet0/3
+ ip address 122.171.172.166 255.255.255.0
+ no shutdown
+!",paloalto,0,synthetic_v4,non_compliant,easy
+CIS-2.2,Network infrastructure must synchronize clock with approved time sources,Verify CIS-2.2 compliance,"! RTR-55-75 Configuration
+!
+hostname RTR-55-75
+version 15.7
+ntp server 95.206.130.144
+ntp server 169.103.39.152",paloalto,1,synthetic_v4,compliant,hard
+CIS-2.2,Network infrastructure must synchronize clock with approved time sources,Verify CIS-2.2 compliance,"! Generated: 2024-01-27
+!
+hostname RTR-37-40
+version 15.7
+! ntp server 124.17.133.246
+interface GigabitEthernet0/3
+ ip address 175.54.238.207 255.255.255.0
+ no shutdown
+!",paloalto,0,synthetic_v4,non_compliant,easy
+CIS-2.2,Network infrastructure must synchronize clock with approved time sources,Verify CIS-2.2 compliance,"! Generated: 2024-01-03
+!
+hostname RTR-34-90
+version 15.7
+! ntp server 126.181.186.90
+interface GigabitEthernet0/0
+ ip address 244.197.79.138 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet0/3
+ ip address 89.147.106.88 255.255.255.0
+ no shutdown
+!",paloalto,0,synthetic_v4,non_compliant,hard
+CIS-2.2,Network infrastructure must synchronize clock with approved time sources,Verify CIS-2.2 compliance,"! Generated: 2024-01-09
+!
+hostname RTR-37-22
+version 15.7
+ntp server 125.224.114.227
+interface GigabitEthernet0/1
+ ip address 171.142.72.25 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet0/1
+ ip address 8.20.99.2 255.255.255.0
+ no shutdown
+!",paloalto,1,synthetic_v4,compliant,medium
+CIS-2.2,Network infrastructure must synchronize clock with approved time sources,Verify CIS-2.2 compliance,"! RTR-10-95 Configuration
+!
+hostname RTR-10-95
+version 15.7
+ntp server 244.229.209.162
+interface GigabitEthernet1/1
+ ip address 188.93.42.39 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet0/2
+ ip address 173.232.194.83 255.255.255.0
+ no shutdown
+!",paloalto,1,synthetic_v4,compliant,medium
+CIS-3.1,SNMP must use secure community names and modern protocol versions,Verify CIS-3.1 compliance,"! RTR-94-83 Configuration
+!
+hostname RTR-94-83
+version 15.7
+snmp-server community public RO",cisco,0,synthetic_v4,non_compliant,easy
+CIS-3.1,SNMP must use secure community names and modern protocol versions,Verify CIS-3.1 compliance,"! RTR-4-28 Configuration
+!
+hostname RTR-4-28
+version 15.7
+snmp-server community security-team RO
+interface GigabitEthernet1/3
+ ip address 123.87.176.165 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet0/2
+ ip address 134.191.193.222 255.255.255.0
+ no shutdown
+!",cisco,1,synthetic_v4,compliant,medium
+CIS-3.1,SNMP must use secure community names and modern protocol versions,Verify CIS-3.1 compliance,"! RTR-2-86 Configuration
+!
+hostname RTR-2-86
+version 15.7
+snmp-server community fw-monitor RO",cisco,1,synthetic_v4,compliant,easy
+CIS-3.1,SNMP must use secure community names and modern protocol versions,Verify CIS-3.1 compliance,"! Generated: 2024-01-15
+!
+hostname RTR-97-41
+version 15.7
+snmp-server community corp-monitor RO",cisco,1,synthetic_v4,compliant,hard
+CIS-3.1,SNMP must use secure community names and modern protocol versions,Verify CIS-3.1 compliance,"! Generated: 2024-01-08
+!
+hostname RTR-27-74
+version 15.7
+snmp-server community router-ops RO
+interface GigabitEthernet1/0
+ ip address 206.169.81.63 255.255.255.0
+ no shutdown
+!",cisco,1,synthetic_v4,compliant,medium
+CIS-3.1,SNMP must use secure community names and modern protocol versions,Verify CIS-3.1 compliance,"! Generated: 2024-01-27
+!
+hostname RTR-64-97
+version 15.7
+snmp-server community router-ops RO",cisco,1,synthetic_v4,compliant,easy
+CIS-3.1,SNMP must use secure community names and modern protocol versions,Verify CIS-3.1 compliance,"! RTR-30-28 Configuration
+!
+hostname RTR-30-28
+version 15.7
+snmp-server community public RO",cisco,0,synthetic_v4,non_compliant,medium
+CIS-3.1,SNMP must use secure community names and modern protocol versions,Verify CIS-3.1 compliance,"! Generated: 2024-01-03
+!
+hostname RTR-3-91
+version 15.7
+snmp-server community server-mgmt RO
+interface GigabitEthernet1/2
+ ip address 139.199.243.239 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet0/2
+ ip address 88.163.177.211 255.255.255.0
+ no shutdown
+!",cisco,1,synthetic_v4,compliant,medium
+CIS-3.1,SNMP must use secure community names and modern protocol versions,Verify CIS-3.1 compliance,"! Generated: 2024-01-28
+!
+hostname RTR-16-49
+version 15.7
+snmp-server community private RO
+interface GigabitEthernet1/3
+ ip address 51.105.194.152 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet0/0
+ ip address 249.89.62.42 255.255.255.0
+ no shutdown
+!",cisco,0,synthetic_v4,non_compliant,easy
+CIS-3.1,SNMP must use secure community names and modern protocol versions,Verify CIS-3.1 compliance,"! Generated: 2024-01-05
+!
+hostname RTR-42-55
+version 15.7
+snmp-server community corp-monitor RO
+interface GigabitEthernet0/1
+ ip address 251.93.7.37 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet0/1
+ ip address 42.203.165.3 255.255.255.0
+ no shutdown
+!",juniper,1,synthetic_v4,compliant,hard
+CIS-3.1,SNMP must use secure community names and modern protocol versions,Verify CIS-3.1 compliance,"! Generated: 2024-01-23
+!
+hostname RTR-55-75
+version 15.7
+snmp-server community router-ops RO
+interface GigabitEthernet0/0
+ ip address 188.185.123.223 255.255.255.0
+ no shutdown
+!",juniper,1,synthetic_v4,compliant,hard
+CIS-3.1,SNMP must use secure community names and modern protocol versions,Verify CIS-3.1 compliance,"! Generated: 2024-01-16
+!
+hostname RTR-6-46
+version 15.7
+snmp-server community default RO",juniper,0,synthetic_v4,non_compliant,hard
+CIS-3.1,SNMP must use secure community names and modern protocol versions,Verify CIS-3.1 compliance,"! RTR-85-52 Configuration
+!
+hostname RTR-85-52
+version 15.7
+snmp-server community security-team RO
+interface GigabitEthernet1/1
+ ip address 236.197.53.217 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet1/0
+ ip address 83.115.226.212 255.255.255.0
+ no shutdown
+!",juniper,1,synthetic_v4,compliant,easy
+CIS-3.1,SNMP must use secure community names and modern protocol versions,Verify CIS-3.1 compliance,"! Generated: 2024-01-08
+!
+hostname RTR-61-62
+version 15.7
+snmp-server community public RO
+interface GigabitEthernet0/0
+ ip address 62.223.189.113 255.255.255.0
+ no shutdown
+!",juniper,0,synthetic_v4,non_compliant,hard
+CIS-3.1,SNMP must use secure community names and modern protocol versions,Verify CIS-3.1 compliance,"! RTR-12-85 Configuration
+!
+hostname RTR-12-85
+version 15.7
+snmp-server community default RO
+interface GigabitEthernet0/2
+ ip address 83.69.229.196 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet0/2
+ ip address 242.218.206.112 255.255.255.0
+ no shutdown
+!",juniper,0,synthetic_v4,non_compliant,medium
+CIS-3.1,SNMP must use secure community names and modern protocol versions,Verify CIS-3.1 compliance,"! Generated: 2024-01-19
+!
+hostname RTR-87-39
+version 15.7
+snmp-server community default RO
+interface GigabitEthernet1/0
+ ip address 249.27.183.151 255.255.255.0
+ no shutdown
+!",juniper,0,synthetic_v4,non_compliant,easy
+CIS-3.1,SNMP must use secure community names and modern protocol versions,Verify CIS-3.1 compliance,"! RTR-13-38 Configuration
+!
+hostname RTR-13-38
+version 15.7
+snmp-server community corp-monitor RO
+interface GigabitEthernet1/2
+ ip address 91.127.141.115 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet0/2
+ ip address 118.134.82.54 255.255.255.0
+ no shutdown
+!",juniper,1,synthetic_v4,compliant,hard
+CIS-3.1,SNMP must use secure community names and modern protocol versions,Verify CIS-3.1 compliance,"! RTR-85-43 Configuration
+!
+hostname RTR-85-43
+version 15.7
+snmp-server community test RO
+interface GigabitEthernet1/0
+ ip address 40.72.126.160 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet1/3
+ ip address 175.158.104.241 255.255.255.0
+ no shutdown
+!",juniper,0,synthetic_v4,non_compliant,hard
+CIS-3.1,Secure SNMP community naming and versioning is required,Verify CIS-3.1 compliance,"! RTR-96-88 Configuration
+!
+hostname RTR-96-88
+version 15.7
+snmp-server community test RO",paloalto,0,synthetic_v4,non_compliant,easy
+CIS-3.1,Secure SNMP community naming and versioning is required,Verify CIS-3.1 compliance,"! RTR-53-91 Configuration
+!
+hostname RTR-53-91
+version 15.7
+snmp-server community datacenter RO
+interface GigabitEthernet1/1
+ ip address 242.207.215.227 255.255.255.0
+ no shutdown
+!",paloalto,1,synthetic_v4,compliant,medium
+CIS-3.1,Secure SNMP community naming and versioning is required,Verify CIS-3.1 compliance,"! RTR-90-11 Configuration
+!
+hostname RTR-90-11
+version 15.7
+snmp-server community community RO
+interface GigabitEthernet1/1
+ ip address 39.3.144.69 255.255.255.0
+ no shutdown
+!",paloalto,0,synthetic_v4,non_compliant,hard
+CIS-3.1,Secure SNMP community naming and versioning is required,Verify CIS-3.1 compliance,"! Generated: 2024-01-04
+!
+hostname RTR-91-23
+version 15.7
+snmp-server community security-team RO
+interface GigabitEthernet0/3
+ ip address 31.209.81.144 255.255.255.0
+ no shutdown
+!",paloalto,1,synthetic_v4,compliant,hard
+CIS-3.1,Secure SNMP community naming and versioning is required,Verify CIS-3.1 compliance,"! RTR-80-7 Configuration
+!
+hostname RTR-80-7
+version 15.7
+snmp-server community community RO
+interface GigabitEthernet1/3
+ ip address 187.81.49.14 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet1/1
+ ip address 166.97.216.190 255.255.255.0
+ no shutdown
+!",paloalto,0,synthetic_v4,non_compliant,medium
+CIS-3.1,Secure SNMP community naming and versioning is required,Verify CIS-3.1 compliance,"! Generated: 2024-01-27
+!
+hostname RTR-48-66
+version 15.7
+snmp-server community private RO
+interface GigabitEthernet1/1
+ ip address 84.133.201.31 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet1/3
+ ip address 8.228.207.53 255.255.255.0
+ no shutdown
+!",paloalto,0,synthetic_v4,non_compliant,easy
+CIS-3.1,Secure SNMP community naming and versioning is required,Verify CIS-3.1 compliance,"! RTR-83-88 Configuration
+!
+hostname RTR-83-88
+version 15.7
+snmp-server community public RO
+interface GigabitEthernet1/0
+ ip address 11.112.119.244 255.255.255.0
+ no shutdown
+!",paloalto,0,synthetic_v4,non_compliant,easy
+CIS-3.1,Secure SNMP community naming and versioning is required,Verify CIS-3.1 compliance,"! Generated: 2024-01-13
+!
+hostname RTR-48-83
+version 15.7
+snmp-server community security-team RO
+interface GigabitEthernet1/3
+ ip address 14.102.111.87 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet0/3
+ ip address 240.221.92.242 255.255.255.0
+ no shutdown
+!",paloalto,1,synthetic_v4,compliant,medium
+CIS-3.1,Secure SNMP community naming and versioning is required,Verify CIS-3.1 compliance,"! RTR-59-69 Configuration
+!
+hostname RTR-59-69
+version 15.7
+snmp-server community datacenter RO",paloalto,1,synthetic_v4,compliant,hard
+CIS-4.1,Inter-zone traffic control via security zone configuration is mandatory,Verify CIS-4.1 compliance,"! RTR-78-29 Configuration
+!
+hostname RTR-78-29
+version 15.7",juniper,0,synthetic_v4,non_compliant,hard
+CIS-4.1,Inter-zone traffic control via security zone configuration is mandatory,Verify CIS-4.1 compliance,"! RTR-56-72 Configuration
+!
+hostname RTR-56-72
+version 15.7
+interface GigabitEthernet0/2
+ ip address 94.45.188.117 255.255.255.0
+ no shutdown
+!",juniper,1,synthetic_v4,compliant,medium
+CIS-4.1,Inter-zone traffic control via security zone configuration is mandatory,Verify CIS-4.1 compliance,"! RTR-35-35 Configuration
+!
+hostname RTR-35-35
+version 15.7
+interface GigabitEthernet1/2
+ ip address 233.122.97.90 255.255.255.0
+ no shutdown
+!",juniper,0,synthetic_v4,non_compliant,medium
+CIS-4.1,Network Segmentation,Security zones must be configured to segment network traffic.,set security zones security-zone trust,juniper,0,v1_curated,curated_training,medium
+CIS-4.1,Inter-zone traffic control via security zone configuration is mandatory,Verify CIS-4.1 compliance,"! RTR-18-17 Configuration
+!
+hostname RTR-18-17
+version 15.7
+interface GigabitEthernet1/3
+ ip address 94.220.10.182 255.255.255.0
+ no shutdown
+!",juniper,1,synthetic_v4,compliant,hard
+CIS-4.1,Inter-zone traffic control via security zone configuration is mandatory,Verify CIS-4.1 compliance,"! Generated: 2024-01-16
+!
+hostname RTR-38-30
+version 15.7
+interface GigabitEthernet0/3
+ ip address 183.11.199.147 255.255.255.0
+ no shutdown
+!",juniper,0,synthetic_v4,non_compliant,medium
+CIS-4.1,Inter-zone traffic control via security zone configuration is mandatory,Verify CIS-4.1 compliance,"! RTR-44-24 Configuration
+!
+hostname RTR-44-24
+version 15.7
+interface GigabitEthernet0/3
+ ip address 124.138.235.138 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet1/1
+ ip address 66.36.129.32 255.255.255.0
+ no shutdown
+!",juniper,0,synthetic_v4,non_compliant,medium
+CIS-4.1,Inter-zone traffic control via security zone configuration is mandatory,Verify CIS-4.1 compliance,"! RTR-30-12 Configuration
+!
+hostname RTR-30-12
+version 15.7
+interface GigabitEthernet1/3
+ ip address 242.216.85.61 255.255.255.0
+ no shutdown
+!",juniper,0,synthetic_v4,non_compliant,easy
+CIS-4.1,Inter-zone traffic control via security zone configuration is mandatory,Verify CIS-4.1 compliance,"! RTR-36-14 Configuration
+!
+hostname RTR-36-14
+version 15.7",juniper,0,synthetic_v4,non_compliant,easy
+CIS-4.1,Inter-zone traffic control via security zone configuration is mandatory,Verify CIS-4.1 compliance,"! RTR-27-61 Configuration
+!
+hostname RTR-27-61
+version 15.7
+interface GigabitEthernet0/2
+ ip address 17.25.16.216 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet1/3
+ ip address 48.254.237.169 255.255.255.0
+ no shutdown
+!",paloalto,1,synthetic_v4,compliant,medium
+CIS-4.1,Inter-zone traffic control via security zone configuration is mandatory,Verify CIS-4.1 compliance,"! RTR-25-54 Configuration
+!
+hostname RTR-25-54
+version 15.7
+interface GigabitEthernet1/1
+ ip address 1.33.83.220 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet0/2
+ ip address 187.247.33.57 255.255.255.0
+ no shutdown
+!",paloalto,1,synthetic_v4,compliant,medium
+CIS-4.1,Inter-zone traffic control via security zone configuration is mandatory,Verify CIS-4.1 compliance,"! Generated: 2024-01-05
+!
+hostname RTR-6-6
+version 15.7",paloalto,1,synthetic_v4,compliant,hard
+CIS-4.1,Inter-zone traffic control via security zone configuration is mandatory,Verify CIS-4.1 compliance,"! RTR-46-66 Configuration
+!
+hostname RTR-46-66
+version 15.7",paloalto,1,synthetic_v4,compliant,medium
+CIS-4.1,Inter-zone traffic control via security zone configuration is mandatory,Verify CIS-4.1 compliance,"! Generated: 2024-01-16
+!
+hostname RTR-44-86
+version 15.7
+interface GigabitEthernet1/2
+ ip address 168.205.214.207 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet0/2
+ ip address 171.167.107.62 255.255.255.0
+ no shutdown
+!",paloalto,1,synthetic_v4,compliant,medium
+CIS-4.1,Inter-zone traffic control via security zone configuration is mandatory,Verify CIS-4.1 compliance,"! RTR-38-79 Configuration
+!
+hostname RTR-38-79
+version 15.7",paloalto,1,synthetic_v4,compliant,hard
+CIS-4.1,Inter-zone traffic control via security zone configuration is mandatory,Verify CIS-4.1 compliance,"! Generated: 2024-01-14
+!
+hostname RTR-58-31
+version 15.7",paloalto,0,synthetic_v4,non_compliant,easy
+CIS-4.1,Inter-zone traffic control via security zone configuration is mandatory,Verify CIS-4.1 compliance,"! RTR-74-30 Configuration
+!
+hostname RTR-74-30
+version 15.7
+interface GigabitEthernet1/2
+ ip address 77.19.117.172 255.255.255.0
+ no shutdown
+!",paloalto,0,synthetic_v4,non_compliant,hard
+CIS-4.1,Inter-zone traffic control via security zone configuration is mandatory,Verify CIS-4.1 compliance,"! Generated: 2024-01-04
+!
+hostname RTR-79-48
+version 15.7
+interface GigabitEthernet0/1
+ ip address 86.140.200.228 255.255.255.0
+ no shutdown
+!",paloalto,0,synthetic_v4,non_compliant,hard
+CIS-4.1,Security zones must be configured to enforce traffic segmentation,Verify CIS-4.1 compliance,"! ===========================================================================
+! R2 HSRP configuration  (router, c7200/IOSv)  -- STANDBY (lower priority)
+! ComputingForGeeks CCNA 200-301 lab: hsrp
+! https://computingforgeeks.com/ccna-labs-hsrp-configuration-on-gns3-and-packet-tracer/
+!
+! Group 1, HSRP version 2, same virtual IP 192.168.10.254.
+! R2 has priority 100 (default) + preempt, so it takes over only when R1 fails.
+! ===========================================================================
+enable
+configure terminal
+hostname R2
+interface GigabitEthernet0/0
+ ip address 192.168.10.2 255.255.255.0
+ standby version 2
+ standby 1 ip 192.168.10.254
+ standby 1 priority 100
+ standby 1 preempt
+ no shutdown
+ exit
+end
+write memory",cisco,0,real_derived_R2-hsrp.txt,mutated_from_R2-hsrp.txt_to_0,medium
+CIS-4.1,Inter-zone traffic control via security zone configuration is mandatory,Verify CIS-4.1 compliance,"! ===========================================================================
+! R1 HSRP configuration  (router, c7200/IOSv)  -- ACTIVE (higher priority)
+! ComputingForGeeks CCNA 200-301 lab: hsrp
+! https://computingforgeeks.com/ccna-labs-hsrp-configuration-on-gns3-and-packet-tracer/
+!
+! Group 1, HSRP version 2, virtual IP 192.168.10.254.
+! R1 has priority 110 + preempt, so it owns the active role and reclaims it
+! after a recovery.
+! ===========================================================================
+enable
+configure terminal
+hostname R1
+interface GigabitEthernet0/0
+ ip address 192.168.10.1 255.255.255.0
+ standby version 2
+ standby 1 ip 192.168.10.254
+ standby 1 priority 110
+ standby 1 preempt
+ no shutdown
+ exit
+end
+write memory",cisco,0,real_derived_R1-hsrp.txt,mutated_from_R1-hsrp.txt_to_0,medium
+CIS-4.1,Inter-zone traffic control via security zone configuration is mandatory,Verify CIS-4.1 compliance,"! Host10 - end device in VLAN 10 (a router acting as a host in the lab).
+! On a real PC this is just IP 10.10.10.10/24, gateway 10.10.10.1 (the Vlan10 SVI).
+enable
+configure terminal
+hostname Host10
+!
+interface GigabitEthernet0/0
+ ip address 10.10.10.10 255.255.255.0
+ no shutdown
+!
+ip route 0.0.0.0 0.0.0.0 10.10.10.1
+end
+write memory",cisco,0,real_derived_Host10-config.txt,mutated_from_Host10-config.txt_to_0,medium
+CIS-4.1,Zone-based firewall policies must separate network segments,Verify CIS-4.1 compliance,"! ===========================================================================
+! R1 HSRP configuration  (router, c7200/IOSv)  -- ACTIVE (higher priority)
+! ComputingForGeeks CCNA 200-301 lab: hsrp
+! https://computingforgeeks.com/ccna-labs-hsrp-configuration-on-gns3-and-packet-tracer/
+!
+! Group 1, HSRP version 2, virtual IP 192.168.10.254.
+! R1 has priority 110 + preempt, so it owns the active role and reclaims it
+! after a recovery.
+! ===========================================================================
+enable
+configure terminal
+hostname R1
+interface GigabitEthernet0/0
+ ip address 192.168.10.1 255.255.255.0
+ standby version 2
+ standby 1 ip 192.168.10.254
+ standby 1 priority 110
+ standby 1 preempt
+ no shutdown
+ exit
+end
+write memory",cisco,0,real_derived_R1-hsrp.txt,mutated_from_R1-hsrp.txt_to_0,medium
+CIS-4.1,Network segmentation through defined security zones is required,Verify CIS-4.1 compliance,"! ===========================================================================
+! R2 HSRP configuration  (router, c7200/IOSv)  -- STANDBY (lower priority)
+! ComputingForGeeks CCNA 200-301 lab: hsrp
+! https://computingforgeeks.com/ccna-labs-hsrp-configuration-on-gns3-and-packet-tracer/
+!
+! Group 1, HSRP version 2, same virtual IP 192.168.10.254.
+! R2 has priority 100 (default) + preempt, so it takes over only when R1 fails.
+! ===========================================================================
+enable
+configure terminal
+hostname R2
+interface GigabitEthernet0/0
+ ip address 192.168.10.2 255.255.255.0
+ standby version 2
+ standby 1 ip 192.168.10.254
+ standby 1 priority 100
+ standby 1 preempt
+ no shutdown
+ exit
+end
+write memory",cisco,0,real_derived_R2-hsrp.txt,mutated_from_R2-hsrp.txt_to_0,medium
+CIS-4.1,Network segmentation through defined security zones is required,Verify CIS-4.1 compliance,"! ===========================================================================
+! R2 ipv6-static-routing lab  (router, c7200 / IOS 15.2)
+! ComputingForGeeks CCNA 200-301 lab: ipv6-static-routing
+! https://computingforgeeks.com/cisco-ipv6-static-routes-configuration/
+!
+! Two links to R1: primary 2001:DB8:12::/64 (Gi0/0), backup 2001:DB8:13::/64
+! (Gi1/0). R2 reaches R1's network 2001:DB8:1::/64 via a fully-specified
+! link-local primary static (AD 1) and a floating static (AD 200), so the return
+! path also fails over when the primary link is shut. Run the matching R1 file.
+! ===========================================================================
+enable
+configure terminal
+hostname R2
+ipv6 unicast-routing
+interface Loopback1
+ ipv6 address 2001:DB8:2::1/64
+ exit
+interface GigabitEthernet0/0
+ ipv6 address 2001:DB8:12::2/64
+ ipv6 address FE80::2 link-local
+ no shutdown
+ exit
+interface GigabitEthernet1/0
+ ipv6 address 2001:DB8:13::2/64
+ ipv6 address FE80::20 link-local
+ no shutdown
+ exit
+ipv6 route 2001:DB8:1::/64 GigabitEthernet0/0 FE80::1
+ipv6 route 2001:DB8:1::/64 GigabitEthernet1/0 FE80::10 200
+end
+write memory",cisco,0,real_derived_R2-config.txt,mutated_from_R2-config.txt_to_0,medium
+CIS-4.1,Inter-zone traffic control via security zone configuration is mandatory,Verify CIS-4.1 compliance,"! ===========================================================================
+! R1 ipv6-static-routing lab  (router, c7200 / IOS 15.2)
+! ComputingForGeeks CCNA 200-301 lab: ipv6-static-routing
+! https://computingforgeeks.com/cisco-ipv6-static-routes-configuration/
+!
+! Two links to R2: primary 2001:DB8:12::/64 (Gi0/0), backup 2001:DB8:13::/64
+! (Gi1/0). R1 reaches R2's network 2001:DB8:2::/64 via a fully-specified
+! link-local primary static (AD 1) and a floating static (AD 200) over the
+! backup, plus a ::/0 default route. Run the matching R2 file on the other router.
+!
+! Failover demo: shut Gi0/0 on BOTH routers, then re-run
+! ""show ipv6 route 2001:DB8:2::/64"" and ping 2001:DB8:2::1 to watch the floating
+! route ([200]) take over the backup link.
+! ===========================================================================
+enable
+configure terminal
+hostname R1
+ipv6 unicast-routing
+interface Loopback1
+ ipv6 address 2001:DB8:1::1/64
+ exit
+interface GigabitEthernet0/0
+ ipv6 address 2001:DB8:12::1/64
+ ipv6 address FE80::1 link-local
+ no shutdown
+ exit
+interface GigabitEthernet1/0
+ ipv6 address 2001:DB8:13::1/64
+ ipv6 address FE80::10 link-local
+ no shutdown
+ exit
+ipv6 route 2001:DB8:2::/64 GigabitEthernet0/0 FE80::2
+ipv6 route 2001:DB8:2::/64 GigabitEthernet1/0 FE80::20 200
+ipv6 route ::/0 2001:DB8:12::2
+end
+write memory
+
+interface GigabitEthernet0/1
+ description LAN Interface
+ ip address 137.117.181.19 255.255.255.0
+ no shutdown
+!",cisco,0,real_derived_R1-config.txt,mutated_from_R1-config.txt_to_0,medium

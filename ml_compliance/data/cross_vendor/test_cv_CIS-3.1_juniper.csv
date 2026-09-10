@@ -1,0 +1,5 @@
+rule_id,policy,security_intent,config,vendor,label,source,reason,difficulty
+CIS-3.1,Secure SNMP Configuration,SNMP must use secure community names (not public/private) and versions.,set snmp community secure { authorization read-write; },juniper,1,synthetic,secure_community,easy
+CIS-3.1,Secure SNMP Configuration,SNMP must use secure community names (not public/private) and versions.,set snmp community custom { authorization read-only; },juniper,1,synthetic,secure_community,easy
+CIS-3.1,Secure SNMP Configuration,SNMP must use secure community names (not public/private) and versions.,set snmp community public { authorization read-only; },juniper,0,synthetic,default_community,easy
+CIS-3.1,Secure SNMP Configuration,SNMP must use secure community names (not public/private) and versions.,set snmp community private { authorization read-write; },juniper,0,synthetic,default_community,easy

@@ -1,0 +1,8 @@
+rule_id,policy,security_intent,config,vendor,label,source,difficulty
+CIS-1.2,Password Encryption Required,User passwords must be encrypted using secure hashing algorithms,admin user admin password-hash $1$admin123$hash,paloalto,0,custom_generated,medium
+CIS-1.2,Password Encryption Required,User passwords must be encrypted using secure hashing algorithms,admin user operator password-hash $1$operator123$hash,paloalto,0,custom_generated,medium
+CIS-1.2,Password Encryption Required,User passwords must be encrypted using secure hashing algorithms,admin user service password-hash $5$rounds=65600$service$hash,paloalto,0,custom_generated,hard
+CIS-1.2,Password Encryption Required,User passwords must be encrypted using secure hashing algorithms,admin user admin password plaintext,paloalto,0,custom_generated,easy
+CIS-1.2,Password Encryption Required,User passwords must be encrypted using secure hashing algorithms,admin user operator password plaintext,paloalto,0,custom_generated,easy
+CIS-1.2,Password Encryption Required,User passwords must be encrypted using secure hashing algorithms,"admin user admin password-hash $1$admin123$hash
+admin user guest password plaintext",paloalto,0,custom_generated,hard

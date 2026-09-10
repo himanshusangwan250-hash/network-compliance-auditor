@@ -1,0 +1,11 @@
+rule_id,policy,security_intent,config,vendor,label,source,difficulty
+CIS-2.1,Syslog Configuration Required,Remote syslog logging must be configured for audit trails,logging host 192.0.2.10,cisco,0,custom_generated,easy
+CIS-2.1,Syslog Configuration Required,Remote syslog logging must be configured for audit trails,"logging host 10.1.1.5
+logging trap informational",cisco,0,custom_generated,medium
+CIS-2.1,Syslog Configuration Required,Remote syslog logging must be configured for audit trails,"logging host 172.16.0.2
+logging trap debugging",cisco,0,custom_generated,medium
+CIS-2.1,Syslog Configuration Required,Remote syslog logging must be configured for audit trails,"logging host 192.168.1.100
+logging host 192.168.1.101",cisco,0,custom_generated,easy
+CIS-2.1,Syslog Configuration Required,Remote syslog logging must be configured for audit trails,! logging host 192.0.2.10,cisco,0,custom_generated,easy
+CIS-2.1,Syslog Configuration Required,Remote syslog logging must be configured for audit trails,logging host 0.0.0.0,cisco,0,custom_generated,easy
+CIS-2.1,Syslog Configuration Required,Remote syslog logging must be configured for audit trails,logging trap informational,cisco,0,custom_generated,medium

@@ -1,0 +1,7 @@
+rule_id,policy,security_intent,config,vendor,label,source,difficulty
+CIS-2.2,NTP Configuration Required,Network Time Protocol servers must be configured for accurate timestamps,set system ntp server 10.0.0.1,juniper,0,custom_generated,easy
+CIS-2.2,NTP Configuration Required,Network Time Protocol servers must be configured for accurate timestamps,set system ntp server 192.168.100.5,juniper,0,custom_generated,easy
+CIS-2.2,NTP Configuration Required,Network Time Protocol servers must be configured for accurate timestamps,"set system ntp server 172.16.10.2
+set system ntp server 172.16.10.3",juniper,0,custom_generated,medium
+CIS-2.2,NTP Configuration Required,Network Time Protocol servers must be configured for accurate timestamps,# set system ntp server 10.0.0.1,juniper,0,custom_generated,easy
+CIS-2.2,NTP Configuration Required,Network Time Protocol servers must be configured for accurate timestamps,set system ntp server 0.0.0.0,juniper,0,custom_generated,easy

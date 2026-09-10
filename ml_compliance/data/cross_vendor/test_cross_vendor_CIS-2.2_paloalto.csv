@@ -1,0 +1,7 @@
+rule_id,policy,security_intent,config,vendor,label,source,difficulty
+CIS-2.2,NTP Configuration Required,Network Time Protocol servers must be configured for accurate timestamps,set deviceconfig setting ntp server primary 10.0.0.1,paloalto,0,custom_generated,easy
+CIS-2.2,NTP Configuration Required,Network Time Protocol servers must be configured for accurate timestamps,set deviceconfig setting ntp server primary 192.168.100.5,paloalto,0,custom_generated,easy
+CIS-2.2,NTP Configuration Required,Network Time Protocol servers must be configured for accurate timestamps,"set deviceconfig setting ntp server primary 172.16.10.2
+set deviceconfig setting ntp server secondary 172.16.10.3",paloalto,0,custom_generated,medium
+CIS-2.2,NTP Configuration Required,Network Time Protocol servers must be configured for accurate timestamps,# set deviceconfig setting ntp server primary 10.0.0.1,paloalto,0,custom_generated,easy
+CIS-2.2,NTP Configuration Required,Network Time Protocol servers must be configured for accurate timestamps,set deviceconfig setting ntp server primary 0.0.0.0,paloalto,0,custom_generated,easy

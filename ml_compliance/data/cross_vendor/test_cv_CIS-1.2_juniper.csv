@@ -1,0 +1,3 @@
+rule_id,policy,security_intent,config,vendor,label,source,reason,difficulty
+CIS-1.2,Password Encryption Required,All user passwords must be encrypted using secure hashing.,"root-authentication { encrypted-password ""$1$root123$hash""; }",juniper,1,synthetic,root_encrypted,medium
+CIS-1.2,Password Encryption Required,All user passwords must be encrypted using secure hashing.,"root-authentication { password ""root123""; }",juniper,0,synthetic,root_plaintext,medium

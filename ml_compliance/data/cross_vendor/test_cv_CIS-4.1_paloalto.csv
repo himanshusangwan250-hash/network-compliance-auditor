@@ -1,0 +1,5 @@
+rule_id,policy,security_intent,config,vendor,label,source,reason,difficulty
+CIS-4.1,Network Segmentation,Security zones must be configured to segment network traffic.,set deviceconfig setting zone trust network layer3 ethernet1/1,paloalto,1,synthetic,valid_zone,medium
+CIS-4.1,Network Segmentation,Security zones must be configured to segment network traffic.,set deviceconfig setting zone untrust network layer3 ethernet1/2,paloalto,1,synthetic,valid_zone,medium
+CIS-4.1,Network Segmentation,Security zones must be configured to segment network traffic.,set deviceconfig setting zone trust,paloalto,0,synthetic,incomplete_zone,medium
+CIS-4.1,Network Segmentation,Security zones must be configured to segment network traffic.,set deviceconfig setting zone untrusted,paloalto,0,synthetic,empty_zone,medium

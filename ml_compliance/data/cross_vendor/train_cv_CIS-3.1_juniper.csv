@@ -1,0 +1,9 @@
+rule_id,policy,security_intent,config,vendor,label,source,reason,difficulty
+CIS-3.1,Secure SNMP Configuration,SNMP must use secure community names (not public/private) and versions.,snmp-server community secure RW,cisco,1,synthetic,secure_community,easy
+CIS-3.1,Secure SNMP Configuration,SNMP must use secure community names (not public/private) and versions.,snmp-server community custom RW,cisco,1,synthetic,secure_community,easy
+CIS-3.1,Secure SNMP Configuration,SNMP must use secure community names (not public/private) and versions.,snmp-server community public RO,cisco,0,synthetic,default_community,easy
+CIS-3.1,Secure SNMP Configuration,SNMP must use secure community names (not public/private) and versions.,snmp-server community private RW,cisco,0,synthetic,default_community,easy
+CIS-3.1,Secure SNMP Configuration,SNMP must use secure community names (not public/private) and versions.,set deviceconfig setting snmp community secure version v3,paloalto,1,synthetic,secure_community_v3,easy
+CIS-3.1,Secure SNMP Configuration,SNMP must use secure community names (not public/private) and versions.,set deviceconfig setting snmp community custom version v3,paloalto,1,synthetic,secure_community_v3,easy
+CIS-3.1,Secure SNMP Configuration,SNMP must use secure community names (not public/private) and versions.,set deviceconfig setting snmp community public version v2c,paloalto,0,synthetic,default_community_v2,easy
+CIS-3.1,Secure SNMP Configuration,SNMP must use secure community names (not public/private) and versions.,set deviceconfig setting snmp community private version v2c,paloalto,0,synthetic,default_community_v2,easy

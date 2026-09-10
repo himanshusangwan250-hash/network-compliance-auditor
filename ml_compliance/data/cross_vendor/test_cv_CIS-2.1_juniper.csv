@@ -1,0 +1,6 @@
+rule_id,policy,security_intent,config,vendor,label,source,reason,difficulty
+CIS-2.1,Syslog Configuration Required,Remote syslog logging must be configured for audit trails.,set system syslog host 192.0.2.10 any any,juniper,1,synthetic,valid_host,easy
+CIS-2.1,Syslog Configuration Required,Remote syslog logging must be configured for audit trails.,set system syslog host 10.1.1.5 any critical,juniper,1,synthetic,valid_host_with_severity,medium
+CIS-2.1,Syslog Configuration Required,Remote syslog logging must be configured for audit trails.,# set system syslog host 192.0.2.10 any any,juniper,0,synthetic,commented_out,easy
+CIS-2.1,Syslog Configuration Required,Remote syslog logging must be configured for audit trails.,set system syslog host 0.0.0.0 any any,juniper,0,synthetic,invalid_host,easy
+CIS-2.1,Syslog Configuration Required,Remote syslog logging must be configured for audit trails.,set system syslog host,juniper,0,synthetic,incomplete,medium

@@ -1,0 +1,15 @@
+rule_id,policy,security_intent,config,vendor,label,source,difficulty
+CIS-2.2,NTP Configuration Required,Network Time Protocol servers must be configured for accurate timestamps,ntp server 10.0.0.1,cisco,0,custom_generated,easy
+CIS-2.2,NTP Configuration Required,Network Time Protocol servers must be configured for accurate timestamps,ntp server 192.168.100.5,cisco,0,custom_generated,easy
+CIS-2.2,NTP Configuration Required,Network Time Protocol servers must be configured for accurate timestamps,"ntp server 172.16.10.2
+ntp server 172.16.10.3",cisco,0,custom_generated,medium
+CIS-2.2,NTP Configuration Required,Network Time Protocol servers must be configured for accurate timestamps,"ntp server 203.0.113.1
+ntp server 203.0.113.2",cisco,0,custom_generated,medium
+CIS-2.2,NTP Configuration Required,Network Time Protocol servers must be configured for accurate timestamps,! ntp server 10.0.0.1,cisco,0,custom_generated,easy
+CIS-2.2,NTP Configuration Required,Network Time Protocol servers must be configured for accurate timestamps,ntp server 0.0.0.0,cisco,0,custom_generated,easy
+CIS-2.2,NTP Configuration Required,Network Time Protocol servers must be configured for accurate timestamps,set deviceconfig setting ntp server primary 10.0.0.1,paloalto,0,custom_generated,easy
+CIS-2.2,NTP Configuration Required,Network Time Protocol servers must be configured for accurate timestamps,set deviceconfig setting ntp server primary 192.168.100.5,paloalto,0,custom_generated,easy
+CIS-2.2,NTP Configuration Required,Network Time Protocol servers must be configured for accurate timestamps,"set deviceconfig setting ntp server primary 172.16.10.2
+set deviceconfig setting ntp server secondary 172.16.10.3",paloalto,0,custom_generated,medium
+CIS-2.2,NTP Configuration Required,Network Time Protocol servers must be configured for accurate timestamps,# set deviceconfig setting ntp server primary 10.0.0.1,paloalto,0,custom_generated,easy
+CIS-2.2,NTP Configuration Required,Network Time Protocol servers must be configured for accurate timestamps,set deviceconfig setting ntp server primary 0.0.0.0,paloalto,0,custom_generated,easy

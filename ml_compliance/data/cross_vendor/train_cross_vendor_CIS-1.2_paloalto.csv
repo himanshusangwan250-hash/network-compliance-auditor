@@ -1,0 +1,19 @@
+rule_id,policy,security_intent,config,vendor,label,source,difficulty
+CIS-1.2,Password Encryption Required,User passwords must be encrypted using secure hashing algorithms,username admin privilege 15 secret 5 $1$m8R$QXvGOZTpQVFqLkPzVc7pY/,cisco,0,custom_generated,easy
+CIS-1.2,Password Encryption Required,User passwords must be encrypted using secure hashing algorithms,username operator privilege 1 secret 5 $1$abc123$QXvGOZTpQVFqLkPzVc7pY/,cisco,0,custom_generated,easy
+CIS-1.2,Password Encryption Required,User passwords must be encrypted using secure hashing algorithms,enable secret 5 $1$m8R$QXvGOZTpQVFqLkPzVc7pY/,cisco,0,custom_generated,medium
+CIS-1.2,Password Encryption Required,User passwords must be encrypted using secure hashing algorithms,"service password-encryption
+username admin privilege 15 secret 5 $1$test123$hashvalue/",cisco,0,custom_generated,hard
+CIS-1.2,Password Encryption Required,User passwords must be encrypted using secure hashing algorithms,username secureuser privilege 1 secret 5 $5$rounds=65600$test$hashvalue/,cisco,0,custom_generated,hard
+CIS-1.2,Password Encryption Required,User passwords must be encrypted using secure hashing algorithms,username admin privilege 15 password 0 cisco123,cisco,0,custom_generated,easy
+CIS-1.2,Password Encryption Required,User passwords must be encrypted using secure hashing algorithms,username operator password 0 cleartext123,cisco,0,custom_generated,easy
+CIS-1.2,Password Encryption Required,User passwords must be encrypted using secure hashing algorithms,"username admin privilege 1 secret 5 $1$test123$hash/
+username guest privilege 1 password 0 weakpass",cisco,0,custom_generated,hard
+CIS-1.2,Password Encryption Required,User passwords must be encrypted using secure hashing algorithms,enable password 0 enablepass123,cisco,0,custom_generated,medium
+CIS-1.2,Password Encryption Required,User passwords must be encrypted using secure hashing algorithms,"user admin { uid 2000; class super-user; encrypted-password ""$1$abc123$hash""; }",juniper,0,custom_generated,medium
+CIS-1.2,Password Encryption Required,User passwords must be encrypted using secure hashing algorithms,"user operator { uid 2100; class read-only; encrypted-password ""$1$def456$hash""; }",juniper,0,custom_generated,medium
+CIS-1.2,Password Encryption Required,User passwords must be encrypted using secure hashing algorithms,"root-authentication { encrypted-password ""$1$root123$hash""; }",juniper,0,custom_generated,hard
+CIS-1.2,Password Encryption Required,User passwords must be encrypted using secure hashing algorithms,"user admin { uid 2000; class super-user; password ""cleartext123""; }",juniper,0,custom_generated,easy
+CIS-1.2,Password Encryption Required,User passwords must be encrypted using secure hashing algorithms,"user operator { uid 2100; class read-only; password ""weakpass""; }",juniper,0,custom_generated,easy
+CIS-1.2,Password Encryption Required,User passwords must be encrypted using secure hashing algorithms,"user admin { uid 2000; class super-user; encrypted-password ""$1$abc123$hash""; }
+user guest { uid 3100; class operator; password ""plaintext""; }",juniper,0,custom_generated,hard

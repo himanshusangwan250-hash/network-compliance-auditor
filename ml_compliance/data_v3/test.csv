@@ -1,0 +1,3568 @@
+rule_id,policy,security_intent,config,vendor,label,source,reason,difficulty
+CIS-1.1,Strong authentication requires unique user identities,Verify CIS-1.1 compliance,"! SW-67-DIST-41 Configuration
+!
+hostname SW-67-DIST-41
+version 15.7
+username network_engineer privilege 15 secret 5 $1$6147$hash
+interface Vlan14
+ description DMZ Interface
+ ip address 238.37.4.118 255.255.255.0
+!
+interface TenGigabitEthernet16/8
+ description LAN Interface
+ ip address 239.178.35.226 255.255.255.0
+ no shutdown
+!
+interface TenGigabitEthernet14/17
+ description DMZ Interface
+ ip address 157.4.153.239 255.255.255.0
+ no shutdown
+!",cisco,1,synthetic_v3,compliant,hard
+CIS-1.1,Strong authentication requires unique user identities,Verify CIS-1.1 compliance,"! Generated: 2024-01-19
+!
+hostname ASA-93,85-FW-78-DMZ-20
+version 15.7
+username site_admin privilege 15 secret 5 $1$3317$hash
+username infrastructure_admin privilege 1 secret 5 $1$7421$hash2
+router ospf 1
+ network 31.158.192.168/24 area 0
+!",cisco,1,synthetic_v3,compliant,medium
+CIS-1.1,Strong authentication requires unique user identities,Verify CIS-1.1 compliance,"! Generated: 2024-01-09
+!
+hostname FW-72-EDGE-16
+version 15.7
+username operator privilege 15 secret 5 $1$8311$hash
+interface Loopback6
+ description WAN Interface
+ ip address 35.37.231.45 255.255.255.252
+ no shutdown
+!
+interface Vlan21
+ description DMZ Interface
+ ip address 182.33.148.229 255.255.255.252
+ no shutdown
+!
+interface TenGigabitEthernet11/16
+ description LAN Interface
+ ip address 32.102.71.61 255.255.255.252
+!
+router ospf 1
+ network 104.239.66.44/24 area 0
+!",cisco,0,synthetic_v3,non_compliant,hard
+CIS-1.1,Strong authentication requires unique user identities,Verify CIS-1.1 compliance,"! RTR-65,90,87-CORE-56 Configuration
+!
+hostname RTR-65,90,87-CORE-56
+version 15.7
+username root privilege 15 secret 5 $1$2753$hash
+username test privilege 1 password 0 weakpass",cisco,0,synthetic_v3,non_compliant,medium
+CIS-1.1,Strong authentication requires unique user identities,Verify CIS-1.1 compliance,"! RTR-18,97,53-CORE-8 Configuration
+!
+hostname RTR-18,97,53-CORE-8
+version 15.7
+username manager privilege 15 secret 5 $1$3078$hash
+username root privilege 1 password 0 weakpass
+router ospf 1
+ network 73.201.250.72/24 area 0
+!",cisco,0,synthetic_v3,non_compliant,hard
+CIS-1.1,Strong authentication requires unique user identities,Verify CIS-1.1 compliance,"! RTR-97,4,32-CORE-26 Configuration
+!
+hostname RTR-97,4,32-CORE-26
+version 15.7
+username platform_eng privilege 15 secret 5 $1$3496$hash
+interface TenGigabitEthernet14/22
+ description DMZ Interface
+ ip address 197.188.85.156 255.255.255.0
+ no shutdown
+!",cisco,1,synthetic_v3,compliant,hard
+CIS-1.1,Strong authentication requires unique user identities,Verify CIS-1.1 compliance,"! FW-35-EDGE-82 Configuration
+!
+hostname FW-35-EDGE-82
+version 15.7
+username network_engineer privilege 15 secret 5 $1$6313$hash
+username netadmin privilege 1 secret 5 $1$4752$hash2
+interface Loopback8
+ description WAN Interface
+ ip address 55.161.108.168 255.255.255.252
+ no shutdown
+!
+interface Loopback4
+ description DMZ Interface
+ ip address 36.126.134.192 255.255.255.252
+ no shutdown
+!",cisco,1,synthetic_v3,compliant,medium
+CIS-1.1,Strong authentication requires unique user identities,Verify CIS-1.1 compliance,"! Generated: 2024-01-04
+!
+hostname FW-37-EDGE-69
+version 15.7
+username guest privilege 15 secret 5 $1$3194$hash
+username operator privilege 1 password 0 weakpass
+interface Vlan1
+ description Management Interface
+ ip address 14.99.185.142 255.255.255.252
+!
+interface Loopback24
+ description DMZ Interface
+ ip address 212.60.65.250 255.255.255.0
+ no shutdown
+!
+router ospf 1
+ network 96.187.73.101/24 area 0
+!",cisco,0,synthetic_v3,non_compliant,hard
+CIS-1.1,Strong authentication requires unique user identities,Verify CIS-1.1 compliance,"! SW-27-DIST-20 Configuration
+!
+hostname SW-27-DIST-20
+version 15.7
+username guest privilege 15 secret 5 $1$2083$hash
+interface GigabitEthernet7/2
+ description Management Interface
+ ip address 30.232.28.80 255.255.255.0
+!
+router ospf 1
+ network 12.83.254.177/24 area 0
+!",cisco,0,synthetic_v3,non_compliant,easy
+CIS-1.1,Strong authentication requires unique user identities,Verify CIS-1.1 compliance,"! SW-12-DIST-83 Configuration
+!
+hostname SW-12-DIST-83
+version 15.7
+username cloud_admin privilege 15 secret 5 $1$6928$hash
+interface Vlan24
+ description Management Interface
+ ip address 50.115.70.40 255.255.255.0
+!
+router ospf 1
+ network 139.19.172.67/24 area 0
+!",cisco,1,synthetic_v3,compliant,easy
+CIS-1.1,Strong authentication requires unique user identities,Verify CIS-1.1 compliance,"! RTR-81,66,74-CORE-31 Configuration
+!
+hostname RTR-81,66,74-CORE-31
+version 15.7
+username infrastructure_admin privilege 15 secret 5 $1$8032$hash
+interface Loopback5
+ description WAN Interface
+ ip address 135.184.34.245 255.255.255.0
+ no shutdown
+!
+interface Loopback1
+ description Management Interface
+ ip address 252.191.129.192 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet11/7
+ description WAN Interface
+ ip address 198.170.68.12 255.255.255.252
+ no shutdown
+!
+router ospf 1
+ network 54.237.245.93/24 area 0
+!",cisco,1,synthetic_v3,compliant,hard
+CIS-1.1,Strong authentication requires unique user identities,Verify CIS-1.1 compliance,"! Generated: 2024-01-05
+!
+hostname FW-60-EDGE-27
+version 15.7
+username cisco privilege 15 secret 5 $1$6231$hash
+username manager privilege 1 password 0 weakpass
+interface TenGigabitEthernet24/11
+ description WAN Interface
+ ip address 82.123.238.32 255.255.255.252
+ no shutdown
+!
+interface TenGigabitEthernet3/1
+ description DMZ Interface
+ ip address 243.196.214.64 255.255.255.0
+ no shutdown
+!
+router ospf 1
+ network 90.97.81.255/24 area 0
+!",cisco,0,synthetic_v3,non_compliant,medium
+CIS-1.1,Strong authentication requires unique user identities,Verify CIS-1.1 compliance,"! Generated: 2024-01-05
+!
+hostname SW-93-DIST-34
+version 15.7
+username operator privilege 15 secret 5 $1$5403$hash
+username admin privilege 1 password 0 weakpass
+interface Vlan13
+ description DMZ Interface
+ ip address 135.32.134.183 255.255.255.0
+ no shutdown
+!
+router ospf 1
+ network 24.255.85.188/24 area 0
+!",cisco,0,synthetic_v3,non_compliant,hard
+CIS-1.1,Strong authentication requires unique user identities,Verify CIS-1.1 compliance,"! FW-37-EDGE-87 Configuration
+!
+hostname FW-37-EDGE-87
+version 15.7
+username ops_team privilege 15 secret 5 $1$8237$hash
+username platform_eng privilege 1 secret 5 $1$5901$hash2
+interface Vlan14
+ description DMZ Interface
+ ip address 51.196.247.28 255.255.255.0
+ no shutdown
+!
+interface Vlan18
+ description DMZ Interface
+ ip address 180.151.11.251 255.255.255.252
+!
+router ospf 1
+ network 22.254.146.117/24 area 0
+!",cisco,1,synthetic_v3,compliant,easy
+CIS-1.1,Strong authentication requires unique user identities,Verify CIS-1.1 compliance,"! SW-36-DIST-17 Configuration
+!
+hostname SW-36-DIST-17
+version 15.7
+username test privilege 15 secret 5 $1$9740$hash
+interface TenGigabitEthernet5/21
+ description DMZ Interface
+ ip address 216.21.14.21 255.255.255.0
+ no shutdown
+!
+interface Vlan20
+ description LAN Interface
+ ip address 197.213.15.128 255.255.255.252
+ no shutdown
+!
+interface Vlan15
+ description LAN Interface
+ ip address 207.207.152.117 255.255.255.0
+ no shutdown
+!",cisco,0,synthetic_v3,non_compliant,hard
+CIS-1.1,Strong authentication requires unique user identities,Verify CIS-1.1 compliance,"! Generated: 2024-01-09
+!
+hostname FW-67-EDGE-84
+version 15.7
+username security_ops privilege 15 secret 5 $1$8141$hash
+username devops privilege 1 secret 5 $1$2494$hash2
+interface Vlan10
+ description WAN Interface
+ ip address 220.82.168.106 255.255.255.252
+!
+interface Loopback24
+ description WAN Interface
+ ip address 117.45.161.65 255.255.255.252
+!
+router ospf 1
+ network 141.0.236.211/24 area 0
+!",cisco,1,synthetic_v3,compliant,easy
+CIS-1.1,Strong authentication requires unique user identities,Verify CIS-1.1 compliance,"! SW-39-DIST-29 Configuration
+!
+hostname SW-39-DIST-29
+version 15.7
+username cisco privilege 15 secret 5 $1$5735$hash
+username operator privilege 1 password 0 weakpass
+interface Loopback11
+ description DMZ Interface
+ ip address 74.62.194.230 255.255.255.252
+ no shutdown
+!
+interface TenGigabitEthernet9/1
+ description DMZ Interface
+ ip address 245.40.177.237 255.255.255.252
+ no shutdown
+!
+router ospf 1
+ network 64.103.138.139/24 area 0
+!",cisco,0,synthetic_v3,non_compliant,medium
+CIS-1.1,Strong authentication requires unique user identities,Verify CIS-1.1 compliance,"! Generated: 2024-01-26
+!
+hostname ASA-81,54-FW-49-DMZ-58
+version 15.7
+username manager privilege 15 secret 5 $1$2525$hash
+interface Vlan14
+ description Management Interface
+ ip address 84.1.47.188 255.255.255.252
+ no shutdown
+!
+interface Vlan2
+ description Management Interface
+ ip address 56.219.108.127 255.255.255.252
+ no shutdown
+!
+interface Vlan10
+ description LAN Interface
+ ip address 145.248.175.229 255.255.255.0
+!
+router ospf 1
+ network 127.8.63.80/24 area 0
+!",cisco,0,synthetic_v3,non_compliant,hard
+CIS-1.1,Unique administrative accounts must replace default credentials,Verify CIS-1.1 compliance,"# Date: 2024-01-04
+
+system {
+    host-name 55-SRX-12,38-MX-85,81-EX-77;
+    login {
+        user netadmin {
+            uid 15562;
+            class super-user;
+            authentication {
+                encrypted-password ""$1$3798$hash"";
+            }
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,medium
+CIS-1.1,Unique administrative accounts must replace default credentials,Verify CIS-1.1 compliance,"# 68-SRX-31,54-MX-63,8-EX-19 Configuration
+
+system {
+    host-name 68-SRX-31,54-MX-63,8-EX-19;
+    login {
+        user ops_team {
+            uid 4877;
+            class super-user;
+            authentication {
+                encrypted-password ""$1$4792$hash"";
+            }
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,easy
+CIS-1.1,Unique administrative accounts must replace default credentials,Verify CIS-1.1 compliance,"# Date: 2024-01-13
+
+system {
+    host-name 94-Junos-54,22-ROUTER-53;
+    login {
+        user noc_analyst {
+            uid 37784;
+            class super-user;
+            authentication {
+                encrypted-password ""$1$7149$hash"";
+            }
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,medium
+CIS-1.1,Unique administrative accounts must replace default credentials,Verify CIS-1.1 compliance,"# 57-Junos-74,58-ROUTER-12 Configuration
+
+system {
+    host-name 57-Junos-74,58-ROUTER-12;
+    login {
+        user guest {
+            class super-user;
+            authentication {
+                encrypted-password ""$1$6178$hash"";
+            }
+        }
+    }
+}",juniper,0,synthetic_v3,non_compliant,easy
+CIS-1.1,Unique administrative accounts must replace default credentials,Verify CIS-1.1 compliance,"# 66-SRX-10,93-MX-93,13-EX-33 Configuration
+
+system {
+    host-name 66-SRX-10,93-MX-93,13-EX-33;
+    login {
+        user guest {
+            class super-user;
+            authentication {
+                encrypted-password ""$1$5850$hash"";
+            }
+        }
+    }
+}",juniper,0,synthetic_v3,non_compliant,easy
+CIS-1.1,Unique administrative accounts must replace default credentials,Verify CIS-1.1 compliance,"# 41-SRX-34,14-MX-10,44-EX-22 Configuration
+
+system {
+    host-name 41-SRX-34,14-MX-10,44-EX-22;
+    login {
+        user security_ops {
+            uid 49971;
+            class super-user;
+            authentication {
+                encrypted-password ""$1$2228$hash"";
+            }
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,medium
+CIS-1.1,Unique administrative accounts must replace default credentials,Verify CIS-1.1 compliance,"# 67-SRX-98,31-MX-8,77-EX-52 Configuration
+
+system {
+    host-name 67-SRX-98,31-MX-8,77-EX-52;
+    login {
+        user operator {
+            class super-user;
+            authentication {
+                encrypted-password ""$1$3292$hash"";
+            }
+        }
+    }
+}",juniper,0,synthetic_v3,non_compliant,easy
+CIS-1.1,Unique administrative accounts must replace default credentials,Verify CIS-1.1 compliance,"# 84-Junos-41,23-ROUTER-91 Configuration
+
+system {
+    host-name 84-Junos-41,23-ROUTER-91;
+    login {
+        user regional_admin {
+            uid 60300;
+            class super-user;
+            authentication {
+                encrypted-password ""$1$6846$hash"";
+            }
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,hard
+CIS-1.1,Unique administrative accounts must replace default credentials,Verify CIS-1.1 compliance,"# 52-Junos-59,35-ROUTER-50 Configuration
+
+system {
+    host-name 52-Junos-59,35-ROUTER-50;
+    login {
+        user guest {
+            class super-user;
+            authentication {
+                encrypted-password ""$1$7909$hash"";
+            }
+        }
+    }
+}",juniper,0,synthetic_v3,non_compliant,easy
+CIS-1.1,Unique administrative accounts must replace default credentials,Verify CIS-1.1 compliance,"# Date: 2024-01-20
+
+system {
+    host-name 85-Junos-13,85-ROUTER-67;
+    login {
+        user operator {
+            class super-user;
+            authentication {
+                encrypted-password ""$1$3247$hash"";
+            }
+        }
+    }
+}",juniper,0,synthetic_v3,non_compliant,medium
+CIS-1.1,Unique administrative accounts must replace default credentials,Verify CIS-1.1 compliance,"# Date: 2024-01-18
+
+system {
+    host-name 52-Junos-55,62-ROUTER-50;
+    login {
+        user root {
+            class super-user;
+            authentication {
+                encrypted-password ""$1$7112$hash"";
+            }
+        }
+    }
+}",juniper,0,synthetic_v3,non_compliant,hard
+CIS-1.1,Unique administrative accounts must replace default credentials,Verify CIS-1.1 compliance,"# Date: 2024-01-19
+
+system {
+    host-name 45-FIREWALL-40,17-SWITCH-14;
+    login {
+        user cisco {
+            class super-user;
+            authentication {
+                encrypted-password ""$1$3736$hash"";
+            }
+        }
+    }
+}",juniper,0,synthetic_v3,non_compliant,easy
+CIS-1.1,Unique administrative accounts must replace default credentials,Verify CIS-1.1 compliance,"# Date: 2024-01-20
+
+system {
+    host-name 61-SRX-17,83-MX-23,77-EX-2;
+    login {
+        user manager {
+            class super-user;
+            authentication {
+                encrypted-password ""$1$6004$hash"";
+            }
+        }
+    }
+}",juniper,0,synthetic_v3,non_compliant,hard
+CIS-1.1,Unique administrative accounts must replace default credentials,Verify CIS-1.1 compliance,"# Date: 2024-01-02
+
+system {
+    host-name 84-SRX-64,38-MX-34,54-EX-52;
+    login {
+        user test {
+            class super-user;
+            authentication {
+                encrypted-password ""$1$4111$hash"";
+            }
+        }
+    }
+}",juniper,0,synthetic_v3,non_compliant,hard
+CIS-1.1,Unique administrative accounts must replace default credentials,Verify CIS-1.1 compliance,"# 19-Junos-12,92-ROUTER-32 Configuration
+
+system {
+    host-name 19-Junos-12,92-ROUTER-32;
+    login {
+        user sysadmin {
+            uid 35650;
+            class super-user;
+            authentication {
+                encrypted-password ""$1$1802$hash"";
+            }
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,easy
+CIS-1.1,Unique administrative accounts must replace default credentials,Verify CIS-1.1 compliance,"# 29-SRX-94,17-MX-28,94-EX-3 Configuration
+
+system {
+    host-name 29-SRX-94,17-MX-28,94-EX-3;
+    login {
+        user root {
+            class super-user;
+            authentication {
+                encrypted-password ""$1$3017$hash"";
+            }
+        }
+    }
+}",juniper,0,synthetic_v3,non_compliant,easy
+CIS-1.1,Unique administrative accounts must replace default credentials,Verify CIS-1.1 compliance,"# Date: 2024-01-12
+
+system {
+    host-name 64-Junos-4,49-ROUTER-88;
+    login {
+        user network_engineer {
+            uid 61526;
+            class super-user;
+            authentication {
+                encrypted-password ""$1$4066$hash"";
+            }
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,hard
+CIS-1.1,Unique administrative accounts must replace default credentials,Verify CIS-1.1 compliance,"# 92-Junos-5,65-ROUTER-74 Configuration
+
+system {
+    host-name 92-Junos-5,65-ROUTER-74;
+    login {
+        user platform_eng {
+            uid 46402;
+            class super-user;
+            authentication {
+                encrypted-password ""$1$3415$hash"";
+            }
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,easy
+CIS-1.1,Strong authentication requires unique user identities,Verify CIS-1.1 compliance,"<!-- 79-PAFW-88,22-PAN-97,66-CORP-18 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>79-PAFW-88,22-PAN-97,66-CORP-18</hostname>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""devops"">
+        <password-hash>$1$3608$hash</password-hash>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,1,synthetic_v3,compliant,hard
+CIS-1.1,Strong authentication requires unique user identities,Verify CIS-1.1 compliance,"<!-- 10-SECURITY-67,33-PERIMETER-49 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>10-SECURITY-67,33-PERIMETER-49</hostname>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""network_engineer"">
+        <password-hash>$1$9460$hash</password-hash>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,1,synthetic_v3,compliant,hard
+CIS-1.1,Strong authentication requires unique user identities,Verify CIS-1.1 compliance,"<!-- 16-SECURITY-67,1-PERIMETER-49 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>16-SECURITY-67,1-PERIMETER-49</hostname>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""operator"">
+        <password-hash>$1$4365$hash</password-hash>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,hard
+CIS-1.1,Strong authentication requires unique user identities,Verify CIS-1.1 compliance,"<!-- 49-FORTIGATE-51,85-EDGE-4 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>49-FORTIGATE-51,85-EDGE-4</hostname>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""devops"">
+        <password-hash>$1$3561$hash</password-hash>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,1,synthetic_v3,compliant,medium
+CIS-1.1,Strong authentication requires unique user identities,Verify CIS-1.1 compliance,"<!-- 97-SECURITY-16,12-PERIMETER-62 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>97-SECURITY-16,12-PERIMETER-62</hostname>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""operator"">
+        <password-hash>$1$3135$hash</password-hash>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,hard
+CIS-1.1,Strong authentication requires unique user identities,Verify CIS-1.1 compliance,"<!-- 18-PAFW-96,51-PAN-70,38-CORP-82 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>18-PAFW-96,51-PAN-70,38-CORP-82</hostname>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""security_ops"">
+        <password-hash>$1$5883$hash</password-hash>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,1,synthetic_v3,compliant,hard
+CIS-1.1,Strong authentication requires unique user identities,Verify CIS-1.1 compliance,"<!-- 35-SECURITY-31,72-PERIMETER-56 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>35-SECURITY-31,72-PERIMETER-56</hostname>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""manager"">
+        <password-hash>$1$7240$hash</password-hash>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,easy
+CIS-1.1,Strong authentication requires unique user identities,Verify CIS-1.1 compliance,"<!-- 71-FORTIGATE-79,90-EDGE-88 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>71-FORTIGATE-79,90-EDGE-88</hostname>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""operator"">
+        <password-hash>$1$1852$hash</password-hash>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,medium
+CIS-1.1,Strong authentication requires unique user identities,Verify CIS-1.1 compliance,"<!-- 69-PAFW-26,34-PAN-94,81-CORP-10 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>69-PAFW-26,34-PAN-94,81-CORP-10</hostname>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""regional_admin"">
+        <password-hash>$1$2235$hash</password-hash>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,1,synthetic_v3,compliant,medium
+CIS-1.1,Strong authentication requires unique user identities,Verify CIS-1.1 compliance,"<!-- 90-PAFW-68,55-PAN-30,62-CORP-99 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>90-PAFW-68,55-PAN-30,62-CORP-99</hostname>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""guest"">
+        <password-hash>$1$6742$hash</password-hash>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,medium
+CIS-1.1,Strong authentication requires unique user identities,Verify CIS-1.1 compliance,"<!-- 72-SECURITY-50,31-PERIMETER-66 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>72-SECURITY-50,31-PERIMETER-66</hostname>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""regional_admin"">
+        <password-hash>$1$5712$hash</password-hash>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,1,synthetic_v3,compliant,hard
+CIS-1.1,Strong authentication requires unique user identities,Verify CIS-1.1 compliance,"<!-- 29-FORTIGATE-99,76-EDGE-94 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>29-FORTIGATE-99,76-EDGE-94</hostname>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""infrastructure_admin"">
+        <password-hash>$1$3193$hash</password-hash>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,1,synthetic_v3,compliant,medium
+CIS-1.1,Strong authentication requires unique user identities,Verify CIS-1.1 compliance,"<!-- 29-SECURITY-87,90-PERIMETER-30 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>29-SECURITY-87,90-PERIMETER-30</hostname>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""manager"">
+        <password-hash>$1$6172$hash</password-hash>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,medium
+CIS-1.1,Strong authentication requires unique user identities,Verify CIS-1.1 compliance,"<!-- 24-FORTIGATE-74,17-EDGE-74 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>24-FORTIGATE-74,17-EDGE-74</hostname>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""operator"">
+        <password-hash>$1$4744$hash</password-hash>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,medium
+CIS-1.1,Strong authentication requires unique user identities,Verify CIS-1.1 compliance,"<!-- 66-SECURITY-12,51-PERIMETER-47 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>66-SECURITY-12,51-PERIMETER-47</hostname>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""cloud_admin"">
+        <password-hash>$1$1173$hash</password-hash>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,1,synthetic_v3,compliant,medium
+CIS-1.1,Strong authentication requires unique user identities,Verify CIS-1.1 compliance,"<!-- 95-SECURITY-78,26-PERIMETER-93 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>95-SECURITY-78,26-PERIMETER-93</hostname>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""network_engineer"">
+        <password-hash>$1$5819$hash</password-hash>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,1,synthetic_v3,compliant,hard
+CIS-1.1,Strong authentication requires unique user identities,Verify CIS-1.1 compliance,"<!-- 26-PAFW-93,75-PAN-63,43-CORP-46 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>26-PAFW-93,75-PAN-63,43-CORP-46</hostname>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""security_ops"">
+        <password-hash>$1$4842$hash</password-hash>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,1,synthetic_v3,compliant,medium
+CIS-1.1,Strong authentication requires unique user identities,Verify CIS-1.1 compliance,"<!-- 66-SECURITY-58,63-PERIMETER-6 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>66-SECURITY-58,63-PERIMETER-6</hostname>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""infrastructure_admin"">
+        <password-hash>$1$4154$hash</password-hash>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,1,synthetic_v3,compliant,medium
+CIS-1.2,Authentication credentials must not be stored in readable form,Verify CIS-1.2 compliance,"! RTR-80,47,98-CORE-70 Configuration
+!
+hostname RTR-80,47,98-CORE-70
+version 15.7
+username operator privilege 1 password 0 cleartext123
+enable password 0 weakenable
+interface TenGigabitEthernet8/1
+ description LAN Interface
+ ip address 29.76.242.128 255.255.255.0
+!
+interface GigabitEthernet1/20
+ description DMZ Interface
+ ip address 73.107.222.65 255.255.255.252
+ no shutdown
+!
+interface Loopback1
+ description WAN Interface
+ ip address 190.26.90.41 255.255.255.0
+ no shutdown
+!",cisco,0,synthetic_v3,non_compliant,hard
+CIS-1.2,Authentication credentials must not be stored in readable form,Verify CIS-1.2 compliance,"! RTR-47,47,23-CORE-83 Configuration
+!
+hostname RTR-47,47,23-CORE-83
+version 15.7
+username operator privilege 1 password 0 cleartext123
+enable password 0 weakenable
+router ospf 1
+ network 62.70.171.122/24 area 0
+!",cisco,0,synthetic_v3,non_compliant,hard
+CIS-1.2,Authentication credentials must not be stored in readable form,Verify CIS-1.2 compliance,"! RTR-38,25,9-CORE-3 Configuration
+!
+hostname RTR-38,25,9-CORE-3
+version 15.7
+username operator privilege 1 password 0 cleartext123
+enable password 0 weakenable
+router ospf 1
+ network 95.210.175.167/24 area 0
+!",cisco,0,synthetic_v3,non_compliant,hard
+CIS-1.2,Authentication credentials must not be stored in readable form,Verify CIS-1.2 compliance,"! SW-87-ACCESS-37,79-CORE-85 Configuration
+!
+hostname SW-87-ACCESS-37,79-CORE-85
+version 15.7
+service password-encryption
+username netadmin privilege 15 secret 5 $1$secure$hash
+enable secret 5 $1$enable$hash
+interface TenGigabitEthernet14/23
+ description DMZ Interface
+ ip address 239.18.47.197 255.255.255.252
+ no shutdown
+!
+interface Loopback2
+ description Management Interface
+ ip address 216.33.149.121 255.255.255.0
+!
+interface Vlan10
+ description Management Interface
+ ip address 135.107.107.157 255.255.255.0
+!
+router ospf 1
+ network 171.44.247.147/24 area 0
+!",cisco,1,synthetic_v3,compliant,easy
+CIS-1.2,Authentication credentials must not be stored in readable form,Verify CIS-1.2 compliance,"! RTR-35,53,29-CORE-96 Configuration
+!
+hostname RTR-35,53,29-CORE-96
+version 15.7
+service password-encryption
+username netadmin privilege 15 secret 5 $1$secure$hash
+enable secret 5 $1$enable$hash",cisco,1,synthetic_v3,compliant,medium
+CIS-1.2,Authentication credentials must not be stored in readable form,Verify CIS-1.2 compliance,"! FW-53-EDGE-44 Configuration
+!
+hostname FW-53-EDGE-44
+version 15.7
+username operator privilege 1 password 0 cleartext123
+enable password 0 weakenable",cisco,0,synthetic_v3,non_compliant,medium
+CIS-1.2,Authentication credentials must not be stored in readable form,Verify CIS-1.2 compliance,"! FW-34-EDGE-81 Configuration
+!
+hostname FW-34-EDGE-81
+version 15.7
+username operator privilege 1 password 0 cleartext123
+enable password 0 weakenable
+interface Vlan16
+ description WAN Interface
+ ip address 217.132.83.149 255.255.255.0
+!",cisco,0,synthetic_v3,non_compliant,hard
+CIS-1.2,Authentication credentials must not be stored in readable form,Verify CIS-1.2 compliance,"! SW-16-DIST-99 Configuration
+!
+hostname SW-16-DIST-99
+version 15.7
+username operator privilege 1 password 0 cleartext123
+enable password 0 weakenable
+interface Loopback23
+ description LAN Interface
+ ip address 240.216.111.37 255.255.255.0
+!
+interface Vlan14
+ description Management Interface
+ ip address 66.28.251.137 255.255.255.252
+ no shutdown
+!
+interface GigabitEthernet10/17
+ description Management Interface
+ ip address 122.126.142.226 255.255.255.0
+ no shutdown
+!
+router ospf 1
+ network 88.10.17.27/24 area 0
+!",cisco,0,synthetic_v3,non_compliant,easy
+CIS-1.2,Authentication credentials must not be stored in readable form,Verify CIS-1.2 compliance,"! Generated: 2024-01-04
+!
+hostname FW-90-EDGE-86
+version 15.7
+service password-encryption
+username netadmin privilege 15 secret 5 $1$secure$hash
+enable secret 5 $1$enable$hash",cisco,1,synthetic_v3,compliant,hard
+CIS-1.2,Authentication credentials must not be stored in readable form,Verify CIS-1.2 compliance,"! ASA-47,56-FW-26-DMZ-64 Configuration
+!
+hostname ASA-47,56-FW-26-DMZ-64
+version 15.7
+username operator privilege 1 password 0 cleartext123
+enable password 0 weakenable
+interface TenGigabitEthernet9/8
+ description WAN Interface
+ ip address 77.205.115.160 255.255.255.0
+ no shutdown
+!
+router ospf 1
+ network 161.172.139.34/24 area 0
+!",cisco,0,synthetic_v3,non_compliant,hard
+CIS-1.2,Authentication credentials must not be stored in readable form,Verify CIS-1.2 compliance,"! Generated: 2024-01-20
+!
+hostname SW-44-DIST-85
+version 15.7
+service password-encryption
+username netadmin privilege 15 secret 5 $1$secure$hash
+enable secret 5 $1$enable$hash
+interface Vlan17
+ description DMZ Interface
+ ip address 217.190.211.196 255.255.255.252
+ no shutdown
+!
+interface Vlan19
+ description LAN Interface
+ ip address 145.109.192.197 255.255.255.252
+ no shutdown
+!",cisco,1,synthetic_v3,compliant,medium
+CIS-1.2,Authentication credentials must not be stored in readable form,Verify CIS-1.2 compliance,"! FW-70-EDGE-35 Configuration
+!
+hostname FW-70-EDGE-35
+version 15.7
+service password-encryption
+username netadmin privilege 15 secret 5 $1$secure$hash
+enable secret 5 $1$enable$hash
+router ospf 1
+ network 148.90.233.222/24 area 0
+!",cisco,1,synthetic_v3,compliant,medium
+CIS-1.2,Authentication credentials must not be stored in readable form,Verify CIS-1.2 compliance,"! FW-52-EDGE-33 Configuration
+!
+hostname FW-52-EDGE-33
+version 15.7
+username operator privilege 1 password 0 cleartext123
+enable password 0 weakenable
+interface TenGigabitEthernet0/20
+ description LAN Interface
+ ip address 148.255.109.170 255.255.255.252
+!
+interface Loopback18
+ description WAN Interface
+ ip address 134.102.186.119 255.255.255.0
+!
+interface Vlan13
+ description Management Interface
+ ip address 82.32.104.217 255.255.255.252
+!",cisco,0,synthetic_v3,non_compliant,easy
+CIS-1.2,Authentication credentials must not be stored in readable form,Verify CIS-1.2 compliance,"! Generated: 2024-01-20
+!
+hostname SW-63-ACCESS-51,84-CORE-74
+version 15.7
+service password-encryption
+username netadmin privilege 15 secret 5 $1$secure$hash
+enable secret 5 $1$enable$hash
+interface TenGigabitEthernet7/2
+ description DMZ Interface
+ ip address 199.220.165.176 255.255.255.0
+!
+interface Loopback13
+ description DMZ Interface
+ ip address 90.97.164.89 255.255.255.0
+ no shutdown
+!
+interface TenGigabitEthernet11/19
+ description Management Interface
+ ip address 160.74.225.12 255.255.255.0
+!",cisco,1,synthetic_v3,compliant,hard
+CIS-1.2,Authentication credentials must not be stored in readable form,Verify CIS-1.2 compliance,"! SW-41-DIST-34 Configuration
+!
+hostname SW-41-DIST-34
+version 15.7
+service password-encryption
+username netadmin privilege 15 secret 5 $1$secure$hash
+enable secret 5 $1$enable$hash
+interface TenGigabitEthernet19/18
+ description Management Interface
+ ip address 134.254.252.207 255.255.255.0
+ no shutdown
+!
+interface TenGigabitEthernet22/9
+ description LAN Interface
+ ip address 1.60.12.120 255.255.255.0
+ no shutdown
+!",cisco,1,synthetic_v3,compliant,medium
+CIS-1.2,Authentication credentials must not be stored in readable form,Verify CIS-1.2 compliance,"! Generated: 2024-01-13
+!
+hostname SW-67-ACCESS-69,51-CORE-95
+version 15.7
+service password-encryption
+username netadmin privilege 15 secret 5 $1$secure$hash
+enable secret 5 $1$enable$hash
+interface GigabitEthernet6/9
+ description Management Interface
+ ip address 102.155.146.119 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet22/16
+ description LAN Interface
+ ip address 119.231.46.185 255.255.255.0
+!
+interface TenGigabitEthernet12/13
+ description DMZ Interface
+ ip address 116.12.91.117 255.255.255.0
+ no shutdown
+!",cisco,1,synthetic_v3,compliant,easy
+CIS-1.2,Authentication credentials must not be stored in readable form,Verify CIS-1.2 compliance,"! Generated: 2024-01-02
+!
+hostname SW-74-DIST-47
+version 15.7
+service password-encryption
+username netadmin privilege 15 secret 5 $1$secure$hash
+enable secret 5 $1$enable$hash
+interface Vlan3
+ description Management Interface
+ ip address 247.40.72.187 255.255.255.252
+ no shutdown
+!
+interface GigabitEthernet16/19
+ description WAN Interface
+ ip address 63.241.39.176 255.255.255.252
+ no shutdown
+!
+interface Vlan17
+ description WAN Interface
+ ip address 121.232.240.147 255.255.255.252
+ no shutdown
+!
+router ospf 1
+ network 85.148.85.18/24 area 0
+!",cisco,1,synthetic_v3,compliant,medium
+CIS-1.2,Authentication credentials must not be stored in readable form,Verify CIS-1.2 compliance,"! Generated: 2024-01-22
+!
+hostname SW-9-ACCESS-61,87-CORE-48
+version 15.7
+username operator privilege 1 password 0 cleartext123
+enable password 0 weakenable
+interface Loopback14
+ description WAN Interface
+ ip address 31.73.202.103 255.255.255.0
+ no shutdown
+!
+router ospf 1
+ network 53.33.186.101/24 area 0
+!",cisco,0,synthetic_v3,non_compliant,medium
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"# 56-FIREWALL-3,21-SWITCH-37 Configuration
+
+system {
+    host-name 56-FIREWALL-3,21-SWITCH-37;
+    root-authentication {
+        encrypted-password ""$1$8688$hash"";
+    }
+}",juniper,1,synthetic_v3,compliant,medium
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"# 76-FIREWALL-34,31-SWITCH-39 Configuration
+
+system {
+    host-name 76-FIREWALL-34,31-SWITCH-39;
+    root-authentication {
+        password ""admin123"";
+    }
+}",juniper,0,synthetic_v3,non_compliant,easy
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"# Date: 2024-01-14
+
+system {
+    host-name 8-FIREWALL-39,50-SWITCH-13;
+    root-authentication {
+        password ""password"";
+    }
+}",juniper,0,synthetic_v3,non_compliant,easy
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"# 14-SRX-79,79-MX-14,72-EX-6 Configuration
+
+system {
+    host-name 14-SRX-79,79-MX-14,72-EX-6;
+    root-authentication {
+        encrypted-password ""$1$3736$hash"";
+    }
+}",juniper,1,synthetic_v3,compliant,medium
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"# 84-SRX-80,58-MX-42,94-EX-94 Configuration
+
+system {
+    host-name 84-SRX-80,58-MX-42,94-EX-94;
+    root-authentication {
+        encrypted-password ""$1$3118$hash"";
+    }
+}",juniper,1,synthetic_v3,compliant,medium
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"# Date: 2024-01-11
+
+system {
+    host-name 97-FIREWALL-65,50-SWITCH-15;
+    root-authentication {
+        password ""password"";
+    }
+}",juniper,0,synthetic_v3,non_compliant,medium
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"# Date: 2024-01-16
+
+system {
+    host-name 60-SRX-80,38-MX-84,22-EX-1;
+    root-authentication {
+        password ""password"";
+    }
+}",juniper,0,synthetic_v3,non_compliant,easy
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"# 22-FIREWALL-32,69-SWITCH-55 Configuration
+
+system {
+    host-name 22-FIREWALL-32,69-SWITCH-55;
+    root-authentication {
+        password ""password"";
+    }
+}",juniper,0,synthetic_v3,non_compliant,medium
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"# Date: 2024-01-17
+
+system {
+    host-name 27-SRX-47,21-MX-94,38-EX-91;
+    root-authentication {
+        encrypted-password ""$1$9165$hash"";
+    }
+}",juniper,1,synthetic_v3,compliant,hard
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"# 8-FIREWALL-68,3-SWITCH-55 Configuration
+
+system {
+    host-name 8-FIREWALL-68,3-SWITCH-55;
+    root-authentication {
+        encrypted-password ""$1$2040$hash"";
+    }
+}",juniper,1,synthetic_v3,compliant,easy
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"# 66-FIREWALL-78,86-SWITCH-14 Configuration
+
+system {
+    host-name 66-FIREWALL-78,86-SWITCH-14;
+    root-authentication {
+        encrypted-password ""$1$8173$hash"";
+    }
+}",juniper,1,synthetic_v3,compliant,easy
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"# Date: 2024-01-21
+
+system {
+    host-name 73-Junos-51,7-ROUTER-43;
+    root-authentication {
+        encrypted-password ""$1$8074$hash"";
+    }
+}",juniper,1,synthetic_v3,compliant,easy
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"# 37-SRX-88,88-MX-16,51-EX-48 Configuration
+
+system {
+    host-name 37-SRX-88,88-MX-16,51-EX-48;
+    root-authentication {
+        encrypted-password ""$1$2737$hash"";
+    }
+}",juniper,1,synthetic_v3,compliant,medium
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"# Date: 2024-01-21
+
+system {
+    host-name 84-Junos-19,84-ROUTER-31;
+    root-authentication {
+        encrypted-password ""$1$9824$hash"";
+    }
+}",juniper,1,synthetic_v3,compliant,easy
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"# Date: 2024-01-06
+
+system {
+    host-name 39-SRX-99,60-MX-19,61-EX-55;
+    root-authentication {
+        encrypted-password ""$1$3497$hash"";
+    }
+}",juniper,1,synthetic_v3,compliant,easy
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"# Date: 2024-01-04
+
+system {
+    host-name 95-SRX-69,73-MX-9,39-EX-12;
+    root-authentication {
+        password ""admin123"";
+    }
+}",juniper,0,synthetic_v3,non_compliant,easy
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"# 66-SRX-71,40-MX-67,44-EX-97 Configuration
+
+system {
+    host-name 66-SRX-71,40-MX-67,44-EX-97;
+    root-authentication {
+        password ""admin123"";
+    }
+}",juniper,0,synthetic_v3,non_compliant,easy
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"# 30-Junos-65,29-ROUTER-76 Configuration
+
+system {
+    host-name 30-Junos-65,29-ROUTER-76;
+    root-authentication {
+        encrypted-password ""$1$6556$hash"";
+    }
+}",juniper,1,synthetic_v3,compliant,medium
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"<!-- 85-SECURITY-87,19-PERIMETER-8 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>85-SECURITY-87,19-PERIMETER-8</hostname>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""admin"">
+        <password-hash>$1$4889$hash</password-hash>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,1,synthetic_v3,compliant,hard
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"<!-- 80-SECURITY-48,6-PERIMETER-9 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>80-SECURITY-48,6-PERIMETER-9</hostname>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""admin"">
+        <password>plaintext123</password>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,medium
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"<!-- 67-FORTIGATE-46,30-EDGE-75 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>67-FORTIGATE-46,30-EDGE-75</hostname>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""admin"">
+        <password-hash>$1$1674$hash</password-hash>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,1,synthetic_v3,compliant,medium
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"<!-- 26-PAFW-26,37-PAN-23,29-CORP-34 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>26-PAFW-26,37-PAN-23,29-CORP-34</hostname>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""admin"">
+        <password-hash>$1$3855$hash</password-hash>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,1,synthetic_v3,compliant,easy
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"<!-- 82-PAFW-29,89-PAN-30,60-CORP-80 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>82-PAFW-29,89-PAN-30,60-CORP-80</hostname>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""admin"">
+        <password-hash>$1$4492$hash</password-hash>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,1,synthetic_v3,compliant,easy
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"<!-- 16-PAFW-10,47-PAN-5,70-CORP-26 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>16-PAFW-10,47-PAN-5,70-CORP-26</hostname>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""admin"">
+        <password-hash>$1$6468$hash</password-hash>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,1,synthetic_v3,compliant,easy
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"<!-- 99-PAFW-49,99-PAN-26,32-CORP-48 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>99-PAFW-49,99-PAN-26,32-CORP-48</hostname>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""admin"">
+        <password>plaintext123</password>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,easy
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"<!-- 57-PAFW-8,39-PAN-79,81-CORP-56 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>57-PAFW-8,39-PAN-79,81-CORP-56</hostname>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""admin"">
+        <password-hash>$1$2077$hash</password-hash>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,1,synthetic_v3,compliant,easy
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"<!-- 93-PAFW-22,6-PAN-54,66-CORP-14 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>93-PAFW-22,6-PAN-54,66-CORP-14</hostname>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""admin"">
+        <password>plaintext123</password>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,hard
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"<!-- 67-FORTIGATE-42,24-EDGE-57 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>67-FORTIGATE-42,24-EDGE-57</hostname>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""admin"">
+        <password>plaintext123</password>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,hard
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"<!-- 86-SECURITY-9,29-PERIMETER-13 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>86-SECURITY-9,29-PERIMETER-13</hostname>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""admin"">
+        <password>plaintext123</password>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,easy
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"<!-- 46-FORTIGATE-23,28-EDGE-92 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>46-FORTIGATE-23,28-EDGE-92</hostname>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""admin"">
+        <password>plaintext123</password>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,easy
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"<!-- 43-SECURITY-33,39-PERIMETER-96 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>43-SECURITY-33,39-PERIMETER-96</hostname>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""admin"">
+        <password-hash>$1$5496$hash</password-hash>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,1,synthetic_v3,compliant,easy
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"<!-- 9-PAFW-63,9-PAN-25,7-CORP-82 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>9-PAFW-63,9-PAN-25,7-CORP-82</hostname>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""admin"">
+        <password>plaintext123</password>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,hard
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"<!-- 58-SECURITY-82,39-PERIMETER-12 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>58-SECURITY-82,39-PERIMETER-12</hostname>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""admin"">
+        <password-hash>$1$3808$hash</password-hash>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,1,synthetic_v3,compliant,medium
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"<!-- 9-FORTIGATE-52,78-EDGE-32 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>9-FORTIGATE-52,78-EDGE-32</hostname>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""admin"">
+        <password>plaintext123</password>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,easy
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"<!-- 3-PAFW-87,18-PAN-49,84-CORP-15 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>3-PAFW-87,18-PAN-49,84-CORP-15</hostname>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""admin"">
+        <password-hash>$1$6544$hash</password-hash>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,1,synthetic_v3,compliant,medium
+CIS-1.2,Credential storage must employ secure password encryption,Verify CIS-1.2 compliance,"<!-- 87-SECURITY-4,59-PERIMETER-67 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>87-SECURITY-4,59-PERIMETER-67</hostname>
+  </system>
+  <mgt-config>
+    <users>
+      <entry name=""admin"">
+        <password-hash>$1$6377$hash</password-hash>
+      </entry>
+    </users>
+  </mgt-config>
+</device-config>",paloalto,1,synthetic_v3,compliant,medium
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"! SW-88-ACCESS-50,88-CORE-92 Configuration
+!
+hostname SW-88-ACCESS-50,88-CORE-92
+version 15.7
+logging host 29.251.86.254
+logging trap informational",cisco,1,synthetic_v3,compliant,medium
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"! Generated: 2024-01-13
+!
+hostname SW-50-DIST-55
+version 15.7
+! logging host 179.123.150.31
+interface GigabitEthernet23/1
+ description WAN Interface
+ ip address 190.181.229.234 255.255.255.252
+ no shutdown
+!
+interface Loopback9
+ description Management Interface
+ ip address 180.68.93.186 255.255.255.0
+!",cisco,0,synthetic_v3,non_compliant,hard
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"! Generated: 2024-01-11
+!
+hostname ASA-77,40-FW-23-DMZ-73
+version 15.7
+! logging host 206.71.102.65
+router ospf 1
+ network 87.156.43.152/24 area 0
+!",cisco,0,synthetic_v3,non_compliant,medium
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"! SW-5-DIST-16 Configuration
+!
+hostname SW-5-DIST-16
+version 15.7
+! logging host 89.247.2.41
+interface GigabitEthernet6/19
+ description WAN Interface
+ ip address 138.11.78.56 255.255.255.252
+!
+interface TenGigabitEthernet0/10
+ description LAN Interface
+ ip address 57.42.64.69 255.255.255.252
+ no shutdown
+!
+router ospf 1
+ network 99.150.239.253/24 area 0
+!",cisco,0,synthetic_v3,non_compliant,hard
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"! Generated: 2024-01-02
+!
+hostname FW-4-EDGE-65
+version 15.7
+! logging host 238.62.153.104
+interface TenGigabitEthernet17/8
+ description Management Interface
+ ip address 220.63.221.38 255.255.255.0
+!
+router ospf 1
+ network 71.87.102.243/24 area 0
+!",cisco,0,synthetic_v3,non_compliant,easy
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"! Generated: 2024-01-27
+!
+hostname FW-70-EDGE-24
+version 15.7
+! logging host 112.49.70.135
+interface Vlan14
+ description DMZ Interface
+ ip address 110.238.215.247 255.255.255.252
+ no shutdown
+!
+interface GigabitEthernet24/13
+ description WAN Interface
+ ip address 194.71.154.202 255.255.255.0
+ no shutdown
+!",cisco,0,synthetic_v3,non_compliant,hard
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"! RTR-14,19,37-CORE-34 Configuration
+!
+hostname RTR-14,19,37-CORE-34
+version 15.7
+! logging host 24.39.253.217
+interface Loopback3
+ description Management Interface
+ ip address 204.11.211.19 255.255.255.252
+ no shutdown
+!",cisco,0,synthetic_v3,non_compliant,hard
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"! Generated: 2024-01-14
+!
+hostname SW-65-DIST-14
+version 15.7
+! logging host 181.248.143.21",cisco,0,synthetic_v3,non_compliant,hard
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"! Generated: 2024-01-06
+!
+hostname SW-95-DIST-77
+version 15.7
+logging host 246.220.123.143
+logging trap informational
+interface Loopback1
+ description Management Interface
+ ip address 33.199.88.104 255.255.255.252
+ no shutdown
+!",cisco,1,synthetic_v3,compliant,medium
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"! ASA-23,33-FW-3-DMZ-69 Configuration
+!
+hostname ASA-23,33-FW-3-DMZ-69
+version 15.7
+logging host 223.54.195.243
+logging trap informational
+interface TenGigabitEthernet14/7
+ description DMZ Interface
+ ip address 69.104.202.40 255.255.255.252
+!
+interface Loopback11
+ description LAN Interface
+ ip address 231.245.47.127 255.255.255.0
+ no shutdown
+!
+interface TenGigabitEthernet6/18
+ description Management Interface
+ ip address 242.92.144.6 255.255.255.252
+!",cisco,1,synthetic_v3,compliant,easy
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"! Generated: 2024-01-24
+!
+hostname ASA-17,90-FW-87-DMZ-13
+version 15.7
+logging host 129.51.76.7
+logging trap informational
+interface Loopback18
+ description WAN Interface
+ ip address 75.82.77.175 255.255.255.252
+!
+interface GigabitEthernet22/7
+ description LAN Interface
+ ip address 207.72.82.247 255.255.255.252
+ no shutdown
+!",cisco,1,synthetic_v3,compliant,hard
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"! SW-1-DIST-63 Configuration
+!
+hostname SW-1-DIST-63
+version 15.7
+! logging host 121.56.23.210
+router ospf 1
+ network 84.116.85.75/24 area 0
+!",cisco,0,synthetic_v3,non_compliant,medium
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"! RTR-85,93,20-CORE-49 Configuration
+!
+hostname RTR-85,93,20-CORE-49
+version 15.7
+! logging host 167.40.39.246
+interface Loopback17
+ description WAN Interface
+ ip address 217.26.241.169 255.255.255.252
+ no shutdown
+!",cisco,0,synthetic_v3,non_compliant,hard
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"! Generated: 2024-01-27
+!
+hostname SW-43-ACCESS-98,8-CORE-18
+version 15.7
+! logging host 188.168.31.61
+interface GigabitEthernet11/2
+ description Management Interface
+ ip address 154.41.245.243 255.255.255.0
+!
+interface GigabitEthernet3/1
+ description Management Interface
+ ip address 130.115.179.111 255.255.255.252
+ no shutdown
+!
+interface TenGigabitEthernet0/1
+ description WAN Interface
+ ip address 199.100.194.175 255.255.255.0
+ no shutdown
+!",cisco,0,synthetic_v3,non_compliant,medium
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"! Generated: 2024-01-25
+!
+hostname ASA-4,75-FW-31-DMZ-62
+version 15.7
+logging host 26.4.31.69
+logging trap informational
+interface GigabitEthernet3/6
+ description WAN Interface
+ ip address 97.136.248.122 255.255.255.252
+ no shutdown
+!",cisco,1,synthetic_v3,compliant,easy
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"! Generated: 2024-01-11
+!
+hostname RTR-8,17,57-CORE-24
+version 15.7
+! logging host 90.125.149.34
+interface GigabitEthernet21/2
+ description WAN Interface
+ ip address 65.105.253.181 255.255.255.252
+ no shutdown
+!
+interface TenGigabitEthernet14/22
+ description DMZ Interface
+ ip address 242.187.149.223 255.255.255.0
+ no shutdown
+!",cisco,0,synthetic_v3,non_compliant,easy
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"! Generated: 2024-01-16
+!
+hostname RTR-55,87,66-CORE-94
+version 15.7
+logging host 132.63.207.4
+logging trap informational
+interface GigabitEthernet22/13
+ description DMZ Interface
+ ip address 63.21.229.247 255.255.255.0
+ no shutdown
+!
+interface TenGigabitEthernet5/2
+ description DMZ Interface
+ ip address 215.68.180.244 255.255.255.0
+ no shutdown
+!
+interface Loopback5
+ description DMZ Interface
+ ip address 249.57.173.234 255.255.255.0
+ no shutdown
+!
+router ospf 1
+ network 40.148.153.247/24 area 0
+!",cisco,1,synthetic_v3,compliant,medium
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"! Generated: 2024-01-18
+!
+hostname SW-32-ACCESS-8,70-CORE-89
+version 15.7
+logging host 32.10.22.27
+logging trap informational
+interface Loopback4
+ description WAN Interface
+ ip address 234.114.12.59 255.255.255.252
+ no shutdown
+!",cisco,1,synthetic_v3,compliant,medium
+CIS-2.1,Centralized logging via syslog must be implemented for compliance,Verify CIS-2.1 compliance,"# 28-Junos-98,56-ROUTER-36 Configuration
+
+system {
+    host-name 28-Junos-98,56-ROUTER-36;
+    syslog {
+        #host 200.95.141.129 {
+    }
+}",juniper,0,synthetic_v3,non_compliant,hard
+CIS-2.1,Centralized logging via syslog must be implemented for compliance,Verify CIS-2.1 compliance,"# Date: 2024-01-03
+
+system {
+    host-name 61-FIREWALL-46,40-SWITCH-67;
+    syslog {
+        host 227.109.85.243 {
+            any any;
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,medium
+CIS-2.1,Centralized logging via syslog must be implemented for compliance,Verify CIS-2.1 compliance,"# 94-Junos-92,78-ROUTER-59 Configuration
+
+system {
+    host-name 94-Junos-92,78-ROUTER-59;
+    syslog {
+        #host 163.168.199.122 {
+    }
+}",juniper,0,synthetic_v3,non_compliant,hard
+CIS-2.1,Centralized logging via syslog must be implemented for compliance,Verify CIS-2.1 compliance,"# 78-SRX-93,82-MX-13,49-EX-66 Configuration
+
+system {
+    host-name 78-SRX-93,82-MX-13,49-EX-66;
+    syslog {
+        #host 21.172.154.109 {
+    }
+}",juniper,0,synthetic_v3,non_compliant,easy
+CIS-2.1,Centralized logging via syslog must be implemented for compliance,Verify CIS-2.1 compliance,"# 99-Junos-42,37-ROUTER-87 Configuration
+
+system {
+    host-name 99-Junos-42,37-ROUTER-87;
+    syslog {
+        #host 109.201.36.89 {
+    }
+}",juniper,0,synthetic_v3,non_compliant,easy
+CIS-2.1,Centralized logging via syslog must be implemented for compliance,Verify CIS-2.1 compliance,"# Date: 2024-01-02
+
+system {
+    host-name 82-Junos-5,77-ROUTER-15;
+    syslog {
+        #host 137.202.127.45 {
+    }
+}",juniper,0,synthetic_v3,non_compliant,medium
+CIS-2.1,Centralized logging via syslog must be implemented for compliance,Verify CIS-2.1 compliance,"# 14-FIREWALL-5,48-SWITCH-4 Configuration
+
+system {
+    host-name 14-FIREWALL-5,48-SWITCH-4;
+    syslog {
+        host 183.78.90.223 {
+            any any;
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,hard
+CIS-2.1,Centralized logging via syslog must be implemented for compliance,Verify CIS-2.1 compliance,"# 49-SRX-17,97-MX-2,21-EX-67 Configuration
+
+system {
+    host-name 49-SRX-17,97-MX-2,21-EX-67;
+    syslog {
+        host 43.101.224.223 {
+            any any;
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,hard
+CIS-2.1,Centralized logging via syslog must be implemented for compliance,Verify CIS-2.1 compliance,"# 43-FIREWALL-69,47-SWITCH-15 Configuration
+
+system {
+    host-name 43-FIREWALL-69,47-SWITCH-15;
+    syslog {
+        #host 252.217.196.223 {
+    }
+}",juniper,0,synthetic_v3,non_compliant,medium
+CIS-2.1,Centralized logging via syslog must be implemented for compliance,Verify CIS-2.1 compliance,"# 84-FIREWALL-50,71-SWITCH-66 Configuration
+
+system {
+    host-name 84-FIREWALL-50,71-SWITCH-66;
+    syslog {
+        #host 218.82.234.95 {
+    }
+}",juniper,0,synthetic_v3,non_compliant,hard
+CIS-2.1,Centralized logging via syslog must be implemented for compliance,Verify CIS-2.1 compliance,"# 42-FIREWALL-48,73-SWITCH-49 Configuration
+
+system {
+    host-name 42-FIREWALL-48,73-SWITCH-49;
+    syslog {
+        host 231.17.165.180 {
+            any any;
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,medium
+CIS-2.1,Centralized logging via syslog must be implemented for compliance,Verify CIS-2.1 compliance,"# 14-FIREWALL-58,29-SWITCH-74 Configuration
+
+system {
+    host-name 14-FIREWALL-58,29-SWITCH-74;
+    syslog {
+        host 102.118.228.95 {
+            any any;
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,hard
+CIS-2.1,Centralized logging via syslog must be implemented for compliance,Verify CIS-2.1 compliance,"# 27-Junos-34,13-ROUTER-43 Configuration
+
+system {
+    host-name 27-Junos-34,13-ROUTER-43;
+    syslog {
+        #host 19.234.251.193 {
+    }
+}",juniper,0,synthetic_v3,non_compliant,easy
+CIS-2.1,Centralized logging via syslog must be implemented for compliance,Verify CIS-2.1 compliance,"# 21-Junos-60,70-ROUTER-24 Configuration
+
+system {
+    host-name 21-Junos-60,70-ROUTER-24;
+    syslog {
+        host 113.233.222.188 {
+            any any;
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,medium
+CIS-2.1,Centralized logging via syslog must be implemented for compliance,Verify CIS-2.1 compliance,"# Date: 2024-01-02
+
+system {
+    host-name 91-SRX-43,46-MX-99,99-EX-71;
+    syslog {
+        host 133.107.185.138 {
+            any any;
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,medium
+CIS-2.1,Centralized logging via syslog must be implemented for compliance,Verify CIS-2.1 compliance,"# 13-FIREWALL-17,94-SWITCH-19 Configuration
+
+system {
+    host-name 13-FIREWALL-17,94-SWITCH-19;
+    syslog {
+        #host 111.140.176.249 {
+    }
+}",juniper,0,synthetic_v3,non_compliant,easy
+CIS-2.1,Centralized logging via syslog must be implemented for compliance,Verify CIS-2.1 compliance,"# Date: 2024-01-25
+
+system {
+    host-name 22-FIREWALL-80,46-SWITCH-73;
+    syslog {
+        #host 6.145.251.254 {
+    }
+}",juniper,0,synthetic_v3,non_compliant,hard
+CIS-2.1,Centralized logging via syslog must be implemented for compliance,Verify CIS-2.1 compliance,"# Date: 2024-01-23
+
+system {
+    host-name 92-Junos-19,56-ROUTER-72;
+    syslog {
+        host 202.128.61.143 {
+            any any;
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,hard
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"<!-- 22-PAFW-42,3-PAN-15,25-CORP-75 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>22-PAFW-42,3-PAN-15,25-CORP-75</hostname>
+  </system>
+  <log-settings>
+    <syslog>
+    </syslog>
+  </log-settings>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,medium
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"<!-- 16-PAFW-71,92-PAN-38,17-CORP-45 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>16-PAFW-71,92-PAN-38,17-CORP-45</hostname>
+  </system>
+  <log-settings>
+    <syslog>
+      <entry name=""primary"">
+        <server>{<entry name=""syslog-40"">
+          <ip-address>116.223.42.248</ip-address>
+        </entry>}}</server>
+      </entry>
+    </syslog>
+  </log-settings>
+</device-config>",paloalto,1,synthetic_v3,compliant,medium
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"<!-- 91-FORTIGATE-19,9-EDGE-88 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>91-FORTIGATE-19,9-EDGE-88</hostname>
+  </system>
+  <log-settings>
+    <syslog>
+    </syslog>
+  </log-settings>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,medium
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"<!-- 82-FORTIGATE-88,69-EDGE-24 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>82-FORTIGATE-88,69-EDGE-24</hostname>
+  </system>
+  <log-settings>
+    <syslog>
+      <entry name=""primary"">
+        <server>{<entry name=""syslog-25"">
+          <ip-address>200.55.118.55</ip-address>
+        </entry>}}</server>
+      </entry>
+    </syslog>
+  </log-settings>
+</device-config>",paloalto,1,synthetic_v3,compliant,medium
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"<!-- 76-PAFW-56,86-PAN-35,14-CORP-91 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>76-PAFW-56,86-PAN-35,14-CORP-91</hostname>
+  </system>
+  <log-settings>
+    <syslog>
+    </syslog>
+  </log-settings>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,medium
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"<!-- 4-FORTIGATE-64,29-EDGE-89 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>4-FORTIGATE-64,29-EDGE-89</hostname>
+  </system>
+  <log-settings>
+    <syslog>
+    </syslog>
+  </log-settings>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,hard
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"<!-- 3-PAFW-79,62-PAN-57,54-CORP-72 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>3-PAFW-79,62-PAN-57,54-CORP-72</hostname>
+  </system>
+  <log-settings>
+    <syslog>
+    </syslog>
+  </log-settings>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,medium
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"<!-- 32-PAFW-29,33-PAN-24,94-CORP-85 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>32-PAFW-29,33-PAN-24,94-CORP-85</hostname>
+  </system>
+  <log-settings>
+    <syslog>
+      <entry name=""primary"">
+        <server>{<entry name=""syslog-39"">
+          <ip-address>85.236.136.195</ip-address>
+        </entry>}}</server>
+      </entry>
+    </syslog>
+  </log-settings>
+</device-config>",paloalto,1,synthetic_v3,compliant,hard
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"<!-- 15-SECURITY-69,21-PERIMETER-66 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>15-SECURITY-69,21-PERIMETER-66</hostname>
+  </system>
+  <log-settings>
+    <syslog>
+      <entry name=""primary"">
+        <server>{<entry name=""syslog-12"">
+          <ip-address>147.239.97.193</ip-address>
+        </entry>}}</server>
+      </entry>
+    </syslog>
+  </log-settings>
+</device-config>",paloalto,1,synthetic_v3,compliant,easy
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"<!-- 59-PAFW-80,57-PAN-64,76-CORP-56 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>59-PAFW-80,57-PAN-64,76-CORP-56</hostname>
+  </system>
+  <log-settings>
+    <syslog>
+    </syslog>
+  </log-settings>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,hard
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"<!-- 44-FORTIGATE-63,99-EDGE-71 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>44-FORTIGATE-63,99-EDGE-71</hostname>
+  </system>
+  <log-settings>
+    <syslog>
+      <entry name=""primary"">
+        <server>{<entry name=""syslog-59"">
+          <ip-address>170.49.175.196</ip-address>
+        </entry>}}</server>
+      </entry>
+    </syslog>
+  </log-settings>
+</device-config>",paloalto,1,synthetic_v3,compliant,easy
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"<!-- 76-SECURITY-49,8-PERIMETER-13 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>76-SECURITY-49,8-PERIMETER-13</hostname>
+  </system>
+  <log-settings>
+    <syslog>
+      <entry name=""primary"">
+        <server>{<entry name=""syslog-8"">
+          <ip-address>164.175.141.138</ip-address>
+        </entry>}}</server>
+      </entry>
+    </syslog>
+  </log-settings>
+</device-config>",paloalto,1,synthetic_v3,compliant,medium
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"<!-- 40-SECURITY-41,99-PERIMETER-68 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>40-SECURITY-41,99-PERIMETER-68</hostname>
+  </system>
+  <log-settings>
+    <syslog>
+      <entry name=""primary"">
+        <server>{<entry name=""syslog-61"">
+          <ip-address>27.153.107.147</ip-address>
+        </entry>}}</server>
+      </entry>
+    </syslog>
+  </log-settings>
+</device-config>",paloalto,1,synthetic_v3,compliant,medium
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"<!-- 37-FORTIGATE-15,61-EDGE-18 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>37-FORTIGATE-15,61-EDGE-18</hostname>
+  </system>
+  <log-settings>
+    <syslog>
+      <entry name=""primary"">
+        <server>{<entry name=""syslog-96"">
+          <ip-address>19.166.211.212</ip-address>
+        </entry>}}</server>
+      </entry>
+    </syslog>
+  </log-settings>
+</device-config>",paloalto,1,synthetic_v3,compliant,medium
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"<!-- 13-SECURITY-74,13-PERIMETER-16 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>13-SECURITY-74,13-PERIMETER-16</hostname>
+  </system>
+  <log-settings>
+    <syslog>
+    </syslog>
+  </log-settings>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,hard
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"<!-- 39-PAFW-21,55-PAN-35,30-CORP-28 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>39-PAFW-21,55-PAN-35,30-CORP-28</hostname>
+  </system>
+  <log-settings>
+    <syslog>
+      <entry name=""primary"">
+        <server>{<entry name=""syslog-99"">
+          <ip-address>91.13.70.225</ip-address>
+        </entry>}}</server>
+      </entry>
+    </syslog>
+  </log-settings>
+</device-config>",paloalto,1,synthetic_v3,compliant,easy
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"<!-- 42-PAFW-85,70-PAN-47,79-CORP-86 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>42-PAFW-85,70-PAN-47,79-CORP-86</hostname>
+  </system>
+  <log-settings>
+    <syslog>
+      <entry name=""primary"">
+        <server>{<entry name=""syslog-92"">
+          <ip-address>25.244.252.192</ip-address>
+        </entry>}}</server>
+      </entry>
+    </syslog>
+  </log-settings>
+</device-config>",paloalto,1,synthetic_v3,compliant,medium
+CIS-2.1,Remote syslog servers must be configured for audit trail retention,Verify CIS-2.1 compliance,"<!-- 6-SECURITY-17,70-PERIMETER-45 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>6-SECURITY-17,70-PERIMETER-45</hostname>
+  </system>
+  <log-settings>
+    <syslog>
+      <entry name=""primary"">
+        <server>{<entry name=""syslog-9"">
+          <ip-address>84.161.117.169</ip-address>
+        </entry>}}</server>
+      </entry>
+    </syslog>
+  </log-settings>
+</device-config>",paloalto,1,synthetic_v3,compliant,hard
+CIS-2.2,Reliable time source configuration through NTP is mandatory,Verify CIS-2.2 compliance,"! Generated: 2024-01-25
+!
+hostname SW-55-ACCESS-27,94-CORE-21
+version 15.7
+! ntp server 239.147.158.139
+interface GigabitEthernet2/4
+ description WAN Interface
+ ip address 219.1.122.17 255.255.255.252
+ no shutdown
+!
+interface GigabitEthernet24/14
+ description DMZ Interface
+ ip address 32.238.62.124 255.255.255.252
+ no shutdown
+!
+interface Vlan2
+ description DMZ Interface
+ ip address 46.198.96.140 255.255.255.252
+ no shutdown
+!
+router ospf 1
+ network 168.44.32.83/24 area 0
+!",cisco,0,synthetic_v3,non_compliant,medium
+CIS-2.2,Reliable time source configuration through NTP is mandatory,Verify CIS-2.2 compliance,"! Generated: 2024-01-11
+!
+hostname SW-13-ACCESS-23,99-CORE-28
+version 15.7
+! ntp server 92.26.220.131
+interface GigabitEthernet15/20
+ description Management Interface
+ ip address 109.73.107.252 255.255.255.252
+!
+interface GigabitEthernet3/7
+ description DMZ Interface
+ ip address 230.2.229.200 255.255.255.0
+ no shutdown
+!",cisco,0,synthetic_v3,non_compliant,medium
+CIS-2.2,Reliable time source configuration through NTP is mandatory,Verify CIS-2.2 compliance,"! RTR-89,10,14-CORE-73 Configuration
+!
+hostname RTR-89,10,14-CORE-73
+version 15.7
+! ntp server 60.210.22.53
+interface GigabitEthernet3/21
+ description Management Interface
+ ip address 184.69.113.189 255.255.255.0
+!
+interface GigabitEthernet1/8
+ description WAN Interface
+ ip address 236.209.61.254 255.255.255.252
+ no shutdown
+!
+interface Loopback6
+ description WAN Interface
+ ip address 88.121.60.24 255.255.255.252
+ no shutdown
+!
+router ospf 1
+ network 171.123.22.243/24 area 0
+!",cisco,0,synthetic_v3,non_compliant,hard
+CIS-2.2,Reliable time source configuration through NTP is mandatory,Verify CIS-2.2 compliance,"! FW-33-EDGE-75 Configuration
+!
+hostname FW-33-EDGE-75
+version 15.7
+! ntp server 104.215.192.223
+interface Loopback2
+ description DMZ Interface
+ ip address 38.187.196.164 255.255.255.0
+!
+interface GigabitEthernet9/0
+ description DMZ Interface
+ ip address 146.99.89.228 255.255.255.0
+!
+router ospf 1
+ network 67.150.72.220/24 area 0
+!",cisco,0,synthetic_v3,non_compliant,easy
+CIS-2.2,Reliable time source configuration through NTP is mandatory,Verify CIS-2.2 compliance,"! SW-10-DIST-20 Configuration
+!
+hostname SW-10-DIST-20
+version 15.7
+ntp server 248.235.169.202
+ntp server 157.62.28.181
+router ospf 1
+ network 30.95.46.46/24 area 0
+!",cisco,1,synthetic_v3,compliant,medium
+CIS-2.2,Reliable time source configuration through NTP is mandatory,Verify CIS-2.2 compliance,"! Generated: 2024-01-11
+!
+hostname FW-83-EDGE-42
+version 15.7
+ntp server 157.17.144.83
+ntp server 146.20.28.186
+interface Loopback2
+ description WAN Interface
+ ip address 36.77.52.134 255.255.255.0
+ no shutdown
+!",cisco,1,synthetic_v3,compliant,easy
+CIS-2.2,Reliable time source configuration through NTP is mandatory,Verify CIS-2.2 compliance,"! RTR-85,19,57-CORE-13 Configuration
+!
+hostname RTR-85,19,57-CORE-13
+version 15.7
+ntp server 35.195.242.98
+interface Vlan14
+ description LAN Interface
+ ip address 115.10.251.243 255.255.255.252
+ no shutdown
+!
+interface GigabitEthernet11/2
+ description LAN Interface
+ ip address 35.153.201.235 255.255.255.0
+!
+interface TenGigabitEthernet20/10
+ description DMZ Interface
+ ip address 183.42.181.155 255.255.255.252
+!
+router ospf 1
+ network 116.86.186.129/24 area 0
+!",cisco,1,synthetic_v3,compliant,easy
+CIS-2.2,Reliable time source configuration through NTP is mandatory,Verify CIS-2.2 compliance,"! SW-87-ACCESS-64,15-CORE-11 Configuration
+!
+hostname SW-87-ACCESS-64,15-CORE-11
+version 15.7
+! ntp server 208.175.190.218
+interface Vlan20
+ description DMZ Interface
+ ip address 135.79.142.207 255.255.255.0
+!
+interface GigabitEthernet13/15
+ description DMZ Interface
+ ip address 85.153.255.250 255.255.255.252
+!
+router ospf 1
+ network 75.54.75.114/24 area 0
+!",cisco,0,synthetic_v3,non_compliant,medium
+CIS-2.2,Reliable time source configuration through NTP is mandatory,Verify CIS-2.2 compliance,"! Generated: 2024-01-06
+!
+hostname FW-80-EDGE-87
+version 15.7
+! ntp server 134.157.208.77",cisco,0,synthetic_v3,non_compliant,hard
+CIS-2.2,Reliable time source configuration through NTP is mandatory,Verify CIS-2.2 compliance,"! Generated: 2024-01-21
+!
+hostname ASA-28,51-FW-19-DMZ-61
+version 15.7
+ntp server 116.153.211.14
+interface Loopback16
+ description Management Interface
+ ip address 47.226.12.178 255.255.255.0
+ no shutdown
+!
+router ospf 1
+ network 79.79.205.101/24 area 0
+!",cisco,1,synthetic_v3,compliant,medium
+CIS-2.2,Reliable time source configuration through NTP is mandatory,Verify CIS-2.2 compliance,"! FW-86-EDGE-78 Configuration
+!
+hostname FW-86-EDGE-78
+version 15.7
+! ntp server 92.49.194.121
+interface Vlan1
+ description DMZ Interface
+ ip address 92.241.123.137 255.255.255.252
+ no shutdown
+!",cisco,0,synthetic_v3,non_compliant,hard
+CIS-2.2,Reliable time source configuration through NTP is mandatory,Verify CIS-2.2 compliance,"! Generated: 2024-01-02
+!
+hostname ASA-44,54-FW-10-DMZ-12
+version 15.7
+! ntp server 179.150.66.134
+interface GigabitEthernet11/20
+ description WAN Interface
+ ip address 200.172.121.127 255.255.255.252
+ no shutdown
+!
+interface GigabitEthernet16/22
+ description WAN Interface
+ ip address 30.65.218.200 255.255.255.0
+ no shutdown
+!
+interface TenGigabitEthernet1/16
+ description LAN Interface
+ ip address 93.199.203.227 255.255.255.0
+ no shutdown
+!
+router ospf 1
+ network 108.78.233.37/24 area 0
+!",cisco,0,synthetic_v3,non_compliant,medium
+CIS-2.2,Reliable time source configuration through NTP is mandatory,Verify CIS-2.2 compliance,"! Generated: 2024-01-24
+!
+hostname FW-41-EDGE-60
+version 15.7
+ntp server 34.249.161.157
+ntp server 157.18.49.202",cisco,1,synthetic_v3,compliant,easy
+CIS-2.2,Reliable time source configuration through NTP is mandatory,Verify CIS-2.2 compliance,"! Generated: 2024-01-02
+!
+hostname SW-12-ACCESS-79,50-CORE-36
+version 15.7
+! ntp server 12.155.6.245",cisco,0,synthetic_v3,non_compliant,easy
+CIS-2.2,Reliable time source configuration through NTP is mandatory,Verify CIS-2.2 compliance,"! SW-49-ACCESS-92,98-CORE-25 Configuration
+!
+hostname SW-49-ACCESS-92,98-CORE-25
+version 15.7
+! ntp server 17.204.137.63",cisco,0,synthetic_v3,non_compliant,hard
+CIS-2.2,Reliable time source configuration through NTP is mandatory,Verify CIS-2.2 compliance,"! SW-63-DIST-23 Configuration
+!
+hostname SW-63-DIST-23
+version 15.7
+ntp server 76.83.20.75
+ntp server 110.56.79.248
+interface Loopback15
+ description LAN Interface
+ ip address 2.198.90.198 255.255.255.252
+!",cisco,1,synthetic_v3,compliant,hard
+CIS-2.2,Reliable time source configuration through NTP is mandatory,Verify CIS-2.2 compliance,"! SW-48-ACCESS-95,3-CORE-56 Configuration
+!
+hostname SW-48-ACCESS-95,3-CORE-56
+version 15.7
+ntp server 37.21.235.106
+ntp server 139.116.205.33
+interface TenGigabitEthernet12/13
+ description Management Interface
+ ip address 118.231.227.244 255.255.255.252
+ no shutdown
+!
+interface Vlan10
+ description Management Interface
+ ip address 35.105.125.56 255.255.255.0
+ no shutdown
+!
+router ospf 1
+ network 168.186.237.209/24 area 0
+!",cisco,1,synthetic_v3,compliant,medium
+CIS-2.2,Reliable time source configuration through NTP is mandatory,Verify CIS-2.2 compliance,"! Generated: 2024-01-20
+!
+hostname SW-11-ACCESS-98,89-CORE-9
+version 15.7
+ntp server 95.224.73.114
+ntp server 11.96.107.186
+interface GigabitEthernet4/10
+ description DMZ Interface
+ ip address 236.89.179.119 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet12/12
+ description LAN Interface
+ ip address 243.149.32.58 255.255.255.0
+ no shutdown
+!
+interface Vlan21
+ description Management Interface
+ ip address 7.225.35.216 255.255.255.0
+ no shutdown
+!",cisco,1,synthetic_v3,compliant,medium
+CIS-2.2,Accurate timestamps depend on proper NTP configuration,Verify CIS-2.2 compliance,"# Date: 2024-01-01
+
+system {
+    host-name 21-Junos-27,92-ROUTER-71;
+    ntp {
+        server 137.84.241.104;
+    }
+}",juniper,1,synthetic_v3,compliant,medium
+CIS-2.2,Accurate timestamps depend on proper NTP configuration,Verify CIS-2.2 compliance,"# Date: 2024-01-17
+
+system {
+    host-name 97-SRX-62,1-MX-35,47-EX-17;
+    ntp {
+        server 135.178.205.42;
+    }
+}",juniper,1,synthetic_v3,compliant,hard
+CIS-2.2,Accurate timestamps depend on proper NTP configuration,Verify CIS-2.2 compliance,"# Date: 2024-01-02
+
+system {
+    host-name 18-SRX-33,60-MX-56,1-EX-15;
+    ntp {
+        #server 197.60.62.10;
+    }
+}",juniper,0,synthetic_v3,non_compliant,medium
+CIS-2.2,Accurate timestamps depend on proper NTP configuration,Verify CIS-2.2 compliance,"# Date: 2024-01-28
+
+system {
+    host-name 56-SRX-55,76-MX-3,53-EX-30;
+    ntp {
+        #server 73.54.175.82;
+    }
+}",juniper,0,synthetic_v3,non_compliant,hard
+CIS-2.2,Accurate timestamps depend on proper NTP configuration,Verify CIS-2.2 compliance,"# 94-FIREWALL-28,5-SWITCH-38 Configuration
+
+system {
+    host-name 94-FIREWALL-28,5-SWITCH-38;
+    ntp {
+        #server 111.194.172.54;
+    }
+}",juniper,0,synthetic_v3,non_compliant,hard
+CIS-2.2,Accurate timestamps depend on proper NTP configuration,Verify CIS-2.2 compliance,"# Date: 2024-01-27
+
+system {
+    host-name 62-SRX-36,84-MX-95,66-EX-25;
+    ntp {
+        #server 51.2.212.254;
+    }
+}",juniper,0,synthetic_v3,non_compliant,medium
+CIS-2.2,Accurate timestamps depend on proper NTP configuration,Verify CIS-2.2 compliance,"# 76-Junos-69,24-ROUTER-14 Configuration
+
+system {
+    host-name 76-Junos-69,24-ROUTER-14;
+    ntp {
+        server 67.214.87.147;
+    }
+}",juniper,1,synthetic_v3,compliant,easy
+CIS-2.2,Accurate timestamps depend on proper NTP configuration,Verify CIS-2.2 compliance,"# Date: 2024-01-11
+
+system {
+    host-name 79-Junos-16,11-ROUTER-89;
+    ntp {
+        server 7.69.3.226;
+    }
+}",juniper,1,synthetic_v3,compliant,easy
+CIS-2.2,Accurate timestamps depend on proper NTP configuration,Verify CIS-2.2 compliance,"# 37-FIREWALL-51,21-SWITCH-8 Configuration
+
+system {
+    host-name 37-FIREWALL-51,21-SWITCH-8;
+    ntp {
+        server 115.71.206.196;
+    }
+}",juniper,1,synthetic_v3,compliant,medium
+CIS-2.2,Accurate timestamps depend on proper NTP configuration,Verify CIS-2.2 compliance,"# 11-FIREWALL-60,2-SWITCH-27 Configuration
+
+system {
+    host-name 11-FIREWALL-60,2-SWITCH-27;
+    ntp {
+        server 231.84.52.21;
+    }
+}",juniper,1,synthetic_v3,compliant,medium
+CIS-2.2,Accurate timestamps depend on proper NTP configuration,Verify CIS-2.2 compliance,"# 67-Junos-74,26-ROUTER-64 Configuration
+
+system {
+    host-name 67-Junos-74,26-ROUTER-64;
+    ntp {
+        server 10.162.0.103;
+    }
+}",juniper,1,synthetic_v3,compliant,easy
+CIS-2.2,Accurate timestamps depend on proper NTP configuration,Verify CIS-2.2 compliance,"# 27-SRX-88,76-MX-64,12-EX-78 Configuration
+
+system {
+    host-name 27-SRX-88,76-MX-64,12-EX-78;
+    ntp {
+        #server 38.203.24.163;
+    }
+}",juniper,0,synthetic_v3,non_compliant,medium
+CIS-2.2,Accurate timestamps depend on proper NTP configuration,Verify CIS-2.2 compliance,"# Date: 2024-01-09
+
+system {
+    host-name 8-Junos-97,99-ROUTER-6;
+    ntp {
+        #server 251.154.120.237;
+    }
+}",juniper,0,synthetic_v3,non_compliant,hard
+CIS-2.2,Accurate timestamps depend on proper NTP configuration,Verify CIS-2.2 compliance,"# 93-Junos-83,60-ROUTER-95 Configuration
+
+system {
+    host-name 93-Junos-83,60-ROUTER-95;
+    ntp {
+        #server 127.112.82.207;
+    }
+}",juniper,0,synthetic_v3,non_compliant,easy
+CIS-2.2,Accurate timestamps depend on proper NTP configuration,Verify CIS-2.2 compliance,"# 63-FIREWALL-67,34-SWITCH-50 Configuration
+
+system {
+    host-name 63-FIREWALL-67,34-SWITCH-50;
+    ntp {
+        server 144.166.8.157;
+    }
+}",juniper,1,synthetic_v3,compliant,easy
+CIS-2.2,Accurate timestamps depend on proper NTP configuration,Verify CIS-2.2 compliance,"# Date: 2024-01-22
+
+system {
+    host-name 20-FIREWALL-15,27-SWITCH-21;
+    ntp {
+        #server 237.235.209.120;
+    }
+}",juniper,0,synthetic_v3,non_compliant,easy
+CIS-2.2,Accurate timestamps depend on proper NTP configuration,Verify CIS-2.2 compliance,"# Date: 2024-01-02
+
+system {
+    host-name 42-SRX-41,9-MX-27,1-EX-42;
+    ntp {
+        server 134.104.217.143;
+    }
+}",juniper,1,synthetic_v3,compliant,hard
+CIS-2.2,Accurate timestamps depend on proper NTP configuration,Verify CIS-2.2 compliance,"# 81-SRX-40,80-MX-12,8-EX-49 Configuration
+
+system {
+    host-name 81-SRX-40,80-MX-12,8-EX-49;
+    ntp {
+        server 227.46.125.107;
+    }
+}",juniper,1,synthetic_v3,compliant,hard
+CIS-2.2,Device clocks must be synchronized via configured NTP servers,Verify CIS-2.2 compliance,"<!-- 43-PAFW-3,89-PAN-6,56-CORP-56 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>43-PAFW-3,89-PAN-6,56-CORP-56</hostname>
+    <ntp-servers>
+    </ntp-servers>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,medium
+CIS-2.2,Device clocks must be synchronized via configured NTP servers,Verify CIS-2.2 compliance,"<!-- 90-SECURITY-65,30-PERIMETER-79 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>90-SECURITY-65,30-PERIMETER-79</hostname>
+    <ntp-servers>
+      <primary>11.223.70.253</primary>
+    </ntp-servers>
+</device-config>",paloalto,1,synthetic_v3,compliant,medium
+CIS-2.2,Device clocks must be synchronized via configured NTP servers,Verify CIS-2.2 compliance,"<!-- 61-PAFW-68,88-PAN-85,83-CORP-63 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>61-PAFW-68,88-PAN-85,83-CORP-63</hostname>
+    <ntp-servers>
+    </ntp-servers>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,hard
+CIS-2.2,Device clocks must be synchronized via configured NTP servers,Verify CIS-2.2 compliance,"<!-- 94-SECURITY-50,97-PERIMETER-69 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>94-SECURITY-50,97-PERIMETER-69</hostname>
+    <ntp-servers>
+      <primary>13.236.179.250</primary>
+    </ntp-servers>
+</device-config>",paloalto,1,synthetic_v3,compliant,hard
+CIS-2.2,Device clocks must be synchronized via configured NTP servers,Verify CIS-2.2 compliance,"<!-- 97-SECURITY-99,72-PERIMETER-51 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>97-SECURITY-99,72-PERIMETER-51</hostname>
+    <ntp-servers>
+      <primary>54.215.160.64</primary>
+    </ntp-servers>
+</device-config>",paloalto,1,synthetic_v3,compliant,hard
+CIS-2.2,Device clocks must be synchronized via configured NTP servers,Verify CIS-2.2 compliance,"<!-- 62-FORTIGATE-20,97-EDGE-68 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>62-FORTIGATE-20,97-EDGE-68</hostname>
+    <ntp-servers>
+      <primary>114.34.217.6</primary>
+    </ntp-servers>
+</device-config>",paloalto,1,synthetic_v3,compliant,medium
+CIS-2.2,Device clocks must be synchronized via configured NTP servers,Verify CIS-2.2 compliance,"<!-- 10-FORTIGATE-73,59-EDGE-49 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>10-FORTIGATE-73,59-EDGE-49</hostname>
+    <ntp-servers>
+    </ntp-servers>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,medium
+CIS-2.2,Device clocks must be synchronized via configured NTP servers,Verify CIS-2.2 compliance,"<!-- 19-PAFW-16,6-PAN-15,2-CORP-24 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>19-PAFW-16,6-PAN-15,2-CORP-24</hostname>
+    <ntp-servers>
+    </ntp-servers>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,easy
+CIS-2.2,Device clocks must be synchronized via configured NTP servers,Verify CIS-2.2 compliance,"<!-- 2-FORTIGATE-5,90-EDGE-82 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>2-FORTIGATE-5,90-EDGE-82</hostname>
+    <ntp-servers>
+      <primary>190.53.35.184</primary>
+    </ntp-servers>
+</device-config>",paloalto,1,synthetic_v3,compliant,easy
+CIS-2.2,Device clocks must be synchronized via configured NTP servers,Verify CIS-2.2 compliance,"<!-- 21-PAFW-19,78-PAN-62,43-CORP-66 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>21-PAFW-19,78-PAN-62,43-CORP-66</hostname>
+    <ntp-servers>
+    </ntp-servers>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,medium
+CIS-2.2,Device clocks must be synchronized via configured NTP servers,Verify CIS-2.2 compliance,"<!-- 18-SECURITY-33,49-PERIMETER-30 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>18-SECURITY-33,49-PERIMETER-30</hostname>
+    <ntp-servers>
+    </ntp-servers>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,medium
+CIS-2.2,Device clocks must be synchronized via configured NTP servers,Verify CIS-2.2 compliance,"<!-- 54-FORTIGATE-71,26-EDGE-38 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>54-FORTIGATE-71,26-EDGE-38</hostname>
+    <ntp-servers>
+    </ntp-servers>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,easy
+CIS-2.2,Device clocks must be synchronized via configured NTP servers,Verify CIS-2.2 compliance,"<!-- 51-SECURITY-48,39-PERIMETER-12 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>51-SECURITY-48,39-PERIMETER-12</hostname>
+    <ntp-servers>
+    </ntp-servers>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,easy
+CIS-2.2,Device clocks must be synchronized via configured NTP servers,Verify CIS-2.2 compliance,"<!-- 17-FORTIGATE-14,71-EDGE-45 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>17-FORTIGATE-14,71-EDGE-45</hostname>
+    <ntp-servers>
+    </ntp-servers>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,medium
+CIS-2.2,Device clocks must be synchronized via configured NTP servers,Verify CIS-2.2 compliance,"<!-- 20-PAFW-72,44-PAN-14,50-CORP-19 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>20-PAFW-72,44-PAN-14,50-CORP-19</hostname>
+    <ntp-servers>
+      <primary>41.182.124.212</primary>
+    </ntp-servers>
+</device-config>",paloalto,1,synthetic_v3,compliant,medium
+CIS-2.2,Device clocks must be synchronized via configured NTP servers,Verify CIS-2.2 compliance,"<!-- 21-FORTIGATE-2,40-EDGE-41 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>21-FORTIGATE-2,40-EDGE-41</hostname>
+    <ntp-servers>
+      <primary>109.186.250.194</primary>
+    </ntp-servers>
+</device-config>",paloalto,1,synthetic_v3,compliant,medium
+CIS-2.2,Device clocks must be synchronized via configured NTP servers,Verify CIS-2.2 compliance,"<!-- 57-FORTIGATE-2,70-EDGE-23 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>57-FORTIGATE-2,70-EDGE-23</hostname>
+    <ntp-servers>
+      <primary>16.13.132.139</primary>
+    </ntp-servers>
+</device-config>",paloalto,1,synthetic_v3,compliant,hard
+CIS-2.2,Device clocks must be synchronized via configured NTP servers,Verify CIS-2.2 compliance,"<!-- 75-FORTIGATE-86,62-EDGE-86 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>75-FORTIGATE-86,62-EDGE-86</hostname>
+    <ntp-servers>
+      <primary>163.25.136.12</primary>
+    </ntp-servers>
+</device-config>",paloalto,1,synthetic_v3,compliant,hard
+CIS-3.1,Weak SNMP communities expose devices to unauthorized access,Verify CIS-3.1 compliance,"! FW-11-EDGE-15 Configuration
+!
+hostname FW-11-EDGE-15
+version 15.7
+snmp-server community infrastructure RO
+interface Loopback7
+ description DMZ Interface
+ ip address 53.25.189.152 255.255.255.252
+ no shutdown
+!",cisco,1,synthetic_v3,compliant,medium
+CIS-3.1,Weak SNMP communities expose devices to unauthorized access,Verify CIS-3.1 compliance,"! ASA-63,6-FW-41-DMZ-56 Configuration
+!
+hostname ASA-63,6-FW-41-DMZ-56
+version 15.7
+snmp-server community security-team RO
+router ospf 1
+ network 42.187.254.0/24 area 0
+!",cisco,1,synthetic_v3,compliant,medium
+CIS-3.1,Weak SNMP communities expose devices to unauthorized access,Verify CIS-3.1 compliance,"! ASA-22,88-FW-45-DMZ-18 Configuration
+!
+hostname ASA-22,88-FW-45-DMZ-18
+version 15.7
+snmp-server community community RO",cisco,0,synthetic_v3,non_compliant,hard
+CIS-3.1,Weak SNMP communities expose devices to unauthorized access,Verify CIS-3.1 compliance,"! Generated: 2024-01-09
+!
+hostname SW-55-ACCESS-18,66-CORE-14
+version 15.7
+snmp-server community admin RO",cisco,0,synthetic_v3,non_compliant,medium
+CIS-3.1,Weak SNMP communities expose devices to unauthorized access,Verify CIS-3.1 compliance,"! SW-92-ACCESS-57,64-CORE-46 Configuration
+!
+hostname SW-92-ACCESS-57,64-CORE-46
+version 15.7
+snmp-server community security-team RO
+interface TenGigabitEthernet11/22
+ description LAN Interface
+ ip address 11.66.47.107 255.255.255.252
+ no shutdown
+!",cisco,1,synthetic_v3,compliant,easy
+CIS-3.1,Weak SNMP communities expose devices to unauthorized access,Verify CIS-3.1 compliance,"! RTR-39,41,40-CORE-28 Configuration
+!
+hostname RTR-39,41,40-CORE-28
+version 15.7
+snmp-server community corp-monitor RO
+interface TenGigabitEthernet21/24
+ description Management Interface
+ ip address 58.53.9.8 255.255.255.0
+ no shutdown
+!
+interface Vlan5
+ description LAN Interface
+ ip address 239.61.40.95 255.255.255.252
+!
+router ospf 1
+ network 81.162.80.107/24 area 0
+!",cisco,1,synthetic_v3,compliant,medium
+CIS-3.1,Weak SNMP communities expose devices to unauthorized access,Verify CIS-3.1 compliance,"! SW-31-ACCESS-83,67-CORE-77 Configuration
+!
+hostname SW-31-ACCESS-83,67-CORE-77
+version 15.7
+snmp-server community test RO
+interface Loopback16
+ description LAN Interface
+ ip address 208.34.180.204 255.255.255.0
+ no shutdown
+!
+interface Loopback6
+ description WAN Interface
+ ip address 74.222.94.81 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet14/22
+ description DMZ Interface
+ ip address 105.167.108.238 255.255.255.252
+ no shutdown
+!",cisco,0,synthetic_v3,non_compliant,easy
+CIS-3.1,Weak SNMP communities expose devices to unauthorized access,Verify CIS-3.1 compliance,"! Generated: 2024-01-28
+!
+hostname FW-24-EDGE-21
+version 15.7
+snmp-server community community RO",cisco,0,synthetic_v3,non_compliant,hard
+CIS-3.1,Weak SNMP communities expose devices to unauthorized access,Verify CIS-3.1 compliance,"! SW-28-ACCESS-18,36-CORE-61 Configuration
+!
+hostname SW-28-ACCESS-18,36-CORE-61
+version 15.7
+snmp-server community netwatch RO
+router ospf 1
+ network 93.143.2.29/24 area 0
+!",cisco,1,synthetic_v3,compliant,medium
+CIS-3.1,Weak SNMP communities expose devices to unauthorized access,Verify CIS-3.1 compliance,"! Generated: 2024-01-22
+!
+hostname RTR-13,66,73-CORE-14
+version 15.7
+snmp-server community test RO",cisco,0,synthetic_v3,non_compliant,hard
+CIS-3.1,Weak SNMP communities expose devices to unauthorized access,Verify CIS-3.1 compliance,"! Generated: 2024-01-07
+!
+hostname RTR-20,58,48-CORE-2
+version 15.7
+snmp-server community public RO
+interface Loopback24
+ description Management Interface
+ ip address 27.182.104.5 255.255.255.252
+ no shutdown
+!
+interface GigabitEthernet17/8
+ description LAN Interface
+ ip address 212.224.150.111 255.255.255.252
+ no shutdown
+!
+interface Loopback23
+ description WAN Interface
+ ip address 168.60.241.42 255.255.255.252
+ no shutdown
+!
+router ospf 1
+ network 17.57.104.218/24 area 0
+!",cisco,0,synthetic_v3,non_compliant,easy
+CIS-3.1,Weak SNMP communities expose devices to unauthorized access,Verify CIS-3.1 compliance,"! Generated: 2024-01-01
+!
+hostname SW-41-ACCESS-60,85-CORE-25
+version 15.7
+snmp-server community infrastructure RO
+interface GigabitEthernet24/6
+ description Management Interface
+ ip address 136.44.253.43 255.255.255.0
+!
+interface TenGigabitEthernet12/19
+ description DMZ Interface
+ ip address 90.78.200.46 255.255.255.0
+ no shutdown
+!
+interface TenGigabitEthernet18/23
+ description Management Interface
+ ip address 201.126.176.33 255.255.255.252
+ no shutdown
+!",cisco,1,synthetic_v3,compliant,medium
+CIS-3.1,Weak SNMP communities expose devices to unauthorized access,Verify CIS-3.1 compliance,"! SW-9-ACCESS-83,11-CORE-23 Configuration
+!
+hostname SW-9-ACCESS-83,11-CORE-23
+version 15.7
+snmp-server community public RO
+interface GigabitEthernet11/23
+ description DMZ Interface
+ ip address 131.57.190.138 255.255.255.0
+ no shutdown
+!
+router ospf 1
+ network 147.255.205.152/24 area 0
+!",cisco,0,synthetic_v3,non_compliant,hard
+CIS-3.1,Weak SNMP communities expose devices to unauthorized access,Verify CIS-3.1 compliance,"! Generated: 2024-01-17
+!
+hostname SW-87-ACCESS-1,6-CORE-50
+version 15.7
+snmp-server community test RO
+interface Loopback7
+ description DMZ Interface
+ ip address 134.167.198.164 255.255.255.252
+!
+interface Loopback23
+ description DMZ Interface
+ ip address 199.60.222.186 255.255.255.0
+!
+interface TenGigabitEthernet3/19
+ description LAN Interface
+ ip address 184.223.74.46 255.255.255.0
+!",cisco,0,synthetic_v3,non_compliant,medium
+CIS-3.1,Weak SNMP communities expose devices to unauthorized access,Verify CIS-3.1 compliance,"! SW-86-DIST-12 Configuration
+!
+hostname SW-86-DIST-12
+version 15.7
+snmp-server community switch-admin RO
+interface Vlan14
+ description Management Interface
+ ip address 92.94.30.123 255.255.255.0
+ no shutdown
+!",cisco,1,synthetic_v3,compliant,easy
+CIS-3.1,Weak SNMP communities expose devices to unauthorized access,Verify CIS-3.1 compliance,"! SW-53-DIST-85 Configuration
+!
+hostname SW-53-DIST-85
+version 15.7
+snmp-server community community RO",cisco,0,synthetic_v3,non_compliant,hard
+CIS-3.1,Weak SNMP communities expose devices to unauthorized access,Verify CIS-3.1 compliance,"! RTR-86,55,59-CORE-47 Configuration
+!
+hostname RTR-86,55,59-CORE-47
+version 15.7
+snmp-server community public RO
+interface TenGigabitEthernet24/15
+ description DMZ Interface
+ ip address 193.161.127.231 255.255.255.0
+!
+interface Vlan6
+ description WAN Interface
+ ip address 21.88.118.189 255.255.255.252
+ no shutdown
+!",cisco,0,synthetic_v3,non_compliant,hard
+CIS-3.1,Weak SNMP communities expose devices to unauthorized access,Verify CIS-3.1 compliance,"! ASA-52,8-FW-49-DMZ-24 Configuration
+!
+hostname ASA-52,8-FW-49-DMZ-24
+version 15.7
+snmp-server community infrastructure RO
+interface TenGigabitEthernet11/20
+ description WAN Interface
+ ip address 231.199.124.214 255.255.255.252
+ no shutdown
+!
+interface TenGigabitEthernet2/20
+ description WAN Interface
+ ip address 137.28.139.102 255.255.255.252
+!
+router ospf 1
+ network 11.248.161.117/24 area 0
+!",cisco,1,synthetic_v3,compliant,hard
+CIS-3.1,Default SNMP community strings like public or private are prohibited,Verify CIS-3.1 compliance,"# Date: 2024-01-20
+
+system {
+    host-name 70-Junos-52,97-ROUTER-90;
+    snmp {
+        community netwatch {
+            authorization read-write;
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,easy
+CIS-3.1,Default SNMP community strings like public or private are prohibited,Verify CIS-3.1 compliance,"# 97-FIREWALL-95,81-SWITCH-20 Configuration
+
+system {
+    host-name 97-FIREWALL-95,81-SWITCH-20;
+    snmp {
+        community security-team {
+            authorization read-write;
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,medium
+CIS-3.1,Default SNMP community strings like public or private are prohibited,Verify CIS-3.1 compliance,"# 15-FIREWALL-41,69-SWITCH-75 Configuration
+
+system {
+    host-name 15-FIREWALL-41,69-SWITCH-75;
+    snmp {
+        community network-ops {
+            authorization read-write;
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,hard
+CIS-3.1,Default SNMP community strings like public or private are prohibited,Verify CIS-3.1 compliance,"# Date: 2024-01-07
+
+system {
+    host-name 23-SRX-54,13-MX-14,69-EX-80;
+    snmp {
+        community server-mgmt {
+            authorization read-write;
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,hard
+CIS-3.1,Default SNMP community strings like public or private are prohibited,Verify CIS-3.1 compliance,"# 20-SRX-51,19-MX-5,68-EX-45 Configuration
+
+system {
+    host-name 20-SRX-51,19-MX-5,68-EX-45;
+    snmp {
+        community network-ops {
+            authorization read-write;
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,medium
+CIS-3.1,Default SNMP community strings like public or private are prohibited,Verify CIS-3.1 compliance,"# 85-Junos-89,36-ROUTER-37 Configuration
+
+system {
+    host-name 85-Junos-89,36-ROUTER-37;
+    snmp {
+        community public {
+        }
+    }
+}",juniper,0,synthetic_v3,non_compliant,easy
+CIS-3.1,Default SNMP community strings like public or private are prohibited,Verify CIS-3.1 compliance,"# Date: 2024-01-01
+
+system {
+    host-name 96-SRX-87,17-MX-59,86-EX-24;
+    snmp {
+        community default {
+        }
+    }
+}",juniper,0,synthetic_v3,non_compliant,medium
+CIS-3.1,Default SNMP community strings like public or private are prohibited,Verify CIS-3.1 compliance,"# 62-Junos-72,55-ROUTER-66 Configuration
+
+system {
+    host-name 62-Junos-72,55-ROUTER-66;
+    snmp {
+        community security-team {
+            authorization read-write;
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,medium
+CIS-3.1,Default SNMP community strings like public or private are prohibited,Verify CIS-3.1 compliance,"# Date: 2024-01-12
+
+system {
+    host-name 89-Junos-42,18-ROUTER-60;
+    snmp {
+        community platform-team {
+            authorization read-write;
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,medium
+CIS-3.1,Default SNMP community strings like public or private are prohibited,Verify CIS-3.1 compliance,"# Date: 2024-01-05
+
+system {
+    host-name 52-FIREWALL-58,89-SWITCH-84;
+    snmp {
+        community corp-monitor {
+            authorization read-write;
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,easy
+CIS-3.1,Default SNMP community strings like public or private are prohibited,Verify CIS-3.1 compliance,"# Date: 2024-01-08
+
+system {
+    host-name 32-Junos-1,86-ROUTER-55;
+    snmp {
+        community community {
+        }
+    }
+}",juniper,0,synthetic_v3,non_compliant,easy
+CIS-3.1,Default SNMP community strings like public or private are prohibited,Verify CIS-3.1 compliance,"# Date: 2024-01-04
+
+system {
+    host-name 40-SRX-71,12-MX-12,1-EX-42;
+    snmp {
+        community community {
+        }
+    }
+}",juniper,0,synthetic_v3,non_compliant,medium
+CIS-3.1,Default SNMP community strings like public or private are prohibited,Verify CIS-3.1 compliance,"# 26-Junos-59,95-ROUTER-75 Configuration
+
+system {
+    host-name 26-Junos-59,95-ROUTER-75;
+    snmp {
+        community infrastructure {
+            authorization read-write;
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,hard
+CIS-3.1,Default SNMP community strings like public or private are prohibited,Verify CIS-3.1 compliance,"# Date: 2024-01-13
+
+system {
+    host-name 29-Junos-99,94-ROUTER-97;
+    snmp {
+        community admin {
+        }
+    }
+}",juniper,0,synthetic_v3,non_compliant,medium
+CIS-3.1,Default SNMP community strings like public or private are prohibited,Verify CIS-3.1 compliance,"# 13-SRX-93,32-MX-58,11-EX-13 Configuration
+
+system {
+    host-name 13-SRX-93,32-MX-58,11-EX-13;
+    snmp {
+        community network-ops {
+            authorization read-write;
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,medium
+CIS-3.1,Default SNMP community strings like public or private are prohibited,Verify CIS-3.1 compliance,"# Date: 2024-01-01
+
+system {
+    host-name 47-SRX-27,42-MX-98,31-EX-36;
+    snmp {
+        community router-ops {
+            authorization read-write;
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,easy
+CIS-3.1,Default SNMP community strings like public or private are prohibited,Verify CIS-3.1 compliance,"# 65-Junos-73,62-ROUTER-39 Configuration
+
+system {
+    host-name 65-Junos-73,62-ROUTER-39;
+    snmp {
+        community private {
+        }
+    }
+}",juniper,0,synthetic_v3,non_compliant,hard
+CIS-3.1,Default SNMP community strings like public or private are prohibited,Verify CIS-3.1 compliance,"# Date: 2024-01-17
+
+system {
+    host-name 85-SRX-78,72-MX-83,48-EX-89;
+    snmp {
+        community security-team {
+            authorization read-write;
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,medium
+CIS-3.1,SNMP configuration must avoid well-known community names,Verify CIS-3.1 compliance,"<!-- 46-SECURITY-2,2-PERIMETER-74 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>46-SECURITY-2,2-PERIMETER-74</hostname>
+  </system>
+  <snmp>
+    <community><entry name=""community""><version>v2c</version></entry></community>
+  </snmp>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,hard
+CIS-3.1,SNMP configuration must avoid well-known community names,Verify CIS-3.1 compliance,"<!-- 56-PAFW-39,18-PAN-26,92-CORP-13 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>56-PAFW-39,18-PAN-26,92-CORP-13</hostname>
+  </system>
+  <snmp>
+    <community><entry name=""test""><version>v2c</version></entry></community>
+  </snmp>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,hard
+CIS-3.1,SNMP configuration must avoid well-known community names,Verify CIS-3.1 compliance,"<!-- 53-FORTIGATE-58,8-EDGE-95 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>53-FORTIGATE-58,8-EDGE-95</hostname>
+  </system>
+  <snmp>
+    <community><entry name=""router-ops""><version>v3</version></entry></community>
+  </snmp>
+</device-config>",paloalto,1,synthetic_v3,compliant,hard
+CIS-3.1,SNMP configuration must avoid well-known community names,Verify CIS-3.1 compliance,"<!-- 14-SECURITY-73,22-PERIMETER-77 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>14-SECURITY-73,22-PERIMETER-77</hostname>
+  </system>
+  <snmp>
+    <community><entry name=""corp-monitor""><version>v3</version></entry></community>
+  </snmp>
+</device-config>",paloalto,1,synthetic_v3,compliant,hard
+CIS-3.1,SNMP configuration must avoid well-known community names,Verify CIS-3.1 compliance,"<!-- 78-FORTIGATE-7,53-EDGE-86 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>78-FORTIGATE-7,53-EDGE-86</hostname>
+  </system>
+  <snmp>
+    <community><entry name=""cloud-monitor""><version>v3</version></entry></community>
+  </snmp>
+</device-config>",paloalto,1,synthetic_v3,compliant,hard
+CIS-3.1,SNMP configuration must avoid well-known community names,Verify CIS-3.1 compliance,"<!-- 65-SECURITY-71,72-PERIMETER-37 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>65-SECURITY-71,72-PERIMETER-37</hostname>
+  </system>
+  <snmp>
+    <community><entry name=""cloud-monitor""><version>v3</version></entry></community>
+  </snmp>
+</device-config>",paloalto,1,synthetic_v3,compliant,medium
+CIS-3.1,SNMP configuration must avoid well-known community names,Verify CIS-3.1 compliance,"<!-- 22-FORTIGATE-71,83-EDGE-39 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>22-FORTIGATE-71,83-EDGE-39</hostname>
+  </system>
+  <snmp>
+    <community><entry name=""fw-monitor""><version>v3</version></entry></community>
+  </snmp>
+</device-config>",paloalto,1,synthetic_v3,compliant,easy
+CIS-3.1,SNMP configuration must avoid well-known community names,Verify CIS-3.1 compliance,"<!-- 61-FORTIGATE-85,50-EDGE-67 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>61-FORTIGATE-85,50-EDGE-67</hostname>
+  </system>
+  <snmp>
+    <community><entry name=""community""><version>v2c</version></entry></community>
+  </snmp>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,easy
+CIS-3.1,SNMP configuration must avoid well-known community names,Verify CIS-3.1 compliance,"<!-- 14-SECURITY-39,31-PERIMETER-86 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>14-SECURITY-39,31-PERIMETER-86</hostname>
+  </system>
+  <snmp>
+    <community><entry name=""public""><version>v2c</version></entry></community>
+  </snmp>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,hard
+CIS-3.1,SNMP configuration must avoid well-known community names,Verify CIS-3.1 compliance,"<!-- 94-FORTIGATE-85,82-EDGE-52 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>94-FORTIGATE-85,82-EDGE-52</hostname>
+  </system>
+  <snmp>
+    <community><entry name=""private""><version>v2c</version></entry></community>
+  </snmp>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,easy
+CIS-3.1,SNMP configuration must avoid well-known community names,Verify CIS-3.1 compliance,"<!-- 14-PAFW-98,10-PAN-60,48-CORP-84 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>14-PAFW-98,10-PAN-60,48-CORP-84</hostname>
+  </system>
+  <snmp>
+    <community><entry name=""router-ops""><version>v3</version></entry></community>
+  </snmp>
+</device-config>",paloalto,1,synthetic_v3,compliant,medium
+CIS-3.1,SNMP configuration must avoid well-known community names,Verify CIS-3.1 compliance,"<!-- 83-SECURITY-97,30-PERIMETER-62 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>83-SECURITY-97,30-PERIMETER-62</hostname>
+  </system>
+  <snmp>
+    <community><entry name=""platform-team""><version>v3</version></entry></community>
+  </snmp>
+</device-config>",paloalto,1,synthetic_v3,compliant,medium
+CIS-3.1,SNMP configuration must avoid well-known community names,Verify CIS-3.1 compliance,"<!-- 22-PAFW-44,60-PAN-92,70-CORP-86 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>22-PAFW-44,60-PAN-92,70-CORP-86</hostname>
+  </system>
+  <snmp>
+    <community><entry name=""community""><version>v2c</version></entry></community>
+  </snmp>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,hard
+CIS-3.1,SNMP configuration must avoid well-known community names,Verify CIS-3.1 compliance,"<!-- 61-PAFW-42,44-PAN-13,66-CORP-71 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>61-PAFW-42,44-PAN-13,66-CORP-71</hostname>
+  </system>
+  <snmp>
+    <community><entry name=""test""><version>v2c</version></entry></community>
+  </snmp>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,medium
+CIS-3.1,SNMP configuration must avoid well-known community names,Verify CIS-3.1 compliance,"<!-- 14-FORTIGATE-4,59-EDGE-27 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>14-FORTIGATE-4,59-EDGE-27</hostname>
+  </system>
+  <snmp>
+    <community><entry name=""corp-monitor""><version>v3</version></entry></community>
+  </snmp>
+</device-config>",paloalto,1,synthetic_v3,compliant,easy
+CIS-3.1,SNMP configuration must avoid well-known community names,Verify CIS-3.1 compliance,"<!-- 19-FORTIGATE-58,24-EDGE-72 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>19-FORTIGATE-58,24-EDGE-72</hostname>
+  </system>
+  <snmp>
+    <community><entry name=""netwatch""><version>v3</version></entry></community>
+  </snmp>
+</device-config>",paloalto,1,synthetic_v3,compliant,hard
+CIS-3.1,SNMP configuration must avoid well-known community names,Verify CIS-3.1 compliance,"<!-- 20-PAFW-12,65-PAN-70,31-CORP-91 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>20-PAFW-12,65-PAN-70,31-CORP-91</hostname>
+  </system>
+  <snmp>
+    <community><entry name=""community""><version>v2c</version></entry></community>
+  </snmp>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,medium
+CIS-3.1,SNMP configuration must avoid well-known community names,Verify CIS-3.1 compliance,"<!-- 44-PAFW-27,94-PAN-71,52-CORP-61 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>44-PAFW-27,94-PAN-71,52-CORP-61</hostname>
+  </system>
+  <snmp>
+    <community><entry name=""switch-admin""><version>v3</version></entry></community>
+  </snmp>
+</device-config>",paloalto,1,synthetic_v3,compliant,hard
+CIS-4.1,Zone-based firewall policies must separate network segments,Verify CIS-4.1 compliance,"# 69-FIREWALL-57,48-SWITCH-36 Configuration
+
+system {
+    host-name 69-FIREWALL-57,48-SWITCH-36;
+    security {
+        zones {
+            security-zone trust {
+                interfaces { lo0; }
+            }
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,easy
+CIS-4.1,Zone-based firewall policies must separate network segments,Verify CIS-4.1 compliance,"# Date: 2024-01-03
+
+system {
+    host-name 16-Junos-91,21-ROUTER-41;
+    security {
+        zones { }
+    }
+}",juniper,0,synthetic_v3,non_compliant,medium
+CIS-4.1,Zone-based firewall policies must separate network segments,Verify CIS-4.1 compliance,"# 3-FIREWALL-99,66-SWITCH-58 Configuration
+
+system {
+    host-name 3-FIREWALL-99,66-SWITCH-58;
+    security {
+        zones {
+            security-zone dmz {
+                interfaces { lo0; }
+            }
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,easy
+CIS-4.1,Zone-based firewall policies must separate network segments,Verify CIS-4.1 compliance,"# Date: 2024-01-27
+
+system {
+    host-name 20-FIREWALL-8,67-SWITCH-24;
+    security {
+        zones { }
+    }
+}",juniper,0,synthetic_v3,non_compliant,hard
+CIS-4.1,Zone-based firewall policies must separate network segments,Verify CIS-4.1 compliance,"# Date: 2024-01-18
+
+system {
+    host-name 92-FIREWALL-70,20-SWITCH-23;
+    security {
+        zones { }
+    }
+}",juniper,0,synthetic_v3,non_compliant,easy
+CIS-4.1,Zone-based firewall policies must separate network segments,Verify CIS-4.1 compliance,"# 39-Junos-88,82-ROUTER-77 Configuration
+
+system {
+    host-name 39-Junos-88,82-ROUTER-77;
+    security {
+        zones {
+            security-zone trust {
+                interfaces { ae11; }
+            }
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,easy
+CIS-4.1,Zone-based firewall policies must separate network segments,Verify CIS-4.1 compliance,"# Date: 2024-01-23
+
+system {
+    host-name 8-Junos-34,83-ROUTER-72;
+    security {
+        zones {
+            security-zone trust {
+                interfaces { lo0; }
+            }
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,hard
+CIS-4.1,Zone-based firewall policies must separate network segments,Verify CIS-4.1 compliance,"# 88-Junos-22,90-ROUTER-66 Configuration
+
+system {
+    host-name 88-Junos-22,90-ROUTER-66;
+    security {
+        zones {
+            security-zone dmz {
+                interfaces { lo0; }
+            }
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,easy
+CIS-4.1,Zone-based firewall policies must separate network segments,Verify CIS-4.1 compliance,"# 93-FIREWALL-85,19-SWITCH-84 Configuration
+
+system {
+    host-name 93-FIREWALL-85,19-SWITCH-84;
+    security {
+        zones {
+            security-zone untrust {
+                interfaces { ge-6/14; }
+            }
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,medium
+CIS-4.1,Zone-based firewall policies must separate network segments,Verify CIS-4.1 compliance,"# 24-SRX-71,35-MX-73,58-EX-52 Configuration
+
+system {
+    host-name 24-SRX-71,35-MX-73,58-EX-52;
+    security {
+        zones {
+            security-zone dmz {
+                interfaces { ge-7/19; }
+            }
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,easy
+CIS-4.1,Zone-based firewall policies must separate network segments,Verify CIS-4.1 compliance,"# 54-FIREWALL-58,4-SWITCH-49 Configuration
+
+system {
+    host-name 54-FIREWALL-58,4-SWITCH-49;
+    security {
+        zones {
+            security-zone trust {
+                interfaces { ae17; }
+            }
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,hard
+CIS-4.1,Zone-based firewall policies must separate network segments,Verify CIS-4.1 compliance,"# Date: 2024-01-17
+
+system {
+    host-name 16-Junos-32,33-ROUTER-68;
+    security {
+        zones {
+            security-zone untrust {
+                interfaces { xe-3/10; }
+            }
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,easy
+CIS-4.1,Zone-based firewall policies must separate network segments,Verify CIS-4.1 compliance,"# 82-FIREWALL-55,35-SWITCH-2 Configuration
+
+system {
+    host-name 82-FIREWALL-55,35-SWITCH-2;
+    security {
+        zones { }
+    }
+}",juniper,0,synthetic_v3,non_compliant,easy
+CIS-4.1,Zone-based firewall policies must separate network segments,Verify CIS-4.1 compliance,"# 18-FIREWALL-38,2-SWITCH-43 Configuration
+
+system {
+    host-name 18-FIREWALL-38,2-SWITCH-43;
+    security {
+        zones { }
+    }
+}",juniper,0,synthetic_v3,non_compliant,hard
+CIS-4.1,Zone-based firewall policies must separate network segments,Verify CIS-4.1 compliance,"# 97-Junos-9,38-ROUTER-50 Configuration
+
+system {
+    host-name 97-Junos-9,38-ROUTER-50;
+    security {
+        zones { }
+    }
+}",juniper,0,synthetic_v3,non_compliant,easy
+CIS-4.1,Zone-based firewall policies must separate network segments,Verify CIS-4.1 compliance,"# Date: 2024-01-12
+
+system {
+    host-name 22-FIREWALL-69,76-SWITCH-45;
+    security {
+        zones { }
+    }
+}",juniper,0,synthetic_v3,non_compliant,easy
+CIS-4.1,Zone-based firewall policies must separate network segments,Verify CIS-4.1 compliance,"# 63-FIREWALL-86,23-SWITCH-18 Configuration
+
+system {
+    host-name 63-FIREWALL-86,23-SWITCH-18;
+    security {
+        zones {
+            security-zone untrust {
+                interfaces { xe-19/16; }
+            }
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,medium
+CIS-4.1,Zone-based firewall policies must separate network segments,Verify CIS-4.1 compliance,"# 67-SRX-56,94-MX-91,35-EX-9 Configuration
+
+system {
+    host-name 67-SRX-56,94-MX-91,35-EX-9;
+    security {
+        zones {
+            security-zone trust {
+                interfaces { ae7; }
+            }
+        }
+    }
+}",juniper,1,synthetic_v3,compliant,easy
+CIS-4.1,Proper network segmentation via security zones must be implemented,Verify CIS-4.1 compliance,"<!-- 5-FORTIGATE-43,79-EDGE-41 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>5-FORTIGATE-43,79-EDGE-41</hostname>
+  </system>
+  <network>
+    <zone><entry name=""trust""><network><member>mgmt4</member></network></entry></zone>
+  </network>
+</device-config>",paloalto,1,synthetic_v3,compliant,easy
+CIS-4.1,Proper network segmentation via security zones must be implemented,Verify CIS-4.1 compliance,"<!-- 9-SECURITY-28,35-PERIMETER-86 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>9-SECURITY-28,35-PERIMETER-86</hostname>
+  </system>
+  <network>
+    <zone></zone>
+  </network>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,medium
+CIS-4.1,Proper network segmentation via security zones must be implemented,Verify CIS-4.1 compliance,"<!-- 4-FORTIGATE-57,1-EDGE-27 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>4-FORTIGATE-57,1-EDGE-27</hostname>
+  </system>
+  <network>
+    <zone><entry name=""dmz""><network><member>mgmt1</member></network></entry></zone>
+  </network>
+</device-config>",paloalto,1,synthetic_v3,compliant,hard
+CIS-4.1,Proper network segmentation via security zones must be implemented,Verify CIS-4.1 compliance,"<!-- 70-PAFW-34,32-PAN-1,83-CORP-13 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>70-PAFW-34,32-PAN-1,83-CORP-13</hostname>
+  </system>
+  <network>
+    <zone><entry name=""dmz""><network><member>ethernet5/0</member></network></entry></zone>
+  </network>
+</device-config>",paloalto,1,synthetic_v3,compliant,hard
+CIS-4.1,Proper network segmentation via security zones must be implemented,Verify CIS-4.1 compliance,"<!-- 48-PAFW-88,60-PAN-7,99-CORP-24 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>48-PAFW-88,60-PAN-7,99-CORP-24</hostname>
+  </system>
+  <network>
+    <zone><entry name=""trust""><network><member>mgmt15</member></network></entry></zone>
+  </network>
+</device-config>",paloalto,1,synthetic_v3,compliant,hard
+CIS-4.1,Proper network segmentation via security zones must be implemented,Verify CIS-4.1 compliance,"<!-- 77-SECURITY-69,35-PERIMETER-51 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>77-SECURITY-69,35-PERIMETER-51</hostname>
+  </system>
+  <network>
+    <zone><entry name=""trust""><network><member>mgmt16</member></network></entry></zone>
+  </network>
+</device-config>",paloalto,1,synthetic_v3,compliant,hard
+CIS-4.1,Proper network segmentation via security zones must be implemented,Verify CIS-4.1 compliance,"<!-- 63-SECURITY-74,63-PERIMETER-18 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>63-SECURITY-74,63-PERIMETER-18</hostname>
+  </system>
+  <network>
+    <zone></zone>
+  </network>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,medium
+CIS-4.1,Proper network segmentation via security zones must be implemented,Verify CIS-4.1 compliance,"<!-- 11-FORTIGATE-94,5-EDGE-82 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>11-FORTIGATE-94,5-EDGE-82</hostname>
+  </system>
+  <network>
+    <zone><entry name=""untrust""><network><member>mgmt23</member></network></entry></zone>
+  </network>
+</device-config>",paloalto,1,synthetic_v3,compliant,hard
+CIS-4.1,Proper network segmentation via security zones must be implemented,Verify CIS-4.1 compliance,"<!-- 33-PAFW-39,34-PAN-9,99-CORP-66 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>33-PAFW-39,34-PAN-9,99-CORP-66</hostname>
+  </system>
+  <network>
+    <zone></zone>
+  </network>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,easy
+CIS-4.1,Proper network segmentation via security zones must be implemented,Verify CIS-4.1 compliance,"<!-- 80-PAFW-57,20-PAN-26,51-CORP-16 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>80-PAFW-57,20-PAN-26,51-CORP-16</hostname>
+  </system>
+  <network>
+    <zone><entry name=""trust""><network><member>ethernet18/4</member></network></entry></zone>
+  </network>
+</device-config>",paloalto,1,synthetic_v3,compliant,easy
+CIS-4.1,Proper network segmentation via security zones must be implemented,Verify CIS-4.1 compliance,"<!-- 68-PAFW-53,69-PAN-55,3-CORP-66 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>68-PAFW-53,69-PAN-55,3-CORP-66</hostname>
+  </system>
+  <network>
+    <zone></zone>
+  </network>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,easy
+CIS-4.1,Proper network segmentation via security zones must be implemented,Verify CIS-4.1 compliance,"<!-- 93-SECURITY-20,17-PERIMETER-64 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>93-SECURITY-20,17-PERIMETER-64</hostname>
+  </system>
+  <network>
+    <zone><entry name=""untrust""><network><member>mgmt14</member></network></entry></zone>
+  </network>
+</device-config>",paloalto,1,synthetic_v3,compliant,medium
+CIS-4.1,Proper network segmentation via security zones must be implemented,Verify CIS-4.1 compliance,"<!-- 9-FORTIGATE-50,67-EDGE-7 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>9-FORTIGATE-50,67-EDGE-7</hostname>
+  </system>
+  <network>
+    <zone><entry name=""untrust""><network><member>ethernet23/6</member></network></entry></zone>
+  </network>
+</device-config>",paloalto,1,synthetic_v3,compliant,hard
+CIS-4.1,Proper network segmentation via security zones must be implemented,Verify CIS-4.1 compliance,"<!-- 64-FORTIGATE-46,13-EDGE-23 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>64-FORTIGATE-46,13-EDGE-23</hostname>
+  </system>
+  <network>
+    <zone></zone>
+  </network>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,medium
+CIS-4.1,Proper network segmentation via security zones must be implemented,Verify CIS-4.1 compliance,"<!-- 41-FORTIGATE-6,60-EDGE-27 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>41-FORTIGATE-6,60-EDGE-27</hostname>
+  </system>
+  <network>
+    <zone></zone>
+  </network>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,easy
+CIS-4.1,Proper network segmentation via security zones must be implemented,Verify CIS-4.1 compliance,"<!-- 64-FORTIGATE-39,23-EDGE-82 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>64-FORTIGATE-39,23-EDGE-82</hostname>
+  </system>
+  <network>
+    <zone><entry name=""trust""><network><member>mgmt12</member></network></entry></zone>
+  </network>
+</device-config>",paloalto,1,synthetic_v3,compliant,hard
+CIS-4.1,Proper network segmentation via security zones must be implemented,Verify CIS-4.1 compliance,"<!-- 80-SECURITY-97,36-PERIMETER-22 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>80-SECURITY-97,36-PERIMETER-22</hostname>
+  </system>
+  <network>
+    <zone></zone>
+  </network>
+</device-config>",paloalto,0,synthetic_v3,non_compliant,medium
+CIS-4.1,Proper network segmentation via security zones must be implemented,Verify CIS-4.1 compliance,"<!-- 32-PAFW-91,52-PAN-25,66-CORP-85 Configuration -->
+
+<device-config>
+  <system>
+    <hostname>32-PAFW-91,52-PAN-25,66-CORP-85</hostname>
+  </system>
+  <network>
+    <zone><entry name=""untrust""><network><member>mgmt8</member></network></entry></zone>
+  </network>
+</device-config>",paloalto,1,synthetic_v3,compliant,easy

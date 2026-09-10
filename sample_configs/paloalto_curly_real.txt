@@ -1,0 +1,9 @@
+"Outside Web Server" {
+    from Trust;
+    to Untrust;
+    source 10.1.1.0/24;
+    destination 200.10.10.10;
+    service any;
+    action allow;
+    log yes;
+}

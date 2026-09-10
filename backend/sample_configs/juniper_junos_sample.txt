@@ -1,0 +1,93 @@
+# Juniper Junos Sample Configuration
+# Device: TEST-SRX-01
+# Version: 19.4R1
+
+system {
+    host-name TEST-SRX-01;
+    domain-name example.com;
+    root-authentication {
+        encrypted-password "$1$abc123";
+    }
+    login {
+        user admin {
+            uid 2000;
+            class superuser;
+            authentication {
+                encrypted-password "$1$xyz789";
+            }
+        }
+    }
+    services {
+        ssh {
+            root-login deny;
+            protocol-version v2;
+        }
+        telnet {
+            connection-limit 5;
+        }
+        web-management {
+            http;
+        }
+    }
+    ntp {
+        server 192.168.1.10;
+        server 192.168.1.11;
+    }
+    syslog {
+        host 192.168.1.50 {
+            any any;
+        }
+    }
+}
+
+interfaces {
+    ge-0/0/0 {
+        description "WAN Interface";
+        unit 0 {
+            family inet {
+                address 203.0.113.1/30;
+            }
+        }
+    }
+    ge-0/0/1 {
+        description "LAN Interface";
+        unit 0 {
+            family inet {
+                address 192.168.1.1/24;
+            }
+        }
+    }
+}
+
+security {
+    policies {
+        default-policy {
+            permit-all;
+        }
+    }
+    zones {
+        security-zone trust {
+            interfaces {
+                ge-0/0/1.0;
+            }
+        }
+        security-zone untrust {
+            interfaces {
+                ge-0/0/0.0;
+            }
+        }
+    }
+}
+
+snmp {
+    community public {
+        authorization read-only;
+    }
+    community private {
+        authorization read-write;
+    }
+}
+
+login {
+    message "Authorized Access Only";
+}

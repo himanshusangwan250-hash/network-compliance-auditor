@@ -1,0 +1,70 @@
+# Juniper SRX Branch Office Router
+# Hostname: BRANCH-RTR-2024
+# Software: Junos 21.2R3
+
+system {
+    name-server {
+        8.8.4.4;
+        1.1.1.1;
+    }
+    services {
+        ssh {
+            max-sessions-per-connection 5;
+            client-alive-count-max 3;
+        }
+    }
+    login {
+        class operator {
+            permissions [ network view-configuration ];
+        }
+    }
+    time-zone America/Los_Angeles;
+}
+
+chassis {
+    alarm {
+        management-ethernet {
+            link-down ignore;
+        }
+    }
+}
+
+interfaces {
+    ge-1/0/0 {
+        unit 0 {
+            family inet {
+                address 10.50.0.1/29;
+            }
+        }
+    }
+    lo0 {
+        unit 0 {
+            family inet {
+                address 172.16.0.1/32;
+            }
+        }
+    }
+}
+
+routing-options {
+    static {
+        route 0.0.0.0/0 next-hop 10.50.0.6;
+    }
+}
+
+security {
+    policies {
+        from-zone trust to-zone untrust {
+            policy allow-internal {
+                match {
+                    source-address any;
+                    destination-address any;
+                    application any;
+                }
+                then {
+                    permit;
+                }
+            }
+        }
+    }
+}

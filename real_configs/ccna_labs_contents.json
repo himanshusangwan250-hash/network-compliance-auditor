@@ -1,0 +1,338 @@
+[
+  {
+    "name": "LICENSE",
+    "path": "LICENSE",
+    "sha": "c44cf52b0b25ed799fd0cec05d3ef8345509276e",
+    "size": 1074,
+    "url": "https://api.github.com/repos/c4geeks/ccna-labs/contents/LICENSE?ref=main",
+    "html_url": "https://github.com/c4geeks/ccna-labs/blob/main/LICENSE",
+    "git_url": "https://api.github.com/repos/c4geeks/ccna-labs/git/blobs/c44cf52b0b25ed799fd0cec05d3ef8345509276e",
+    "download_url": "https://raw.githubusercontent.com/c4geeks/ccna-labs/main/LICENSE",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/c4geeks/ccna-labs/contents/LICENSE?ref=main",
+      "git": "https://api.github.com/repos/c4geeks/ccna-labs/git/blobs/c44cf52b0b25ed799fd0cec05d3ef8345509276e",
+      "html": "https://github.com/c4geeks/ccna-labs/blob/main/LICENSE"
+    }
+  },
+  {
+    "name": "README.md",
+    "path": "README.md",
+    "sha": "a36ba657eada0dad6381de75ab1b94f0ca4fd77c",
+    "size": 5539,
+    "url": "https://api.github.com/repos/c4geeks/ccna-labs/contents/README.md?ref=main",
+    "html_url": "https://github.com/c4geeks/ccna-labs/blob/main/README.md",
+    "git_url": "https://api.github.com/repos/c4geeks/ccna-labs/git/blobs/a36ba657eada0dad6381de75ab1b94f0ca4fd77c",
+    "download_url": "https://raw.githubusercontent.com/c4geeks/ccna-labs/main/README.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/c4geeks/ccna-labs/contents/README.md?ref=main",
+      "git": "https://api.github.com/repos/c4geeks/ccna-labs/git/blobs/a36ba657eada0dad6381de75ab1b94f0ca4fd77c",
+      "html": "https://github.com/c4geeks/ccna-labs/blob/main/README.md"
+    }
+  },
+  {
+    "name": "base-device",
+    "path": "base-device",
+    "sha": "ee0467eec341fddb69fb54686af80657f05db9be",
+    "size": 0,
+    "url": "https://api.github.com/repos/c4geeks/ccna-labs/contents/base-device?ref=main",
+    "html_url": "https://github.com/c4geeks/ccna-labs/tree/main/base-device",
+    "git_url": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/ee0467eec341fddb69fb54686af80657f05db9be",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/c4geeks/ccna-labs/contents/base-device?ref=main",
+      "git": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/ee0467eec341fddb69fb54686af80657f05db9be",
+      "html": "https://github.com/c4geeks/ccna-labs/tree/main/base-device"
+    }
+  },
+  {
+    "name": "cdp-lldp",
+    "path": "cdp-lldp",
+    "sha": "80c6e2199156d70dfb493701bad5e5f0c6b54430",
+    "size": 0,
+    "url": "https://api.github.com/repos/c4geeks/ccna-labs/contents/cdp-lldp?ref=main",
+    "html_url": "https://github.com/c4geeks/ccna-labs/tree/main/cdp-lldp",
+    "git_url": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/80c6e2199156d70dfb493701bad5e5f0c6b54430",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/c4geeks/ccna-labs/contents/cdp-lldp?ref=main",
+      "git": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/80c6e2199156d70dfb493701bad5e5f0c6b54430",
+      "html": "https://github.com/c4geeks/ccna-labs/tree/main/cdp-lldp"
+    }
+  },
+  {
+    "name": "dhcp-server-relay",
+    "path": "dhcp-server-relay",
+    "sha": "81b65a8f16d632c6a60090ab71a6bf9cb92c0492",
+    "size": 0,
+    "url": "https://api.github.com/repos/c4geeks/ccna-labs/contents/dhcp-server-relay?ref=main",
+    "html_url": "https://github.com/c4geeks/ccna-labs/tree/main/dhcp-server-relay",
+    "git_url": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/81b65a8f16d632c6a60090ab71a6bf9cb92c0492",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/c4geeks/ccna-labs/contents/dhcp-server-relay?ref=main",
+      "git": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/81b65a8f16d632c6a60090ab71a6bf9cb92c0492",
+      "html": "https://github.com/c4geeks/ccna-labs/tree/main/dhcp-server-relay"
+    }
+  },
+  {
+    "name": "dns-static",
+    "path": "dns-static",
+    "sha": "2459be2b1dfd28033b3431ecaed6d2a104a647de",
+    "size": 0,
+    "url": "https://api.github.com/repos/c4geeks/ccna-labs/contents/dns-static?ref=main",
+    "html_url": "https://github.com/c4geeks/ccna-labs/tree/main/dns-static",
+    "git_url": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/2459be2b1dfd28033b3431ecaed6d2a104a647de",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/c4geeks/ccna-labs/contents/dns-static?ref=main",
+      "git": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/2459be2b1dfd28033b3431ecaed6d2a104a647de",
+      "html": "https://github.com/c4geeks/ccna-labs/tree/main/dns-static"
+    }
+  },
+  {
+    "name": "etherchannel-lacp",
+    "path": "etherchannel-lacp",
+    "sha": "e0dfe2a31cffd328ad5d72e9ad2d3a4c804f09c7",
+    "size": 0,
+    "url": "https://api.github.com/repos/c4geeks/ccna-labs/contents/etherchannel-lacp?ref=main",
+    "html_url": "https://github.com/c4geeks/ccna-labs/tree/main/etherchannel-lacp",
+    "git_url": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/e0dfe2a31cffd328ad5d72e9ad2d3a4c804f09c7",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/c4geeks/ccna-labs/contents/etherchannel-lacp?ref=main",
+      "git": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/e0dfe2a31cffd328ad5d72e9ad2d3a4c804f09c7",
+      "html": "https://github.com/c4geeks/ccna-labs/tree/main/etherchannel-lacp"
+    }
+  },
+  {
+    "name": "hsrp",
+    "path": "hsrp",
+    "sha": "eb629084b41ac0fc6cd1e5d5c18030058ff54477",
+    "size": 0,
+    "url": "https://api.github.com/repos/c4geeks/ccna-labs/contents/hsrp?ref=main",
+    "html_url": "https://github.com/c4geeks/ccna-labs/tree/main/hsrp",
+    "git_url": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/eb629084b41ac0fc6cd1e5d5c18030058ff54477",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/c4geeks/ccna-labs/contents/hsrp?ref=main",
+      "git": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/eb629084b41ac0fc6cd1e5d5c18030058ff54477",
+      "html": "https://github.com/c4geeks/ccna-labs/tree/main/hsrp"
+    }
+  },
+  {
+    "name": "ipv6-static-routing",
+    "path": "ipv6-static-routing",
+    "sha": "c31170103b29ea825a03ec3a6a85f992ca459998",
+    "size": 0,
+    "url": "https://api.github.com/repos/c4geeks/ccna-labs/contents/ipv6-static-routing?ref=main",
+    "html_url": "https://github.com/c4geeks/ccna-labs/tree/main/ipv6-static-routing",
+    "git_url": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/c31170103b29ea825a03ec3a6a85f992ca459998",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/c4geeks/ccna-labs/contents/ipv6-static-routing?ref=main",
+      "git": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/c31170103b29ea825a03ec3a6a85f992ca459998",
+      "html": "https://github.com/c4geeks/ccna-labs/tree/main/ipv6-static-routing"
+    }
+  },
+  {
+    "name": "l3-switch-svi",
+    "path": "l3-switch-svi",
+    "sha": "85845a224b11b2a8a94d719981705de58e05d410",
+    "size": 0,
+    "url": "https://api.github.com/repos/c4geeks/ccna-labs/contents/l3-switch-svi?ref=main",
+    "html_url": "https://github.com/c4geeks/ccna-labs/tree/main/l3-switch-svi",
+    "git_url": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/85845a224b11b2a8a94d719981705de58e05d410",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/c4geeks/ccna-labs/contents/l3-switch-svi?ref=main",
+      "git": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/85845a224b11b2a8a94d719981705de58e05d410",
+      "html": "https://github.com/c4geeks/ccna-labs/tree/main/l3-switch-svi"
+    }
+  },
+  {
+    "name": "nat-pat",
+    "path": "nat-pat",
+    "sha": "c9ea8dbde29022a812b4231f9c4ea80269e500d5",
+    "size": 0,
+    "url": "https://api.github.com/repos/c4geeks/ccna-labs/contents/nat-pat?ref=main",
+    "html_url": "https://github.com/c4geeks/ccna-labs/tree/main/nat-pat",
+    "git_url": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/c9ea8dbde29022a812b4231f9c4ea80269e500d5",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/c4geeks/ccna-labs/contents/nat-pat?ref=main",
+      "git": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/c9ea8dbde29022a812b4231f9c4ea80269e500d5",
+      "html": "https://github.com/c4geeks/ccna-labs/tree/main/nat-pat"
+    }
+  },
+  {
+    "name": "ntp",
+    "path": "ntp",
+    "sha": "c0d7a378d9f8e7768bb92a70030d8f15d3a68fe5",
+    "size": 0,
+    "url": "https://api.github.com/repos/c4geeks/ccna-labs/contents/ntp?ref=main",
+    "html_url": "https://github.com/c4geeks/ccna-labs/tree/main/ntp",
+    "git_url": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/c0d7a378d9f8e7768bb92a70030d8f15d3a68fe5",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/c4geeks/ccna-labs/contents/ntp?ref=main",
+      "git": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/c0d7a378d9f8e7768bb92a70030d8f15d3a68fe5",
+      "html": "https://github.com/c4geeks/ccna-labs/tree/main/ntp"
+    }
+  },
+  {
+    "name": "ospf-concepts",
+    "path": "ospf-concepts",
+    "sha": "e13c62956c8477d308f3784cc901e6775b1815dc",
+    "size": 0,
+    "url": "https://api.github.com/repos/c4geeks/ccna-labs/contents/ospf-concepts?ref=main",
+    "html_url": "https://github.com/c4geeks/ccna-labs/tree/main/ospf-concepts",
+    "git_url": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/e13c62956c8477d308f3784cc901e6775b1815dc",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/c4geeks/ccna-labs/contents/ospf-concepts?ref=main",
+      "git": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/e13c62956c8477d308f3784cc901e6775b1815dc",
+      "html": "https://github.com/c4geeks/ccna-labs/tree/main/ospf-concepts"
+    }
+  },
+  {
+    "name": "ospf-single-area",
+    "path": "ospf-single-area",
+    "sha": "98491d288b4a895d7f06d60d7df5e66e7366096e",
+    "size": 0,
+    "url": "https://api.github.com/repos/c4geeks/ccna-labs/contents/ospf-single-area?ref=main",
+    "html_url": "https://github.com/c4geeks/ccna-labs/tree/main/ospf-single-area",
+    "git_url": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/98491d288b4a895d7f06d60d7df5e66e7366096e",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/c4geeks/ccna-labs/contents/ospf-single-area?ref=main",
+      "git": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/98491d288b4a895d7f06d60d7df5e66e7366096e",
+      "html": "https://github.com/c4geeks/ccna-labs/tree/main/ospf-single-area"
+    }
+  },
+  {
+    "name": "packet-forwarding",
+    "path": "packet-forwarding",
+    "sha": "5cd9064eac5551b2553c96ed36986da4b52a1cce",
+    "size": 0,
+    "url": "https://api.github.com/repos/c4geeks/ccna-labs/contents/packet-forwarding?ref=main",
+    "html_url": "https://github.com/c4geeks/ccna-labs/tree/main/packet-forwarding",
+    "git_url": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/5cd9064eac5551b2553c96ed36986da4b52a1cce",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/c4geeks/ccna-labs/contents/packet-forwarding?ref=main",
+      "git": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/5cd9064eac5551b2553c96ed36986da4b52a1cce",
+      "html": "https://github.com/c4geeks/ccna-labs/tree/main/packet-forwarding"
+    }
+  },
+  {
+    "name": "router-on-a-stick",
+    "path": "router-on-a-stick",
+    "sha": "58f2eb1cc03ccec10740462df90605911174b6f8",
+    "size": 0,
+    "url": "https://api.github.com/repos/c4geeks/ccna-labs/contents/router-on-a-stick?ref=main",
+    "html_url": "https://github.com/c4geeks/ccna-labs/tree/main/router-on-a-stick",
+    "git_url": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/58f2eb1cc03ccec10740462df90605911174b6f8",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/c4geeks/ccna-labs/contents/router-on-a-stick?ref=main",
+      "git": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/58f2eb1cc03ccec10740462df90605911174b6f8",
+      "html": "https://github.com/c4geeks/ccna-labs/tree/main/router-on-a-stick"
+    }
+  },
+  {
+    "name": "routing-table",
+    "path": "routing-table",
+    "sha": "ae5c49b4d1c43288f0f246f6663f642310b4cb52",
+    "size": 0,
+    "url": "https://api.github.com/repos/c4geeks/ccna-labs/contents/routing-table?ref=main",
+    "html_url": "https://github.com/c4geeks/ccna-labs/tree/main/routing-table",
+    "git_url": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/ae5c49b4d1c43288f0f246f6663f642310b4cb52",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/c4geeks/ccna-labs/contents/routing-table?ref=main",
+      "git": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/ae5c49b4d1c43288f0f246f6663f642310b4cb52",
+      "html": "https://github.com/c4geeks/ccna-labs/tree/main/routing-table"
+    }
+  },
+  {
+    "name": "snmp-syslog",
+    "path": "snmp-syslog",
+    "sha": "8abc93e8593250f944affcb4f4f502309df19a6c",
+    "size": 0,
+    "url": "https://api.github.com/repos/c4geeks/ccna-labs/contents/snmp-syslog?ref=main",
+    "html_url": "https://github.com/c4geeks/ccna-labs/tree/main/snmp-syslog",
+    "git_url": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/8abc93e8593250f944affcb4f4f502309df19a6c",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/c4geeks/ccna-labs/contents/snmp-syslog?ref=main",
+      "git": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/8abc93e8593250f944affcb4f4f502309df19a6c",
+      "html": "https://github.com/c4geeks/ccna-labs/tree/main/snmp-syslog"
+    }
+  },
+  {
+    "name": "static-routing-ipv4",
+    "path": "static-routing-ipv4",
+    "sha": "39bce1465f581f8b9422a13b2e747cdd284e9b60",
+    "size": 0,
+    "url": "https://api.github.com/repos/c4geeks/ccna-labs/contents/static-routing-ipv4?ref=main",
+    "html_url": "https://github.com/c4geeks/ccna-labs/tree/main/static-routing-ipv4",
+    "git_url": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/39bce1465f581f8b9422a13b2e747cdd284e9b60",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/c4geeks/ccna-labs/contents/static-routing-ipv4?ref=main",
+      "git": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/39bce1465f581f8b9422a13b2e747cdd284e9b60",
+      "html": "https://github.com/c4geeks/ccna-labs/tree/main/static-routing-ipv4"
+    }
+  },
+  {
+    "name": "stp-rapid-pvst",
+    "path": "stp-rapid-pvst",
+    "sha": "b50b45d5db7d5e19e4c127240a7a571560cece53",
+    "size": 0,
+    "url": "https://api.github.com/repos/c4geeks/ccna-labs/contents/stp-rapid-pvst?ref=main",
+    "html_url": "https://github.com/c4geeks/ccna-labs/tree/main/stp-rapid-pvst",
+    "git_url": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/b50b45d5db7d5e19e4c127240a7a571560cece53",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/c4geeks/ccna-labs/contents/stp-rapid-pvst?ref=main",
+      "git": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/b50b45d5db7d5e19e4c127240a7a571560cece53",
+      "html": "https://github.com/c4geeks/ccna-labs/tree/main/stp-rapid-pvst"
+    }
+  },
+  {
+    "name": "vlan-trunk",
+    "path": "vlan-trunk",
+    "sha": "c1a2dc8175eccf6062f4261efaf32681da91d16b",
+    "size": 0,
+    "url": "https://api.github.com/repos/c4geeks/ccna-labs/contents/vlan-trunk?ref=main",
+    "html_url": "https://github.com/c4geeks/ccna-labs/tree/main/vlan-trunk",
+    "git_url": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/c1a2dc8175eccf6062f4261efaf32681da91d16b",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/c4geeks/ccna-labs/contents/vlan-trunk?ref=main",
+      "git": "https://api.github.com/repos/c4geeks/ccna-labs/git/trees/c1a2dc8175eccf6062f4261efaf32681da91d16b",
+      "html": "https://github.com/c4geeks/ccna-labs/tree/main/vlan-trunk"
+    }
+  }
+]

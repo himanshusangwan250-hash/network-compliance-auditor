@@ -1,0 +1,25 @@
+{
+  "hostname": "TEST-SRX-01",
+  "domain": "example.com",
+  "interfaces": [
+    {
+      "name": "ethernet1/1",
+      "ip": "192.168.1.1",
+      "mask": "255.255.255.0"
+    }
+  ],
+  "users": [
+    {
+      "name": "admin",
+      "privilege": 15,
+      "encrypted": true
+    }
+  ],
+  "ntp": ["192.168.1.10", "192.168.1.11"],
+  "snmp": [
+    {
+      "community": "public",
+      "permission": "read-only"
+    }
+  ]
+}

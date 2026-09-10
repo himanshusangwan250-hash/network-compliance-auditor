@@ -1,0 +1,23 @@
+rule_id,policy,security_intent,config,vendor,label,source,difficulty
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,username ops privilege 5 secret 5 $1$m8R$QXvGOZTpQVFqLkPzVc7pY/,cisco,0,custom_generated,easy
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,username netadmin privilege 1 secret 5 $1$abc123$QXvGOZTpQVFqLkPzVc7pY/,cisco,0,custom_generated,easy
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,username backup privilege 1 secret 5 $1$xyz789$testhashvalue123/,cisco,0,custom_generated,easy
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,username security privilege 15 secret 5 $1$sec123$abc123testhash/,cisco,0,custom_generated,medium
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,username auditor privilege 1 secret 5 $1$audit123$testvaluehash/,cisco,0,custom_generated,medium
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,username admin_ops privilege 5 secret 5 $1$admin123$hashvalue123/,cisco,0,custom_generated,medium
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,username netops privilege 1 secret 5 $1$netops123$securehash/,cisco,0,custom_generated,easy
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,username admin privilege 15 secret 5 $1$m8R$QXvGOZTpQVFqLkPzVc7pY/,cisco,0,custom_generated,easy
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,username root privilege 15 secret 5 $1$root123$hashvalue/,cisco,0,custom_generated,easy
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,username cisco privilege 1 secret 5 $1$cisco123$hashvalue/,cisco,0,custom_generated,easy
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,username guest privilege 1 secret 5 $1$guest123$hashvalue/,cisco,0,custom_generated,easy
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,username test privilege 1 secret 5 $1$test123$hashvalue/,cisco,0,custom_generated,easy
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,"username admin privilege 15 secret 5 $1$abc123$testhash/
+username root privilege 1 secret 5 $1$root123$hash/",cisco,0,custom_generated,hard
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,admin user ops password-hash $1$ops123$hash,paloalto,0,custom_generated,medium
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,admin user analyst password-hash $1$analyst123$hash,paloalto,0,custom_generated,medium
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,admin user backup password-hash $1$backup123$hash,paloalto,0,custom_generated,medium
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,admin user security password-hash $1$sec123$hash,paloalto,0,custom_generated,hard
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,admin user admin password-hash $1$admin123$hash,paloalto,0,custom_generated,easy
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,admin user admin password plaintext,paloalto,0,custom_generated,easy
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,admin user cisco password-hash $1$cisco123$hash,paloalto,0,custom_generated,medium
+CIS-1.1,Avoid Default Credentials,No default usernames should be configured on network devices,admin user root password plaintext,paloalto,0,custom_generated,medium

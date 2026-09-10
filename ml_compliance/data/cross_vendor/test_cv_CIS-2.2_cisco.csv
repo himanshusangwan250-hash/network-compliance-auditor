@@ -1,0 +1,6 @@
+rule_id,policy,security_intent,config,vendor,label,source,reason,difficulty
+CIS-2.2,NTP Configuration Required,NTP servers must be configured for accurate timestamps.,ntp server 10.0.0.1,cisco,1,synthetic,valid_server,easy
+CIS-2.2,NTP Configuration Required,NTP servers must be configured for accurate timestamps.,ntp server 192.168.1.10,cisco,1,synthetic,valid_server,easy
+CIS-2.2,NTP Configuration Required,NTP servers must be configured for accurate timestamps.,ntp server 203.0.113.1,cisco,1,synthetic,valid_server,easy
+CIS-2.2,NTP Configuration Required,NTP servers must be configured for accurate timestamps.,! ntp server 10.0.0.1,cisco,0,synthetic,commented_out,easy
+CIS-2.2,NTP Configuration Required,NTP servers must be configured for accurate timestamps.,ntp server 0.0.0.0,cisco,0,synthetic,invalid_server,easy

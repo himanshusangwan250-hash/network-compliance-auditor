@@ -1,0 +1,8 @@
+rule_id,policy,security_intent,config,vendor,label,source,difficulty
+CIS-4.1,Network Segmentation,Security zones must be configured to segment network traffic,set deviceconfig setting zone trust network layer3 ethernet1/1,paloalto,0,custom_generated,medium
+CIS-4.1,Network Segmentation,Security zones must be configured to segment network traffic,set deviceconfig setting zone untrust network layer3 ethernet1/2,paloalto,0,custom_generated,medium
+CIS-4.1,Network Segmentation,Security zones must be configured to segment network traffic,set deviceconfig setting zone dmz network layer3 ethernet1/3,paloalto,0,custom_generated,medium
+CIS-4.1,Network Segmentation,Security zones must be configured to segment network traffic,set deviceconfig setting zone internal network layer3 ethernet1/4,paloalto,0,custom_generated,hard
+CIS-4.1,Network Segmentation,Security zones must be configured to segment network traffic,# set deviceconfig setting zone trust network layer3 ethernet1/1,paloalto,0,custom_generated,easy
+CIS-4.1,Network Segmentation,Security zones must be configured to segment network traffic,set deviceconfig setting zone trust,paloalto,0,custom_generated,medium
+CIS-4.1,Network Segmentation,Security zones must be configured to segment network traffic,set deviceconfig setting zone trust network,paloalto,0,custom_generated,medium

@@ -1,0 +1,7 @@
+rule_id,policy,security_intent,config,vendor,label,source,reason,difficulty
+CIS-1.2,Password Encryption Required,All user passwords must be encrypted using secure hashing.,username operator privilege 1 secret 5 $1$oper123$hash,cisco,1,synthetic,valid_secret,easy
+CIS-1.2,Password Encryption Required,All user passwords must be encrypted using secure hashing.,enable secret 5 $1$enable123$hash,cisco,1,synthetic,enable_secret,medium
+CIS-1.2,Password Encryption Required,All user passwords must be encrypted using secure hashing.,enable password 0 weakpass,cisco,0,synthetic,enable_plaintext,medium
+CIS-1.2,Password Encryption Required,All user passwords must be encrypted using secure hashing.,username guest privilege 1 password 0 guest123,cisco,0,synthetic,plaintext_password,easy
+CIS-1.2,Password Encryption Required,All user passwords must be encrypted using secure hashing.,"root-authentication { encrypted-password ""$1$root123$hash""; }",juniper,1,synthetic,root_encrypted,medium
+CIS-1.2,Password Encryption Required,All user passwords must be encrypted using secure hashing.,"root-authentication { password ""root123""; }",juniper,0,synthetic,root_plaintext,medium

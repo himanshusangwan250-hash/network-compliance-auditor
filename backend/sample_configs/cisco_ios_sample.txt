@@ -1,0 +1,65 @@
+! Cisco IOS Sample Configuration
+! Router: TEST-RTR-01
+! Version: 15.7
+
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+service sequence-numbers
+
+hostname TEST-RTR-01
+
+boot-start-marker
+boot-end-marker
+
+!
+enable secret 5 $1$m8R$QXvGOZTpQVFqLkPzVc7pY/
+!
+username admin privilege 15 secret 5 $1$m8R$QXvGOZTpQVFqLkPzVc7pY/
+username netadmin privilege 1 password 0 cisco123
+!
+aaa new-model
+aaa authentication login default local
+aaa authorization exec default local
+!
+ip domain name example.com
+ip name-server 8.8.8.8
+!
+interface GigabitEthernet0/0
+ description WAN Interface
+ ip address 203.0.113.1 255.255.255.252
+ no shutdown
+!
+interface GigabitEthernet0/1
+ description LAN Interface
+ ip address 192.168.1.1 255.255.255.0
+ no shutdown
+!
+router ospf 1
+ network 192.168.1.0 0.0.0.255 area 0
+ network 10.0.0.0 0.255.255.255 area 0
+!
+line con 0
+ exec-timeout 5 0
+ login authentication default
+line vty 0 4
+ exec-timeout 15 0
+ transport input telnet ssh
+line vty 5 15
+ exec-timeout 15 0
+ transport input ssh
+!
+ntp server 192.168.1.10
+ntp server 192.168.1.11
+!
+logging host 192.168.1.50
+logging trap informational
+!
+snmp-server community public RO
+snmp-server community private RW
+snmp-server host 192.168.1.60 version 2c public
+!
+banner motd #Authorized Access Only#
+!
+end
