@@ -73,7 +73,7 @@ score = (pass_count / (pass_count + fail_count)) × 100
 
 ```bash
 # Clone the repository
-git clone https://github.com/<your-username>/network-compliance-auditor.git
+git clone https://github.com/himanshusangwan250-hash/network-compliance-auditor.git
 cd network-compliance-auditor
 
 # Setup Python virtual environment
